@@ -118,6 +118,7 @@ void Editor::save() const
     std::cout << "Saving..." << std::endl;
     if (file.is_open())
     {
+        file << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>" << std::endl;
         file << "<filename>" << _filename << "</filename>" << std::endl;
         // Save dots
         for (auto it = _dots.begin(); it != _dots.end(); it++)
