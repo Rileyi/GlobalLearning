@@ -17,3 +17,4 @@ Right click to delete the last dot.
 Exit the program to launch the saving process.
 
 The binary file uploaded is supposed to be runnable on Windows 7
+The SFML library is cross-platform and the code should compile on any platform supporting the library
