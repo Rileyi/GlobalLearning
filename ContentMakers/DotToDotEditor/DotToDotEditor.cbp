@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="DotToDotEditor" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/DotToDotEditor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="butterfly.jpg" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="A:/Librarys/SFML-2.2-debug/include" />
+					<Add directory="src/" />
+				</Compiler>
+				<Linker>
+					<Add library="sfml-graphics-d" />
+					<Add library="sfml-window-d" />
+					<Add library="sfml-system-d" />
+					<Add directory="A:/Librarys/SFML-2.2-debug/lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/DotToDotEditor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="A:/Librarys/SFML-2.2-release/include" />
+					<Add directory="src/" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="sfml-graphics" />
+					<Add library="sfml-window" />
+					<Add library="sfml-system" />
+					<Add directory="A:/Librarys/SFML-2.2-release/lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="./src/" />
+		</Compiler>
+		<Unit filename="src/Application.cpp" />
+		<Unit filename="src/Application.h" />
+		<Unit filename="src/Direction.h" />
+		<Unit filename="src/Dot.cpp" />
+		<Unit filename="src/Dot.h" />
+		<Unit filename="src/Editor.cpp" />
+		<Unit filename="src/Editor.h" />
+		<Unit filename="src/main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
