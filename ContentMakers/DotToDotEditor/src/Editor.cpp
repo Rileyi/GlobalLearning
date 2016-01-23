@@ -119,12 +119,22 @@ void Editor::save() const
     if (file.is_open())
     {
         file << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>" << std::endl;
-        file << "<filename>" << _filename << "</filename>" << std::endl;
-        // Save dots
-        for (auto it = _dots.begin(); it != _dots.end(); it++)
-        {
-            file << (*it);
-        }
+        file << "<exercice type=\"dot-to-dot\">" << std::endl;
+            // Requirements
+            file << "\t<requirements>" << std::endl;
+            file << "\t\t<requirement class=\"arithmetic\" level=\"0\"/>" << std::endl;
+            file << "\t\t<move type=\"drag-and-drop\"/>" << std::endl;
+            // Content
+            file << "\t<content>" << std::endl;
+            file << "\t\t<filename>" << _filename << "</filename>" << std::endl;
+            // Dots
+            for (auto it = _dots.begin(); it != _dots.end(); it++)
+            {
+                file << "\t\t";
+                file << (*it) << std::endl;
+            }
+            file << "\t</content>" << std::endl;
+        file << "</exercice>" << std::endl;
         file.close();
     }
     else

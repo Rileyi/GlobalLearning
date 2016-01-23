@@ -20,11 +20,12 @@ std::ostream& operator<<(std::ostream& os, const Dot& dot)
 
 std::ofstream& operator<<(std::ofstream& stream, const Dot& dot)
 {
-    stream << "<dot>" << std::endl;
-    stream << "\t<number>" << dot._number << "</number>" << std::endl;
-    stream << "\t<x>" << dot._pos.x << "</x>" << std::endl;
-    stream << "\t<y>" << dot._pos.y << "</y>" << std::endl;
-    stream << "</dot>" << std::endl;
+    stream << "<dot number=\"" << dot._number << "\" x=\"" << dot._pos.x << "\" y=\"" << dot._pos.y << "\"/>";
+//    stream << "<dot>" << std::endl;
+//    stream << "\t<number>" << dot._number << "</number>" << std::endl;
+//    stream << "\t<x>" << dot._pos.x << "</x>" << std::endl;
+//    stream << "\t<y>" << dot._pos.y << "</y>" << std::endl;
+//    stream << "</dot>" << std::endl;
     return stream;
 }
 

@@ -1,121 +1,16 @@
-<filename>butterfly.jpg</filename>
-<dot>
-	<number>0</number>
-	<x>110</x>
-	<y>239</y>
-</dot>
-<dot>
-	<number>1</number>
-	<x>86</x>
-	<y>253</y>
-</dot>
-<dot>
-	<number>2</number>
-	<x>58</x>
-	<y>247</y>
-</dot>
-<dot>
-	<number>3</number>
-	<x>44</x>
-	<y>219</y>
-</dot>
-<dot>
-	<number>4</number>
-	<x>52</x>
-	<y>188</y>
-</dot>
-<dot>
-	<number>5</number>
-	<x>28</x>
-	<y>168</y>
-</dot>
-<dot>
-	<number>6</number>
-	<x>16</x>
-	<y>139</y>
-</dot>
-<dot>
-	<number>7</number>
-	<x>22</x>
-	<y>107</y>
-</dot>
-<dot>
-	<number>8</number>
-	<x>44</x>
-	<y>82</y>
-</dot>
-<dot>
-	<number>9</number>
-	<x>72</x>
-	<y>75</y>
-</dot>
-<dot>
-	<number>10</number>
-	<x>102</x>
-	<y>85</y>
-</dot>
-<dot>
-	<number>11</number>
-	<x>122</x>
-	<y>103</y>
-</dot>
-<dot>
-	<number>12</number>
-	<x>166</x>
-	<y>104</y>
-</dot>
-<dot>
-	<number>13</number>
-	<x>186</x>
-	<y>83</y>
-</dot>
-<dot>
-	<number>14</number>
-	<x>215</x>
-	<y>74</y>
-</dot>
-<dot>
-	<number>15</number>
-	<x>243</x>
-	<y>84</y>
-</dot>
-<dot>
-	<number>16</number>
-	<x>265</x>
-	<y>107</y>
-</dot>
-<dot>
-	<number>17</number>
-	<x>270</x>
-	<y>135</y>
-</dot>
-<dot>
-	<number>18</number>
-	<x>259</x>
-	<y>169</y>
-</dot>
-<dot>
-	<number>19</number>
-	<x>238</x>
-	<y>186</y>
-</dot>
-<dot>
-	<number>20</number>
-	<x>245</x>
-	<y>218</y>
-</dot>
-<dot>
-	<number>21</number>
-	<x>230</x>
-	<y>245</y>
-</dot>
-<dot>
-	<number>22</number>
-	<x>202</x>
-	<y>252</y>
-</dot>
-<dot>
-	<number>23</number>
-	<x>178</x>
-	<y>240</y>
-</dot>
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<exercice type="dot-to-dot">
+	<requirements>
+		<requirement class="arithmetic" level="0"/>
+		<move type="drag-and-drop"/>
+	<content>
+		<filename>butterfly.jpg</filename>
+		<dot number="0" x="65" y="39"/>
+		<dot number="1" x="112" y="142"/>
+		<dot number="2" x="79" y="177"/>
+		<dot number="3" x="119" y="201"/>
+		<dot number="4" x="193" y="187"/>
+		<dot number="5" x="196" y="147"/>
+		<dot number="6" x="187" y="120"/>
+	</content>
+</exercice>
