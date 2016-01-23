@@ -49,7 +49,6 @@
 		</Compiler>
 		<Unit filename="src/Application.cpp" />
 		<Unit filename="src/Application.h" />
-		<Unit filename="src/Direction.h" />
 		<Unit filename="src/Dot.cpp" />
 		<Unit filename="src/Dot.h" />
 		<Unit filename="src/Editor.cpp" />
