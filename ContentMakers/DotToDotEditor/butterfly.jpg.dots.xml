@@ -3,14 +3,14 @@
 	<requirements>
 		<requirement class="arithmetic" level="0"/>
 		<move type="drag-and-drop"/>
+</requirements>
 	<content>
-		<filename>butterfly.jpg</filename>
-		<dot number="0" x="65" y="39"/>
-		<dot number="1" x="112" y="142"/>
-		<dot number="2" x="79" y="177"/>
-		<dot number="3" x="119" y="201"/>
-		<dot number="4" x="193" y="187"/>
-		<dot number="5" x="196" y="147"/>
-		<dot number="6" x="187" y="120"/>
+		<background filename="butterfly.jpg"/>
+		<dot number="0" x="99" y="97"/>
+		<dot number="1" x="172" y="164"/>
+		<dot number="2" x="221" y="140"/>
+		<dot number="3" x="204" y="48"/>
+		<dot number="4" x="77" y="63"/>
+		<dot number="5" x="78" y="163"/>
 	</content>
 </exercice>

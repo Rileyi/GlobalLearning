@@ -124,9 +124,10 @@ void Editor::save() const
             file << "\t<requirements>" << std::endl;
             file << "\t\t<requirement class=\"arithmetic\" level=\"0\"/>" << std::endl;
             file << "\t\t<move type=\"drag-and-drop\"/>" << std::endl;
+            file << "</requirements>" << std::endl;
             // Content
             file << "\t<content>" << std::endl;
-            file << "\t\t<filename>" << _filename << "</filename>" << std::endl;
+            file << "\t\t<background filename=\"" << _filename << "\"/>" << std::endl;
             // Dots
             for (auto it = _dots.begin(); it != _dots.end(); it++)
             {
