@@ -12,6 +12,20 @@
 *	Pour l'utiliser, effacez les contenus des methods évènements et ajoutez-y ce qu'il
 *	vous faut. Changez les membres privées sprite et touch_offset à votre
 *	convenance et concevez votre layer comme vous le voulez.
+*	
+*
+*	Code minimal pour pouvoir l'utiliser à ajouter dans la method bool AppDelegate::applicationDidFinishLaunching() :
+*
+*	// create a generic scene
+*	auto scene = Scene::create();
+*
+*	// add the layer
+*	auto layer = new MyLayer();
+*	scene->addChild(layer, 1);
+*	layer->release(); // addChild() retained so we release
+*
+*	// run the first scene
+*	Director::getInstance()->runWithScene(scene);
 */
 class MyLayer : public Layer
 {
