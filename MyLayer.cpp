@@ -4,7 +4,8 @@ MyLayer::MyLayer()
 {
 	Size iSize = Director::getInstance()->getWinSize();
 
-	// crée le sprite
+	// crée le sprite de démonstration
+	// ces lignes sont à supprimer si vous voulez faire votre propre layer.
 	this->sprite = new Sprite;
 	this->sprite->initWithFile("Sprite.png");
 	this->sprite->setPosition(Point(iSize.width / 2.0f, iSize.height / 2.0f));
