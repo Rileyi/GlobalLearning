@@ -21,8 +21,9 @@ Exercice::Exercice(const Exercice& other) : _type(other._type)
 
 Exercice& Exercice::operator=(const Exercice& rhs)
 {
-    if (this == &rhs) return *this; // handle self assignment
-    //assignment operator
+    if (this == &rhs)
+        return *this; // handle self assignment
+    _type = rhs._type;
     return *this;
 }
 

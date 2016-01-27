@@ -33,8 +33,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="DotToDotExercice.cpp" />
-		<Unit filename="DotToDotExercice.h" />
 		<Unit filename="Exercice.cpp" />
 		<Unit filename="Exercice.h" />
 		<Unit filename="main.cpp" />
