@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <exercice type="dot-to-dot">
 	<requirements>
-		<requirement class="arithmetic" level="0"/>
+		<level class="arithmetic" value="0"/>
 		<move type="drag-and-drop"/>
 	</requirements>
+	<learnings>
+		<level class="arithmetic" experience="10"/>
+	</learnings>
 	<content>
 		<background filename="butterfly.jpg"/>
 		<dot number="0" x="99" y="97"/>
