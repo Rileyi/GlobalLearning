@@ -2,11 +2,6 @@
 #define  _APP_DELEGATE_H_
 
 #include "cocos2d.h"
-using namespace cocos2d;
-using cocos2d::Point;
-
-#include "MyLayer.h"
-
 
 /**
 @brief    The cocos2d Application.
