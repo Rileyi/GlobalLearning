@@ -23,3 +23,7 @@ LevelRequirement& LevelRequirement::operator=(const LevelRequirement& rhs)
     _class = rhs._class;
     return *this;
 }
+
+std::string LevelRequirement::toXML() const
+{
+}

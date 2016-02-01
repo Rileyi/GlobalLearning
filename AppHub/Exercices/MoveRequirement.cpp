@@ -22,3 +22,7 @@ MoveRequirement& MoveRequirement::operator=(const MoveRequirement& rhs)
     _type = rhs._type;
     return *this;
 }
+
+std::string MoveRequirement::toXML() const
+{
+}

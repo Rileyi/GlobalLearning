@@ -17,6 +17,8 @@ class LevelRequirement : public Requirement
         LevelRequirement(const LevelRequirement& other);
         LevelRequirement& operator=(const LevelRequirement& other);
 
+        std::string toXML() const;
+
     // Attributes
     protected:
         ExerciceClass _class;

@@ -1,7 +1,9 @@
 #ifndef REQUIREMENT_H
 #define REQUIREMENT_H
 
-class Requirement
+#include "I_Saveable.h"
+
+class Requirement //: public I_Saveable
 {
     public:
         Requirement(unsigned int level = 0);

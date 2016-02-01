@@ -1,6 +1,7 @@
 #ifndef REQUIREMENTLIST_H
 #define REQUIREMENTLIST_H
 
+#include <memory>
 #include <vector>
 #include <string>
 #include "Definitions.h"
@@ -11,6 +12,7 @@
 
 class RequirementList : public I_Loadable
 {
+    typedef std::unique_ptr<Requirement> RequirementPtr;
     // Constants
     public:
         static const std::string XML_ELEMENT;
@@ -30,12 +32,12 @@ class RequirementList : public I_Loadable
         void add(MoveType category, unsigned int level);
 
     protected:
-        void loadLevelRequirementFromXML(const tinyxml2::XMLElement *element);
-        void loadMoveRequirementFromXML(const tinyxml2::XMLElement *element);
+        bool loadLevelRequirementFromXML(const tinyxml2::XMLElement *element);
+        bool loadMoveRequirementFromXML(const tinyxml2::XMLElement *element);
 
     // Attributes
     protected:
-        std::vector<Requirement> _data;
+        std::vector<RequirementPtr> _data;
 };
 
 #endif // REQUIREMENTLIST_H

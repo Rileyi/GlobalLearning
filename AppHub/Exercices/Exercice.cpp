@@ -68,15 +68,15 @@ bool Exercice::setType(const std::string &type)
 
 bool Exercice::loadRequirements(const tinyxml2::XMLElement *element)
 {
+    tinyxml2::XMLPrinter printer;
+    element->Accept(&printer);
+    element->Accept(&printer);
+    std::cout << printer.CStr() << std::endl;
     if (element == nullptr)
         return false;
     if (element->Name() != XML_REQUIREMENTS_ELEMENT)
         return false;
-    /*
-    TO DO
-    Save the requirements for later
-    */
-    return true;
+    return _requirements.loadFromXML(element);
 }
 
 bool Exercice::loadContent(const tinyxml2::XMLDocument &document)

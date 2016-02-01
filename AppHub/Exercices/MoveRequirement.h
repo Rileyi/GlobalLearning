@@ -17,6 +17,8 @@ class MoveRequirement : public Requirement
         MoveRequirement(const MoveRequirement& other);
         MoveRequirement& operator=(const MoveRequirement& other);
 
+        std::string toXML() const;
+
     protected:
         MoveType _type;
 };
