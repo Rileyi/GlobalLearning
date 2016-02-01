@@ -42,6 +42,8 @@
 		<Unit filename="LevelRequirement.h" />
 		<Unit filename="MoveRequirement.cpp" />
 		<Unit filename="MoveRequirement.h" />
+		<Unit filename="Parser.cpp" />
+		<Unit filename="Parser.h" />
 		<Unit filename="Requirement.cpp" />
 		<Unit filename="Requirement.h" />
 		<Unit filename="RequirementList.cpp" />

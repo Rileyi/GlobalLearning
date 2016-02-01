@@ -2,7 +2,7 @@
 <exercice type="dot-to-dot">
 	<requirements>
 		<level class="arithmetic" value="0"/>
-		<move type="drag-and-drop"/>
+		<move type="drag-and-drop" value="0"/>
 	</requirements>
 	<learnings>
 		<level class="arithmetic" experience="10"/>

@@ -3,11 +3,11 @@
 
 enum class ExerciceClass
 {
-    Arithmetic, Reading, Writing
+    Undefined, Arithmetic, Reading, Writing
 };
 
-enum class MoveClass
+enum class MoveType
 {
-    DragAndDrop
+    Undefined, DragAndDrop
 };
 #endif // DEFINITIONS_H_INCLUDED

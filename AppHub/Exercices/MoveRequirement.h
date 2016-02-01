@@ -12,13 +12,13 @@ class MoveRequirement : public Requirement
         static const std::string XML_ELEMENT;
 
     public:
-        MoveRequirement(MoveClass category, unsigned int level = 0);
+        MoveRequirement(MoveType category, unsigned int level = 0);
         virtual ~MoveRequirement();
         MoveRequirement(const MoveRequirement& other);
         MoveRequirement& operator=(const MoveRequirement& other);
 
     protected:
-        MoveClass _class;
+        MoveType _type;
 };
 
 #endif // MOVEREQUIREMENT_H

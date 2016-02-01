@@ -27,7 +27,11 @@ class RequirementList : public I_Loadable
         // Add an exercice class level requirement
         void add(ExerciceClass category, unsigned int level);
         // Add an move class level requirement
-        void add(MoveClass category, unsigned int level);
+        void add(MoveType category, unsigned int level);
+
+    protected:
+        void loadLevelRequirementFromXML(const tinyxml2::XMLElement *element);
+        void loadMoveRequirementFromXML(const tinyxml2::XMLElement *element);
 
     // Attributes
     protected:

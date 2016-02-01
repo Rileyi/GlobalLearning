@@ -2,7 +2,7 @@
 
 const std::string MoveRequirement::XML_ELEMENT = "move";
 
-MoveRequirement::MoveRequirement(MoveClass category, unsigned int level) : Requirement(level), _class(category)
+MoveRequirement::MoveRequirement(MoveType category, unsigned int level) : Requirement(level), _type(category)
 {
 }
 
@@ -10,7 +10,7 @@ MoveRequirement::~MoveRequirement()
 {
 }
 
-MoveRequirement::MoveRequirement(const MoveRequirement& other) : Requirement(other), _class(other._class)
+MoveRequirement::MoveRequirement(const MoveRequirement& other) : Requirement(other), _type(other._type)
 {
 }
 
@@ -19,6 +19,6 @@ MoveRequirement& MoveRequirement::operator=(const MoveRequirement& rhs)
     if (this == &rhs)
         return *this; // handle self assignment
     Requirement::operator=(rhs);
-    _class = rhs._class;
+    _type = rhs._type;
     return *this;
 }
