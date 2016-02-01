@@ -4,7 +4,7 @@ const std::string Exercice::XML_ROOT_ELEMENT = "exercice";
 const std::string Exercice::XML_TYPE_ATTRIBUTE = "type";
 const std::string Exercice::XML_REQUIREMENTS_ELEMENT = "requirements";
 
-Exercice::Exercice() : _type(Exercice::Type::None)
+Exercice::Exercice() : _type(Exercice::Type::None), _requirements()
 {
     //ctor
 }
@@ -14,7 +14,7 @@ Exercice::~Exercice()
     //dtor
 }
 
-Exercice::Exercice(const Exercice& other) : _type(other._type)
+Exercice::Exercice(const Exercice& other) : _type(other._type), _requirements(other._requirements)
 {
     //copy ctor
 }
@@ -24,6 +24,7 @@ Exercice& Exercice::operator=(const Exercice& rhs)
     if (this == &rhs)
         return *this; // handle self assignment
     _type = rhs._type;
+    _requirements = rhs._requirements;
     return *this;
 }
 
@@ -68,6 +69,8 @@ bool Exercice::setType(const std::string &type)
 bool Exercice::loadRequirements(const tinyxml2::XMLElement *element)
 {
     if (element == nullptr)
+        return false;
+    if (element->Name() != XML_REQUIREMENTS_ELEMENT)
         return false;
     /*
     TO DO

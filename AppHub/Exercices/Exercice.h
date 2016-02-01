@@ -7,6 +7,8 @@
 
 #include <iostream>
 
+#include "RequirementList.h"
+
 class Exercice
 {
     // Public enums
@@ -40,6 +42,7 @@ class Exercice
     // Attributes
     protected:
         Exercice::Type _type;
+        RequirementList _requirements;
 };
 
 #endif // EXERCICE_H

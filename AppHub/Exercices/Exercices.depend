@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1453919282 source:a:\strift\documents\github\globallearning\apphub\exercices\exercice.cpp
+1454326029 source:a:\strift\documents\github\globallearning\apphub\exercices\exercice.cpp
 	"Exercice.h"
 
-1453919282 a:\strift\documents\github\globallearning\apphub\exercices\exercice.h
+1454327925 a:\strift\documents\github\globallearning\apphub\exercices\exercice.h
 	"tinyxml2.h"
 	<iostream>
+	"RequirementList.h"
 
 1453919282 a:\strift\documents\github\globallearning\apphub\exercices\tinyxml2.h
 	<ctype.h>
@@ -37,4 +38,44 @@
 
 1453564031 a:\strift\documents\github\globallearning\apphub\exercices\dottodotexercice.h
 	"Exercice.h"
+
+1454323876 source:a:\strift\documents\github\globallearning\apphub\exercices\requirement.cpp
+	"Requirement.h"
+
+1454324980 a:\strift\documents\github\globallearning\apphub\exercices\requirement.h
+
+1454327755 source:a:\strift\documents\github\globallearning\apphub\exercices\levelrequirement.cpp
+	"LevelRequirement.h"
+
+1454327768 a:\strift\documents\github\globallearning\apphub\exercices\levelrequirement.h
+	<string>
+	"Requirement.h"
+	"Definitions.h"
+
+1454323328 a:\strift\documents\github\globallearning\apphub\exercices\exerciceclass.h
+
+1454324656 a:\strift\documents\github\globallearning\apphub\exercices\definitions.h
+
+1454328140 source:a:\strift\documents\github\globallearning\apphub\exercices\moverequirement.cpp
+	"MoveRequirement.h"
+
+1454328149 a:\strift\documents\github\globallearning\apphub\exercices\moverequirement.h
+	<string>
+	"Requirement.h"
+	"Definitions.h"
+
+1454327757 a:\strift\documents\github\globallearning\apphub\exercices\requirementlist.h
+	<vector>
+	<string>
+	"Definitions.h"
+	"I_Loadable.h"
+	"Requirement.h"
+	"LevelRequirement.h"
+	"MoveRequirement.h"
+
+1454328169 source:a:\strift\documents\github\globallearning\apphub\exercices\requirementlist.cpp
+	"RequirementList.h"
+
+1454327378 a:\strift\documents\github\globallearning\apphub\exercices\i_loadable.h
+	"tinyxml2.h"
 

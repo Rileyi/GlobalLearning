@@ -33,8 +33,19 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Definitions.h" />
 		<Unit filename="Exercice.cpp" />
 		<Unit filename="Exercice.h" />
+		<Unit filename="I_Loadable.h" />
+		<Unit filename="I_Saveable.h" />
+		<Unit filename="LevelRequirement.cpp" />
+		<Unit filename="LevelRequirement.h" />
+		<Unit filename="MoveRequirement.cpp" />
+		<Unit filename="MoveRequirement.h" />
+		<Unit filename="Requirement.cpp" />
+		<Unit filename="Requirement.h" />
+		<Unit filename="RequirementList.cpp" />
+		<Unit filename="RequirementList.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="tinyxml2.cpp" />
 		<Unit filename="tinyxml2.h" />
