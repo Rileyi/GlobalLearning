@@ -10,6 +10,7 @@ class MoveRequirement : public Requirement
     // Constants
     public:
         static const std::string XML_ELEMENT;
+        static const std::string XML_TYPE_ATTRIBUTE;
 
     public:
         MoveRequirement(MoveType category, unsigned int level = 0);
@@ -17,6 +18,7 @@ class MoveRequirement : public Requirement
         MoveRequirement(const MoveRequirement& other);
         MoveRequirement& operator=(const MoveRequirement& other);
 
+        MoveRequirement* clone() const;
         std::string toXML() const;
 
     protected:

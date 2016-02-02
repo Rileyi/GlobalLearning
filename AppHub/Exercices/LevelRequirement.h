@@ -17,6 +17,7 @@ class LevelRequirement : public Requirement
         LevelRequirement(const LevelRequirement& other);
         LevelRequirement& operator=(const LevelRequirement& other);
 
+		LevelRequirement* clone() const;
         std::string toXML() const;
 
     // Attributes

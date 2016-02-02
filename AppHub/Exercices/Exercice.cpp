@@ -1,8 +1,7 @@
 #include "Exercice.h"
 
-const std::string Exercice::XML_ROOT_ELEMENT = "exercice";
+const std::string Exercice::XML_ELEMENT = "exercice";
 const std::string Exercice::XML_TYPE_ATTRIBUTE = "type";
-const std::string Exercice::XML_REQUIREMENTS_ELEMENT = "requirements";
 
 Exercice::Exercice() : _type(Exercice::Type::None), _requirements()
 {
@@ -42,7 +41,7 @@ bool Exercice::loadFromFile(const std::string &path)
     }
     /* Check document structure */
     tinyxml2::XMLElement *root = document.RootElement();
-    if (root->Name() != XML_ROOT_ELEMENT)
+    if (root->Name() != XML_ELEMENT)
         return false;
     /* Check exercice type */
     const char *type = root->Attribute(XML_TYPE_ATTRIBUTE.c_str());
@@ -50,7 +49,7 @@ bool Exercice::loadFromFile(const std::string &path)
         return false;
     if (setType(type) == false)
         return false;
-    if (loadRequirements(root->FirstChildElement(XML_REQUIREMENTS_ELEMENT.c_str())) == false)
+    if (loadRequirements(root) == false)
         return false;
 
     return true;
@@ -66,16 +65,23 @@ bool Exercice::setType(const std::string &type)
     return true;
 }
 
-bool Exercice::loadRequirements(const tinyxml2::XMLElement *element)
+bool Exercice::loadRequirements(const tinyxml2::XMLElement *root)
 {
-    tinyxml2::XMLPrinter printer;
-    element->Accept(&printer);
-    element->Accept(&printer);
-    std::cout << printer.CStr() << std::endl;
+    if (root == nullptr)
+    {
+        #ifdef DEBUG
+            std::cerr << "Root element is null" << std::endl;
+        #endif // DEBUG
+        return false;
+    }
+    const tinyxml2::XMLElement *element = root->FirstChildElement(RequirementList::XML_ELEMENT.c_str());
     if (element == nullptr)
+    {
+        #ifdef DEBUG
+            std::cerr << "Not a requirement element" << std::endl;
+        #endif // DEBUG
         return false;
-    if (element->Name() != XML_REQUIREMENTS_ELEMENT)
-        return false;
+    }
     return _requirements.loadFromXML(element);
 }
 

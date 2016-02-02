@@ -15,13 +15,13 @@ RequirementList::~RequirementList()
 
 RequirementList::RequirementList(const RequirementList& other) : _data()
 {
-	// Loop over the vector and deep copy each data
+	// Loop over the vector and "deep copy" each data
     for (auto it = other._data.begin(); it != other._data.end(); it++)
     {
-		// this use the copy constructor of the data in the smart pointer
-		// it then creates a smart pointer for the copied data
-		// and stores the pointer in the array
-        _data.push_back(RequirementPtr(new Requirement(**it)));
+		/* this use the copy constructor of the data in the smart pointer
+		   it then creates a smart pointer for the copied data
+		   and stores the pointer in the array */
+        _data.push_back(RequirementPtr(it->get()->clone()));
     }
 }
 
@@ -32,7 +32,9 @@ RequirementList& RequirementList::operator=(const RequirementList& rhs)
 	_data.clear();
 	// see copy constructor for explanations
 	for (auto it = rhs._data.begin(); it != rhs._data.end(); it++)
-		_data.push_back(RequirementPtr(new Requirement(**it)));
+	{
+        _data.push_back(RequirementPtr(it->get()->clone()));
+	}
     return *this;
 }
 

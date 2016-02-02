@@ -24,6 +24,11 @@ LevelRequirement& LevelRequirement::operator=(const LevelRequirement& rhs)
     return *this;
 }
 
+LevelRequirement* LevelRequirement::clone() const
+{
+	return new LevelRequirement(*this);
+}
+
 std::string LevelRequirement::toXML() const
 {
 }

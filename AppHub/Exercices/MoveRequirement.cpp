@@ -23,6 +23,11 @@ MoveRequirement& MoveRequirement::operator=(const MoveRequirement& rhs)
     return *this;
 }
 
+MoveRequirement* MoveRequirement::clone() const
+{
+	return new MoveRequirement(*this);
+}
+
 std::string MoveRequirement::toXML() const
 {
 }

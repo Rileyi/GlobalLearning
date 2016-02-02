@@ -11,18 +11,15 @@
 
 class Exercice
 {
-    // Public enums
+    // Public
     public:
+        static const std::string XML_ELEMENT;
+        static const std::string XML_TYPE_ATTRIBUTE;
+
         enum class Type
         {
             None, DotToDot
         };
-
-    // Class attributes
-    protected:
-        static const std::string XML_ROOT_ELEMENT;
-        static const std::string XML_TYPE_ATTRIBUTE;
-        static const std::string XML_REQUIREMENTS_ELEMENT;
 
     // Methods
     public:
