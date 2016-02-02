@@ -40,7 +40,10 @@ bool Exercice::loadFromFile(const std::string &path)
         return false;
     }
     LevelRequirement rq(ExerciceClass::Arithmetic, 0);
-    tinyxml2::XMLElement *element = rq.save(document);
+    rq.appendToXML(document, document.RootElement());
+    rq.appendToXML(document, nullptr);
+
+    document.Print();
 
     /* Check document structure */
     tinyxml2::XMLElement *root = document.RootElement();

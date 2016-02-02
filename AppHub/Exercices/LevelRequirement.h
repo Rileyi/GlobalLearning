@@ -10,6 +10,7 @@ class LevelRequirement : public Requirement
     // Constants
     public:
         static const std::string XML_ELEMENT;
+        static const std::string XML_CLASS_ATTRIBUTE;
 
     public:
         LevelRequirement(ExerciceClass category, unsigned int level = 0);
@@ -18,7 +19,7 @@ class LevelRequirement : public Requirement
         LevelRequirement& operator=(const LevelRequirement& other);
 
 		LevelRequirement* clone() const;
-        tinyxml2::XMLElement* save(tinyxml2::XMLDocument &document) const;
+        void appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *element = nullptr) const;
 
     // Attributes
     protected:

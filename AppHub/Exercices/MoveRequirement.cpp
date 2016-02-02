@@ -31,9 +31,13 @@ MoveRequirement* MoveRequirement::clone() const
 	return new MoveRequirement(*this);
 }
 
-tinyxml2::XMLElement* MoveRequirement::save(tinyxml2::XMLDocument &document) const
+void MoveRequirement::appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *parent) const
 {
 	tinyxml2::XMLElement *element = document.NewElement(XML_ELEMENT.c_str());
 	element->SetAttribute(XML_TYPE_ATTRIBUTE.c_str(), Parser::toText(_type).c_str());
-	return element;
+	element->SetAttribute(XML_VALUE_ATTRIBUTE.c_str(), _level);
+	if (parent == nullptr)
+		document.InsertEndChild(element);
+	else
+		parent->InsertEndChild(element);
 }

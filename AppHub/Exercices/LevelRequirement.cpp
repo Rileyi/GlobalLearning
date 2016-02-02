@@ -1,6 +1,8 @@
 #include "LevelRequirement.h"
+#include "Parser.h"
 
 const std::string LevelRequirement::XML_ELEMENT = "level";
+const std::string LevelRequirement::XML_CLASS_ATTRIBUTE = "class";
 
 LevelRequirement::LevelRequirement(ExerciceClass category, unsigned int level) : Requirement(level), _class(category)
 {
@@ -29,7 +31,13 @@ LevelRequirement* LevelRequirement::clone() const
 	return new LevelRequirement(*this);
 }
 
-tinyxml2::XMLElement* LevelRequirement::save(tinyxml2::XMLDocument &document) const
+void LevelRequirement::appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *parent) const
 {
-
+	tinyxml2::XMLElement *element = document.NewElement(XML_ELEMENT.c_str());
+	element->SetAttribute(XML_CLASS_ATTRIBUTE.c_str(), Parser::toText(_class).c_str());
+	element->SetAttribute(XML_VALUE_ATTRIBUTE.c_str(), _level);
+	if (parent == nullptr)
+		document.InsertEndChild(element);
+	else
+		parent->InsertEndChild(element);
 }

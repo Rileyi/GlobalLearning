@@ -10,7 +10,9 @@ class I_Saveable
 {
     public:
 		virtual ~I_Saveable() = 0;
-        virtual tinyxml2::XMLElement* save(tinyxml2::XMLDocument &document) const = 0;
+		// Appends the element as the last child of parent
+		// If parent is nullptr, appends at the end of the document
+        virtual void appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *parent = nullptr) const = 0;
 };
 
 inline I_Saveable::~I_Saveable()

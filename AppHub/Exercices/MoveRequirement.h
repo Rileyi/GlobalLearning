@@ -18,8 +18,10 @@ class MoveRequirement : public Requirement
         MoveRequirement(const MoveRequirement& other);
         MoveRequirement& operator=(const MoveRequirement& other);
 
+        // Cloneable implementation
         MoveRequirement* clone() const;
-        tinyxml2::XMLElement* save(tinyxml2::XMLDocument &document) const;
+        // Saveable implementation
+        void appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *parent) const;
 
     protected:
         MoveType _type;
