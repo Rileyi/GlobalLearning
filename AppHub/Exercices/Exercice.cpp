@@ -3,7 +3,7 @@
 const std::string Exercice::XML_ELEMENT = "exercice";
 const std::string Exercice::XML_TYPE_ATTRIBUTE = "type";
 
-Exercice::Exercice() : _type(Exercice::Type::None), _requirements()
+Exercice::Exercice() : _type(Exercice::Type::Undefined), _requirements()
 {
     //ctor
 }
@@ -47,21 +47,13 @@ bool Exercice::loadFromFile(const std::string &path)
     const char *type = root->Attribute(XML_TYPE_ATTRIBUTE.c_str());
     if (type == nullptr)
         return false;
-    if (setType(type) == false)
+    _type = Parser::exerciceType(type);
+    if (_type == Exercice::Type::Undefined)
         return false;
+    /* Load requirements */
     if (loadRequirements(root) == false)
         return false;
 
-    return true;
-}
-
-bool Exercice::setType(const std::string &type)
-{
-    if (type == "dot-to-dot")
-        _type = Exercice::Type::DotToDot;
-    /* Check if the type has been set */
-    if (_type == Exercice::Type::None)
-        return false;
     return true;
 }
 
@@ -89,7 +81,7 @@ bool Exercice::loadContent(const tinyxml2::XMLDocument &document)
 {
     switch(_type)
     {
-    case Exercice::Type::None:
+    case Exercice::Type::Undefined:
         return false;
         break;
     case Exercice::Type::DotToDot:

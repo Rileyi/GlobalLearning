@@ -1,5 +1,13 @@
 #include "Parser.h"
 
+Exercice::Type Parser::exerciceType(const std::string &str)
+{
+	if (str == "dot-to-dot")
+		return Exercice::Type::DotToDot;
+	else
+		return "undefined";
+}
+
 ExerciceClass Parser::exerciceClass(const std::string &str)
 {
 	if (str == "arithmetic")
@@ -18,6 +26,14 @@ MoveType Parser::moveType(const std::string &str)
 		return MoveType::DragAndDrop;
 	else
 		return MoveType::Undefined;
+}
+
+std::string Parser::toText(const Exercice::Type &type)
+{
+	if (type == Exercice::Type::DotToDot)
+		return "dot-to-dot";
+	else
+		return "undefined";
 }
 
 std::string Parser::toText(const ExerciceClass &category)

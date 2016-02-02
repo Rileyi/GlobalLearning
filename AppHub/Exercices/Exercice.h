@@ -18,7 +18,7 @@ class Exercice
 
         enum class Type
         {
-            None, DotToDot
+            Undefined, DotToDot
         };
 
     // Methods
@@ -31,7 +31,6 @@ class Exercice
         bool loadFromFile(const std::string &path);
 
     protected:
-        bool setType(const std::string &type);
         bool loadRequirements(const tinyxml2::XMLElement *element);
         bool loadContent(const tinyxml2::XMLDocument &document);
         bool loadDotToDotContent(const tinyxml2::XMLDocument &document);
