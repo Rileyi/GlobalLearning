@@ -39,6 +39,9 @@ bool Exercice::loadFromFile(const std::string &path)
         #endif // DEBUG
         return false;
     }
+    LevelRequirement rq(ExerciceClass::Arithmetic, 0);
+    tinyxml2::XMLElement *element = rq.save(document);
+
     /* Check document structure */
     tinyxml2::XMLElement *root = document.RootElement();
     if (root->Name() != XML_ELEMENT)

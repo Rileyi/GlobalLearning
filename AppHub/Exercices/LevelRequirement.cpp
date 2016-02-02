@@ -29,6 +29,7 @@ LevelRequirement* LevelRequirement::clone() const
 	return new LevelRequirement(*this);
 }
 
-std::string LevelRequirement::toXML() const
+tinyxml2::XMLElement* LevelRequirement::save(tinyxml2::XMLDocument &document) const
 {
+
 }

@@ -1,5 +1,7 @@
 #include "Requirement.h"
 
+const std::string Requirement::XML_VALUE_ATTRIBUTE = "value";
+
 Requirement::Requirement(unsigned int level) : _level(level)
 {
 }

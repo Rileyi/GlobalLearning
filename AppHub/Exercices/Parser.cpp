@@ -19,3 +19,23 @@ MoveType Parser::moveType(const std::string &str)
 	else
 		return MoveType::Undefined;
 }
+
+std::string Parser::toText(const ExerciceClass &category)
+{
+	if (category == ExerciceClass::Arithmetic)
+		return "arithmetic";
+	else if (category == ExerciceClass::Reading)
+		return "reading";
+	else if (category == ExerciceClass::Writing)
+		return "writing";
+	else
+		return "undefined";
+}
+
+std::string Parser::toText(const MoveType &type)
+{
+	if (type == MoveType::DragAndDrop)
+		return "drag-and-drop";
+	else
+		return "undefined";
+}

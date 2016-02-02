@@ -19,7 +19,7 @@ class MoveRequirement : public Requirement
         MoveRequirement& operator=(const MoveRequirement& other);
 
         MoveRequirement* clone() const;
-        std::string toXML() const;
+        tinyxml2::XMLElement* save(tinyxml2::XMLDocument &document) const;
 
     protected:
         MoveType _type;

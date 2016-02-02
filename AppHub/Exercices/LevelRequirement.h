@@ -18,7 +18,7 @@ class LevelRequirement : public Requirement
         LevelRequirement& operator=(const LevelRequirement& other);
 
 		LevelRequirement* clone() const;
-        std::string toXML() const;
+        tinyxml2::XMLElement* save(tinyxml2::XMLDocument &document) const;
 
     // Attributes
     protected:

@@ -10,6 +10,9 @@ class Parser
 		static ExerciceClass exerciceClass(const std::string &);
 		static MoveType moveType(const std::string &);
 
+		static std::string toText(const ExerciceClass&);
+		static std::string toText(const MoveType&);
+
 	private:
 		Parser();
 };
