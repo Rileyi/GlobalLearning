@@ -4,13 +4,15 @@
 #include <memory>
 #include <vector>
 #include <string>
+
 #include "Definitions.h"
 #include "I_Loadable.h"
+#include "I_Saveable.h"
 #include "Requirement.h"
 #include "LevelRequirement.h"
 #include "MoveRequirement.h"
 
-class RequirementList : public I_Loadable
+class RequirementList : public I_Loadable, public I_Saveable
 {
     typedef std::unique_ptr<Requirement> RequirementPtr;
     // Constants
@@ -26,6 +28,8 @@ class RequirementList : public I_Loadable
 
         // I_Loadable implementation
         bool loadFromXML(const tinyxml2::XMLElement *element);
+        // Saveable implementation
+        void appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *parent = nullptr) const;
         // Add an exercice class level requirement
         void add(ExerciceClass category, unsigned int level);
         // Add an move class level requirement

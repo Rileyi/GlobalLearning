@@ -18,7 +18,7 @@ class LevelRequirement : public Requirement
         LevelRequirement(const LevelRequirement& other);
         LevelRequirement& operator=(const LevelRequirement& other);
 
-		LevelRequirement* clone() const;
+        LevelRequirement* clone() const;
         void appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *element = nullptr) const;
 
     // Attributes

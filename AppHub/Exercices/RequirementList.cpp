@@ -134,6 +134,21 @@ bool RequirementList::loadMoveRequirementFromXML(const tinyxml2::XMLElement *chi
 	return true;
 }
 
+void RequirementList::appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *parent) const
+{
+	tinyxml2::XMLElement *element = document.NewElement(XML_ELEMENT.c_str());
+	// Add each requirement as a child
+	for (auto it = _data.begin(); it != _data.end(); it++)
+	{
+		it->get()->appendToXML(document, element);
+	}
+	// Add node to the document
+	if (parent == nullptr)
+		document.InsertEndChild(element);
+	else
+		parent->InsertEndChild(element);
+}
+
 void RequirementList::add(ExerciceClass category, unsigned int level)
 {
     _data.push_back(RequirementPtr(new LevelRequirement(category, level)));
