@@ -1,7 +1,7 @@
 #ifndef DEFINITIONS_H_INCLUDED
 #define DEFINITIONS_H_INCLUDED
 
-enum class ExerciceClass
+enum class SubjectType
 {
     Undefined, Arithmetic, Reading, Writing
 };

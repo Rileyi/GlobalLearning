@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <exercice type="dot-to-dot">
 	<requirements>
-		<level class="arithmetic" value="0"/>
+		<subject class="arithmetic" value="0"/>
 		<move type="drag-and-drop" value="0"/>
 	</requirements>
 	<learnings>
-		<level class="arithmetic" experience="10"/>
+		<subject class="arithmetic" experience="10"/>
+		<move type="drag-and-drop" experience="0"/>
 	</learnings>
 	<content>
 		<background filename="butterfly.jpg"/>

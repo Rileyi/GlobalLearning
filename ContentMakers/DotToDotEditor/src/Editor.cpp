@@ -122,9 +122,14 @@ void Editor::save() const
         file << "<exercice type=\"dot-to-dot\">" << std::endl;
             // Requirements
             file << "\t<requirements>" << std::endl;
-            file << "\t\t<requirement class=\"arithmetic\" level=\"0\"/>" << std::endl;
-            file << "\t\t<move type=\"drag-and-drop\"/>" << std::endl;
+            file << "\t\t<subject type=\"arithmetic\" value=\"0\"/>" << std::endl;
+            file << "\t\t<move type=\"drag-and-drop\ value=\"0\"/>" << std::endl;
             file << "\t</requirements>" << std::endl;
+            // Learnings
+            file << "\t<learnings>" << std::endl;
+            file << "\t\t<subject type=\"arithmetic\" experience=\"0\"/>" << std::endl;
+            file << "\t\t<move type=\"drag-and-drop\ experience=\"0\"/>" << std::endl;
+            file << "\t</learnings>" << std::endl;
             // Content
             file << "\t<content>" << std::endl;
             file << "\t\t<background filename=\"" << _filename << "\"/>" << std::endl;
