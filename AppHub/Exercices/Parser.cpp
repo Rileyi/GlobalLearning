@@ -5,19 +5,19 @@ Exercice::Type Parser::exerciceType(const std::string &str)
 	if (str == "dot-to-dot")
 		return Exercice::Type::DotToDot;
 	else
-		return "undefined";
+		return Exercice::Type::Undefined;
 }
 
-ExerciceClass Parser::exerciceClass(const std::string &str)
+SubjectType Parser::subjectType(const std::string &str)
 {
 	if (str == "arithmetic")
-		return ExerciceClass::Arithmetic;
+		return SubjectType::Arithmetic;
 	else if (str == "reading")
-		return ExerciceClass::Reading;
+		return SubjectType::Reading;
 	else if (str == "writing")
-		return ExerciceClass::Writing;
+		return SubjectType::Writing;
 	else
-		return ExerciceClass::Undefined;
+		return SubjectType::Undefined;
 }
 
 MoveType Parser::moveType(const std::string &str)
@@ -36,13 +36,13 @@ std::string Parser::toText(const Exercice::Type &type)
 		return "undefined";
 }
 
-std::string Parser::toText(const ExerciceClass &category)
+std::string Parser::toText(const SubjectType &category)
 {
-	if (category == ExerciceClass::Arithmetic)
+	if (category == SubjectType::Arithmetic)
 		return "arithmetic";
-	else if (category == ExerciceClass::Reading)
+	else if (category == SubjectType::Reading)
 		return "reading";
-	else if (category == ExerciceClass::Writing)
+	else if (category == SubjectType::Writing)
 		return "writing";
 	else
 		return "undefined";

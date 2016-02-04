@@ -5,7 +5,7 @@
 #include "Requirement.h"
 #include "Definitions.h"
 
-class LevelRequirement : public Requirement
+class SubjectRequirement : public Requirement
 {
     // Constants
     public:
@@ -13,17 +13,17 @@ class LevelRequirement : public Requirement
         static const std::string XML_CLASS_ATTRIBUTE;
 
     public:
-        LevelRequirement(ExerciceClass category, unsigned int level = 0);
-        virtual ~LevelRequirement();
-        LevelRequirement(const LevelRequirement& other);
-        LevelRequirement& operator=(const LevelRequirement& other);
+        SubjectRequirement(SubjectType category, unsigned int level = 0);
+        virtual ~SubjectRequirement();
+        SubjectRequirement(const SubjectRequirement& other);
+        SubjectRequirement& operator=(const SubjectRequirement& other);
 
-        LevelRequirement* clone() const;
+        SubjectRequirement* clone() const;
         void appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *element = nullptr) const;
 
     // Attributes
     protected:
-        ExerciceClass _class;
+        SubjectType _class;
 };
 
 #endif // LEVELREQUIREMENT_H

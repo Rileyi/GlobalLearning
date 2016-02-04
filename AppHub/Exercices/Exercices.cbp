@@ -38,8 +38,6 @@
 		<Unit filename="Exercice.h" />
 		<Unit filename="I_Loadable.h" />
 		<Unit filename="I_Saveable.h" />
-		<Unit filename="LevelRequirement.cpp" />
-		<Unit filename="LevelRequirement.h" />
 		<Unit filename="MoveRequirement.cpp" />
 		<Unit filename="MoveRequirement.h" />
 		<Unit filename="Parser.cpp" />
@@ -48,6 +46,8 @@
 		<Unit filename="Requirement.h" />
 		<Unit filename="RequirementList.cpp" />
 		<Unit filename="RequirementList.h" />
+		<Unit filename="SubjectRequirement.cpp" />
+		<Unit filename="SubjectRequirement.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="tinyxml2.cpp" />
 		<Unit filename="tinyxml2.h" />

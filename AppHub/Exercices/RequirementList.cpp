@@ -49,7 +49,7 @@ bool RequirementList::loadFromXML(const tinyxml2::XMLElement *element)
     for (const tinyxml2::XMLElement* child = element->FirstChildElement(); child != nullptr; child = child->NextSiblingElement())
     {
         // Load requirement
-        if (child->Name() == LevelRequirement::XML_ELEMENT)
+        if (child->Name() == SubjectRequirement::XML_ELEMENT)
 			success = loadLevelRequirementFromXML(child);
         else if (child->Name() == MoveRequirement::XML_ELEMENT)
 			success = loadMoveRequirementFromXML(child);
@@ -79,8 +79,8 @@ bool RequirementList::loadLevelRequirementFromXML(const tinyxml2::XMLElement *ch
 	}
 	else
 	{
-		ExerciceClass exerciceClass = Parser::exerciceClass(classAttribute->Value());
-		if (exerciceClass == ExerciceClass::Undefined)
+		SubjectType exerciceClass = Parser::subjectType(classAttribute->Value());
+		if (exerciceClass == SubjectType::Undefined)
 		{
 			#ifdef DEBUG
 				std::cerr << "Exercice class requirement undefined" << classAttribute->Value() << std::endl;
@@ -95,7 +95,7 @@ bool RequirementList::loadLevelRequirementFromXML(const tinyxml2::XMLElement *ch
 			#endif // DEBUG
 			return false;
 		}
-		_data.push_back(RequirementPtr(new LevelRequirement(exerciceClass, value)));
+		_data.push_back(RequirementPtr(new SubjectRequirement(exerciceClass, value)));
 	}
 	return true;
 }
@@ -149,9 +149,9 @@ void RequirementList::appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XML
 		parent->InsertEndChild(element);
 }
 
-void RequirementList::add(ExerciceClass category, unsigned int level)
+void RequirementList::add(SubjectType category, unsigned int level)
 {
-    _data.push_back(RequirementPtr(new LevelRequirement(category, level)));
+    _data.push_back(RequirementPtr(new SubjectRequirement(category, level)));
 }
 
 void RequirementList::add(MoveType category, unsigned int level)

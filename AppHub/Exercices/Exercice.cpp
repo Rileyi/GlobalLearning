@@ -1,4 +1,5 @@
 #include "Exercice.h"
+#include "Parser.h"
 
 const std::string Exercice::XML_ELEMENT = "exercice";
 const std::string Exercice::XML_TYPE_ATTRIBUTE = "type";
