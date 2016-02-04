@@ -741,36 +741,36 @@
 1449090852 source:a:\strift\documents\programmation\c++\dottodoteditor\src\dot.cpp
 	"Dot.h"
 
-1453919283 source:a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\application.cpp
+1449089030 source:a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\application.cpp
 	"Application.h"
 	<iostream>
 	<string>
 	"Editor.h"
 
-1453919283 a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\application.h
+1447718941 a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\application.h
 	<SFML/Graphics.hpp>
 	<thread>
 	<vector>
 	<string>
 
-1453919283 a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\editor.h
+1449088975 a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\editor.h
 	<SFML/Graphics.hpp>
 	<list>
 	"Application.h"
 	"Dot.h"
 
-1453919283 a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\dot.h
+1449090836 a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\dot.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<fstream>
 
-1453919283 source:a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\dot.cpp
+1453560069 source:a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\dot.cpp
 	"Dot.h"
 
-1453919283 source:a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\main.cpp
+1447715006 source:a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\main.cpp
 	"Application.h"
 
-1453919283 source:a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\editor.cpp
+1453560379 source:a:\strift\documents\github\globallearning\contentmakers\dottodoteditor\src\editor.cpp
 	"Editor.h"
 	<iostream>
 	<fstream>
