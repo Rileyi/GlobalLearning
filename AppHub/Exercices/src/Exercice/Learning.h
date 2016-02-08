@@ -1,8 +1,8 @@
 #ifndef LEARNING_H
 #define LEARNING_H
 
-#include "I_Cloneable.h"
-#include "I_Saveable.h"
+#include "IO/I_Cloneable.h"
+#include "IO/I_Saveable.h"
 #include <string>
 
 class Learning : public I_Cloneable, public I_Saveable

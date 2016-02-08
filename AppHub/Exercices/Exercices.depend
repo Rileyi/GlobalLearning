@@ -226,3 +226,141 @@
 	"SubjectLearning.h"
 	"MoveLearning.h"
 
+1454934295 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Exercice.cpp
+	"Exercice.h"
+	"IO/Parser.h"
+
+1454934254 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Exercice.h
+	"IO/tinyxml2.h"
+	<iostream>
+	"RequirementList.h"
+	"LearningList.h"
+
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/IO/tinyxml2.h
+	<ctype.h>
+	<limits.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<cctype>
+	<climits>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<android/log.h>
+	<assert.h>
+
+1454934278 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/RequirementList.h
+	<memory>
+	<vector>
+	<string>
+	"Definitions.h"
+	"IO/I_Loadable.h"
+	"IO/I_Saveable.h"
+	"Requirement.h"
+	"SubjectRequirement.h"
+	"MoveRequirement.h"
+
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Definitions.h
+
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/IO/I_Loadable.h
+	"tinyxml2.h"
+
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/IO/I_Saveable.h
+	"tinyxml2.h"
+
+1454934283 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Requirement.h
+	"IO/I_Cloneable.h"
+	"IO/I_Saveable.h"
+	<string>
+
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/IO/I_Cloneable.h
+
+1454932852 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/SubjectRequirement.h
+	<string>
+	"Requirement.h"
+	"Definitions.h"
+
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/MoveRequirement.h
+	<string>
+	"Requirement.h"
+	"Definitions.h"
+
+1454934287 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/LearningList.h
+	<memory>
+	<vector>
+	<string>
+	"Definitions.h"
+	"IO/I_Loadable.h"
+	"IO/I_Saveable.h"
+	"Learning.h"
+	"SubjectLearning.h"
+	"MoveLearning.h"
+
+1454934292 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Learning.h
+	"IO/I_Cloneable.h"
+	"IO/I_Saveable.h"
+	<string>
+
+1454932882 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/SubjectLearning.h
+	<string>
+	"Learning.h"
+	"Definitions.h"
+
+1454933210 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/MoveLearning.h
+	<string>
+	"Learning.h"
+	"Definitions.h"
+
+1454934305 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/IO/Parser.h
+	<string>
+	"Definitions.h"
+	"Exercice/Exercice.h"
+
+1454932501 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Learning.cpp
+	"Learning.h"
+
+1454934310 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/LearningList.cpp
+	"LearningList.h"
+	<iostream>
+	"IO/Parser.h"
+
+1454934314 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/MoveLearning.cpp
+	"MoveLearning.h"
+	"IO/Parser.h"
+
+1454934317 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/MoveRequirement.cpp
+	"MoveRequirement.h"
+	"IO/Parser.h"
+
+1454503853 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Requirement.cpp
+	"Requirement.h"
+
+1454934320 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/RequirementList.cpp
+	"RequirementList.h"
+	<iostream>
+	"IO/Parser.h"
+
+1454934324 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/SubjectLearning.cpp
+	"SubjectLearning.h"
+	"IO/Parser.h"
+
+1454934327 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/SubjectRequirement.cpp
+	"SubjectRequirement.h"
+	"IO/Parser.h"
+
+1454503853 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/IO/Parser.cpp
+	"Parser.h"
+
+1454503853 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/IO/tinyxml2.cpp
+	"tinyxml2.h"
+	<new>
+	<stddef.h>
+	<stdarg.h>
+	<cstddef>
+	<cstdarg>
+
+1454934152 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/main.cpp
+	<iostream>
+	"Exercice/Exercice.h"
+

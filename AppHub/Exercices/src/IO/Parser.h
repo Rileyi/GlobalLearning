@@ -3,7 +3,7 @@
 
 #include <string>
 #include "Definitions.h"
-#include "Exercice.h"
+#include "Exercice/Exercice.h"
 
 class Parser
 {

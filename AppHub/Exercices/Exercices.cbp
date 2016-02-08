@@ -14,6 +14,7 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add option="-DDEBUG" />
+					<Add directory="src" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -33,32 +34,33 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Definitions.h" />
-		<Unit filename="Exercice.cpp" />
-		<Unit filename="Exercice.h" />
-		<Unit filename="I_Loadable.h" />
-		<Unit filename="I_Saveable.h" />
-		<Unit filename="Learning.cpp" />
-		<Unit filename="Learning.h" />
-		<Unit filename="LearningList.cpp" />
-		<Unit filename="LearningList.h" />
-		<Unit filename="MoveLearning.cpp" />
-		<Unit filename="MoveLearning.h" />
-		<Unit filename="MoveRequirement.cpp" />
-		<Unit filename="MoveRequirement.h" />
-		<Unit filename="Parser.cpp" />
-		<Unit filename="Parser.h" />
-		<Unit filename="Requirement.cpp" />
-		<Unit filename="Requirement.h" />
-		<Unit filename="RequirementList.cpp" />
-		<Unit filename="RequirementList.h" />
-		<Unit filename="SubjectLearning.cpp" />
-		<Unit filename="SubjectLearning.h" />
-		<Unit filename="SubjectRequirement.cpp" />
-		<Unit filename="SubjectRequirement.h" />
-		<Unit filename="main.cpp" />
-		<Unit filename="tinyxml2.cpp" />
-		<Unit filename="tinyxml2.h" />
+		<Unit filename="src/Definitions.h" />
+		<Unit filename="src/Exercice/Exercice.cpp" />
+		<Unit filename="src/Exercice/Exercice.h" />
+		<Unit filename="src/Exercice/Learning.cpp" />
+		<Unit filename="src/Exercice/Learning.h" />
+		<Unit filename="src/Exercice/LearningList.cpp" />
+		<Unit filename="src/Exercice/LearningList.h" />
+		<Unit filename="src/Exercice/MoveLearning.cpp" />
+		<Unit filename="src/Exercice/MoveLearning.h" />
+		<Unit filename="src/Exercice/MoveRequirement.cpp" />
+		<Unit filename="src/Exercice/MoveRequirement.h" />
+		<Unit filename="src/Exercice/Requirement.cpp" />
+		<Unit filename="src/Exercice/Requirement.h" />
+		<Unit filename="src/Exercice/RequirementList.cpp" />
+		<Unit filename="src/Exercice/RequirementList.h" />
+		<Unit filename="src/Exercice/SubjectLearning.cpp" />
+		<Unit filename="src/Exercice/SubjectLearning.h" />
+		<Unit filename="src/Exercice/SubjectRequirement.cpp" />
+		<Unit filename="src/Exercice/SubjectRequirement.h" />
+		<Unit filename="src/IO/I_Cloneable.h" />
+		<Unit filename="src/IO/I_Loadable.h" />
+		<Unit filename="src/IO/I_Saveable.h" />
+		<Unit filename="src/IO/Parser.cpp" />
+		<Unit filename="src/IO/Parser.h" />
+		<Unit filename="src/IO/tinyxml2.cpp" />
+		<Unit filename="src/IO/tinyxml2.h" />
+		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

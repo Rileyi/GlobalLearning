@@ -1,6 +1,6 @@
 #include "MoveRequirement.h"
 
-#include "Parser.h"
+#include "IO/Parser.h"
 
 const std::string MoveRequirement::XML_ELEMENT = "move";
 const std::string MoveRequirement::XML_TYPE_ATTRIBUTE = "type";

@@ -1,6 +1,6 @@
 #include "MoveLearning.h"
 
-#include "Parser.h"
+#include "IO/Parser.h"
 
 const std::string MoveLearning::XML_ELEMENT = "move";
 const std::string MoveLearning::XML_TYPE_ATTRIBUTE = "type";

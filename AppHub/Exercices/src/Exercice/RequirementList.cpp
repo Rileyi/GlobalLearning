@@ -1,19 +1,19 @@
-#include "LearningList.h"
+#include "RequirementList.h"
 
 #include <iostream>
-#include "Parser.h"
+#include "IO/Parser.h"
 
-const std::string LearningList::XML_ELEMENT = "learnings";
+const std::string RequirementList::XML_ELEMENT = "requirements";
 
-LearningList::LearningList() : _data()
+RequirementList::RequirementList() : _data()
 {
 }
 
-LearningList::~LearningList()
+RequirementList::~RequirementList()
 {
 }
 
-LearningList::LearningList(const LearningList& other) : _data()
+RequirementList::RequirementList(const RequirementList& other) : _data()
 {
 	// Loop over the vector and "deep copy" each data
     for (auto it = other._data.begin(); it != other._data.end(); it++)
@@ -21,11 +21,11 @@ LearningList::LearningList(const LearningList& other) : _data()
 		/* this use the copy constructor of the data in the smart pointer
 		   it then creates a smart pointer for the copied data
 		   and stores the pointer in the array */
-        _data.push_back(LearningPtr(it->get()->clone()));
+        _data.push_back(RequirementPtr(it->get()->clone()));
     }
 }
 
-LearningList& LearningList::operator=(const LearningList& rhs)
+RequirementList& RequirementList::operator=(const RequirementList& rhs)
 {
     if (this == &rhs)
         return *this; // handle self assignment
@@ -33,12 +33,12 @@ LearningList& LearningList::operator=(const LearningList& rhs)
 	// see copy constructor for explanations
 	for (auto it = rhs._data.begin(); it != rhs._data.end(); it++)
 	{
-        _data.push_back(LearningPtr(it->get()->clone()));
+        _data.push_back(RequirementPtr(it->get()->clone()));
 	}
     return *this;
 }
 
-bool LearningList::loadFromXML(const tinyxml2::XMLElement *element)
+bool RequirementList::loadFromXML(const tinyxml2::XMLElement *element)
 {
     if (element == nullptr)
         return false;
@@ -49,10 +49,10 @@ bool LearningList::loadFromXML(const tinyxml2::XMLElement *element)
     for (const tinyxml2::XMLElement* child = element->FirstChildElement(); child != nullptr; child = child->NextSiblingElement())
     {
         // Load requirement
-        if (child->Name() == SubjectLearning::XML_ELEMENT)
-			success = loadLevelLearningFromXML(child);
-        else if (child->Name() == MoveLearning::XML_ELEMENT)
-			success = loadMoveLearningFromXML(child);
+        if (child->Name() == SubjectRequirement::XML_ELEMENT)
+			success = loadLevelRequirementFromXML(child);
+        else if (child->Name() == MoveRequirement::XML_ELEMENT)
+			success = loadMoveRequirementFromXML(child);
         else
         {
 			#ifdef DEBUG
@@ -66,7 +66,7 @@ bool LearningList::loadFromXML(const tinyxml2::XMLElement *element)
     return true;
 }
 
-bool LearningList::loadLevelLearningFromXML(const tinyxml2::XMLElement *child)
+bool RequirementList::loadLevelRequirementFromXML(const tinyxml2::XMLElement *child)
 {
 	const tinyxml2::XMLAttribute *classAttribute = child->FindAttribute("class");
 	const tinyxml2::XMLAttribute *valueAttribute = child->FindAttribute("value");
@@ -95,12 +95,12 @@ bool LearningList::loadLevelLearningFromXML(const tinyxml2::XMLElement *child)
 			#endif // DEBUG
 			return false;
 		}
-		_data.push_back(LearningPtr(new SubjectLearning(exerciceClass, value)));
+		_data.push_back(RequirementPtr(new SubjectRequirement(exerciceClass, value)));
 	}
 	return true;
 }
 
-bool LearningList::loadMoveLearningFromXML(const tinyxml2::XMLElement *child)
+bool RequirementList::loadMoveRequirementFromXML(const tinyxml2::XMLElement *child)
 {
 	const tinyxml2::XMLAttribute *typeAttribute = child->FindAttribute("type");
 	const tinyxml2::XMLAttribute *valueAttribute = child->FindAttribute("value");
@@ -129,12 +129,12 @@ bool LearningList::loadMoveLearningFromXML(const tinyxml2::XMLElement *child)
 			#endif // DEBUG
 			return false;
 		}
-		_data.push_back(LearningPtr(new MoveLearning(moveType, value)));
+		_data.push_back(RequirementPtr(new MoveRequirement(moveType, value)));
 	}
 	return true;
 }
 
-void LearningList::appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *parent) const
+void RequirementList::appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *parent) const
 {
 	tinyxml2::XMLElement *element = document.NewElement(XML_ELEMENT.c_str());
 	// Add each requirement as a child
@@ -149,12 +149,12 @@ void LearningList::appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLEle
 		parent->InsertEndChild(element);
 }
 
-void LearningList::add(SubjectType category, unsigned int level)
+void RequirementList::add(SubjectType category, unsigned int level)
 {
-    _data.push_back(LearningPtr(new SubjectLearning(category, level)));
+    _data.push_back(RequirementPtr(new SubjectRequirement(category, level)));
 }
 
-void LearningList::add(MoveType category, unsigned int level)
+void RequirementList::add(MoveType category, unsigned int level)
 {
-    _data.push_back(LearningPtr(new MoveLearning(category, level)));
+    _data.push_back(RequirementPtr(new MoveRequirement(category, level)));
 }

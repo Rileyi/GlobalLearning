@@ -1,5 +1,5 @@
 #include "SubjectRequirement.h"
-#include "Parser.h"
+#include "IO/Parser.h"
 
 const std::string SubjectRequirement::XML_ELEMENT = "level";
 const std::string SubjectRequirement::XML_TYPE_ATTRIBUTE = "class";

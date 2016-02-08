@@ -6,8 +6,8 @@
 #include <string>
 
 #include "Definitions.h"
-#include "I_Loadable.h"
-#include "I_Saveable.h"
+#include "IO/I_Loadable.h"
+#include "IO/I_Saveable.h"
 #include "Requirement.h"
 #include "SubjectRequirement.h"
 #include "MoveRequirement.h"

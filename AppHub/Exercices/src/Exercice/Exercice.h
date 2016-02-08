@@ -2,7 +2,7 @@
 #define EXERCICE_H
 
 #pragma GCC diagnostic ignored "-Weffc++" // disable Weffc++ warnings
-#include "tinyxml2.h"
+#include "IO/tinyxml2.h"
 #pragma GCC diagnostic pop // turn the warnings back on
 
 #include <iostream>
