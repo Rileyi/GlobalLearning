@@ -79,16 +79,16 @@
 1454327378 a:\strift\documents\github\globallearning\apphub\exercices\i_loadable.h
 	"tinyxml2.h"
 
-1454502883 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Exercice.cpp
+1454503853 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Exercice.cpp
 	"Exercice.h"
 	"Parser.h"
 
-1454382084 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Exercice.h
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Exercice.h
 	"tinyxml2.h"
 	<iostream>
 	"RequirementList.h"
 
-1454379895 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/tinyxml2.h
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/tinyxml2.h
 	<ctype.h>
 	<limits.h>
 	<stdio.h>
@@ -102,7 +102,7 @@
 	<android/log.h>
 	<assert.h>
 
-1454503026 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/RequirementList.h
+1454933018 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/RequirementList.h
 	<memory>
 	<vector>
 	<string>
@@ -113,12 +113,12 @@
 	"SubjectRequirement.h"
 	"MoveRequirement.h"
 
-1454503026 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Definitions.h
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Definitions.h
 
-1454378002 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/I_Loadable.h
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/I_Loadable.h
 	"tinyxml2.h"
 
-1454379712 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Requirement.h
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Requirement.h
 	"I_Cloneable.h"
 	"I_Saveable.h"
 	<string>
@@ -128,7 +128,7 @@
 	"Requirement.h"
 	"Definitions.h"
 
-1454380625 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/MoveRequirement.h
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/MoveRequirement.h
 	<string>
 	"Requirement.h"
 	"Definitions.h"
@@ -137,23 +137,23 @@
 	"LevelRequirement.h"
 	"Parser.h"
 
-1454378002 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/main.cpp
+1454503853 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/main.cpp
 	<iostream>
 	"Exercice.h"
 
-1454380617 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/MoveRequirement.cpp
+1454503853 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/MoveRequirement.cpp
 	"MoveRequirement.h"
 	"Parser.h"
 
-1454378002 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Requirement.cpp
+1454503853 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Requirement.cpp
 	"Requirement.h"
 
-1454380987 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/RequirementList.cpp
+1454503853 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/RequirementList.cpp
 	"RequirementList.h"
 	<iostream>
 	"Parser.h"
 
-1454378002 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/tinyxml2.cpp
+1454503853 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/tinyxml2.cpp
 	"tinyxml2.h"
 	<new>
 	<stddef.h>
@@ -161,25 +161,42 @@
 	<cstddef>
 	<cstdarg>
 
-1454378002 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Parser.cpp
+1454503853 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Parser.cpp
 	"Parser.h"
 
-1454503083 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Parser.h
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Parser.h
 	<string>
 	"Definitions.h"
 	"Exercice.h"
 
-1454380630 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/I_Saveable.h
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/I_Saveable.h
 	"tinyxml2.h"
 
-1454378002 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/I_Cloneable.h
+1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/I_Cloneable.h
 
-1454503026 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/SubjectRequirement.h
+1454932852 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/SubjectRequirement.h
 	<string>
 	"Requirement.h"
 	"Definitions.h"
 
-1454503026 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/SubjectRequirement.cpp
+1454932852 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/SubjectRequirement.cpp
 	"SubjectRequirement.h"
 	"Parser.h"
+
+1454932501 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Learning.cpp
+	"Learning.h"
+
+1454932464 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Learning.h
+	"I_Cloneable.h"
+	"I_Saveable.h"
+	<string>
+
+1454933071 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/SubjectLearning.cpp
+	"SubjectLearning.h"
+	"Parser.h"
+
+1454932882 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/SubjectLearning.h
+	<string>
+	"Learning.h"
+	"Definitions.h"
 

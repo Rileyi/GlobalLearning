@@ -15,6 +15,7 @@
 class RequirementList : public I_Loadable, public I_Saveable
 {
     typedef std::unique_ptr<Requirement> RequirementPtr;
+
     // Constants
     public:
         static const std::string XML_ELEMENT;

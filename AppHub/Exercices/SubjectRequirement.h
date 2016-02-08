@@ -10,7 +10,7 @@ class SubjectRequirement : public Requirement
     // Constants
     public:
         static const std::string XML_ELEMENT;
-        static const std::string XML_CLASS_ATTRIBUTE;
+        static const std::string XML_TYPE_ATTRIBUTE;
 
     public:
         SubjectRequirement(SubjectType category, unsigned int level = 0);

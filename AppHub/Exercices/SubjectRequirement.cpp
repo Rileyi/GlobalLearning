@@ -2,7 +2,7 @@
 #include "Parser.h"
 
 const std::string SubjectRequirement::XML_ELEMENT = "level";
-const std::string SubjectRequirement::XML_CLASS_ATTRIBUTE = "class";
+const std::string SubjectRequirement::XML_TYPE_ATTRIBUTE = "class";
 
 SubjectRequirement::SubjectRequirement(SubjectType category, unsigned int level) : Requirement(level), _class(category)
 {
@@ -34,7 +34,7 @@ SubjectRequirement* SubjectRequirement::clone() const
 void SubjectRequirement::appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *parent) const
 {
 	tinyxml2::XMLElement *element = document.NewElement(XML_ELEMENT.c_str());
-	element->SetAttribute(XML_CLASS_ATTRIBUTE.c_str(), Parser::toText(_class).c_str());
+	element->SetAttribute(XML_TYPE_ATTRIBUTE.c_str(), Parser::toText(_class).c_str());
 	element->SetAttribute(XML_VALUE_ATTRIBUTE.c_str(), _level);
 	if (parent == nullptr)
 		document.InsertEndChild(element);
