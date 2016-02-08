@@ -23,7 +23,7 @@ class SubjectRequirement : public Requirement
 
     // Attributes
     protected:
-        SubjectType _class;
+        SubjectType _type;
 };
 
 #endif // LEVELREQUIREMENT_H
