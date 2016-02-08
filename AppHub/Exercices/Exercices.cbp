@@ -40,6 +40,8 @@
 		<Unit filename="I_Saveable.h" />
 		<Unit filename="Learning.cpp" />
 		<Unit filename="Learning.h" />
+		<Unit filename="LearningList.cpp" />
+		<Unit filename="LearningList.h" />
 		<Unit filename="MoveLearning.cpp" />
 		<Unit filename="MoveLearning.h" />
 		<Unit filename="MoveRequirement.cpp" />

@@ -4,7 +4,7 @@
 const std::string Exercice::XML_ELEMENT = "exercice";
 const std::string Exercice::XML_TYPE_ATTRIBUTE = "type";
 
-Exercice::Exercice() : _type(Exercice::Type::Undefined), _requirements()
+Exercice::Exercice() : _type(Exercice::Type::Undefined), _requirements(), _learnings()
 {
     //ctor
 }
@@ -14,7 +14,7 @@ Exercice::~Exercice()
     //dtor
 }
 
-Exercice::Exercice(const Exercice& other) : _type(other._type), _requirements(other._requirements)
+Exercice::Exercice(const Exercice& other) : _type(other._type), _requirements(other._requirements), _learnings(other._learnings)
 {
     //copy ctor
 }
@@ -76,6 +76,26 @@ bool Exercice::loadRequirements(const tinyxml2::XMLElement *root)
         return false;
     }
     return _requirements.loadFromXML(element);
+}
+
+bool Exercice::loadLearnings(const tinyxml2::XMLElement *root)
+{
+    if (root == nullptr)
+    {
+        #ifdef DEBUG
+            std::cerr << "Root element is null" << std::endl;
+        #endif // DEBUG
+        return false;
+    }
+    const tinyxml2::XMLElement *element = root->FirstChildElement(RequirementList::XML_ELEMENT.c_str());
+    if (element == nullptr)
+    {
+        #ifdef DEBUG
+            std::cerr << "Not a learning element" << std::endl;
+        #endif // DEBUG
+        return false;
+    }
+    return _learnings.loadFromXML(element);
 }
 
 bool Exercice::loadContent(const tinyxml2::XMLDocument &document)

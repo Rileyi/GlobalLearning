@@ -79,14 +79,15 @@
 1454327378 a:\strift\documents\github\globallearning\apphub\exercices\i_loadable.h
 	"tinyxml2.h"
 
-1454503853 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Exercice.cpp
+1454933640 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Exercice.cpp
 	"Exercice.h"
 	"Parser.h"
 
-1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Exercice.h
+1454933620 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Exercice.h
 	"tinyxml2.h"
 	<iostream>
 	"RequirementList.h"
+	"LearningList.h"
 
 1454503853 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/tinyxml2.h
 	<ctype.h>
@@ -199,4 +200,29 @@
 	<string>
 	"Learning.h"
 	"Definitions.h"
+
+1454933259 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/MoveLearning.cpp
+	"MoveLearning.h"
+	"Parser.h"
+
+1454933210 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/MoveLearning.h
+	<string>
+	"Learning.h"
+	"Definitions.h"
+
+1454933667 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/LearningList.cpp
+	"LearningList.h"
+	<iostream>
+	"Parser.h"
+
+1454933434 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/LearningList.h
+	<memory>
+	<vector>
+	<string>
+	"Definitions.h"
+	"I_Loadable.h"
+	"I_Saveable.h"
+	"Learning.h"
+	"SubjectLearning.h"
+	"MoveLearning.h"
 

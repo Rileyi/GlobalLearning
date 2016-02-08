@@ -8,6 +8,7 @@
 #include <iostream>
 
 #include "RequirementList.h"
+#include "LearningList.h"
 
 class Exercice
 {
@@ -32,6 +33,7 @@ class Exercice
 
     protected:
         bool loadRequirements(const tinyxml2::XMLElement *element);
+        bool loadLearnings(const tinyxml2::XMLElement *element);
         bool loadContent(const tinyxml2::XMLDocument &document);
         bool loadDotToDotContent(const tinyxml2::XMLDocument &document);
 
@@ -39,6 +41,7 @@ class Exercice
     protected:
         Exercice::Type _type;
         RequirementList _requirements;
+        LearningList _learnings;
 };
 
 #endif // EXERCICE_H
