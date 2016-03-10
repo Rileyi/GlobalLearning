@@ -1,0 +1,17 @@
+<Solution>
+  <PropertyGroup Name="Hub" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Image Name="background_mainscene.png" />
+        <Image Name="background_toolbar.png" />
+        <Image Name="bulle_vide.png" />
+        <Project Name="ButtonModule.csd" Type="Node" />
+        <Project Name="MainScene.csd" Type="Scene" />
+        <Project Name="Mascotte.csd" Type="Node" />
+        <Image Name="shahoots_remplacant.png" />
+        <Project Name="ToolBar.csd" Type="Layer" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
