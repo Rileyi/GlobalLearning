@@ -3,14 +3,61 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Folder Name="barres">
+          <Image Name="Header placeholder.png" />
+          <Image Name="Sentence area.png" />
+          <Image Name="Text area.png" />
+        </Folder>
+        <Folder Name="boutons">
+          <Image Name="button app Dot Link ON.png" />
+          <Image Name="button app Dot Link.png" />
+          <Image Name="button app Painting ON.png" />
+          <Image Name="button app Painting.png" />
+          <Image Name="button Exit ON.png" />
+          <Image Name="button Exit.png" />
+          <Image Name="button Header Help ON.png" />
+          <Image Name="button Header Help.png" />
+          <Image Name="button Header Menu ON.png" />
+          <Image Name="button Header Menu.png" />
+          <Image Name="button Header Restart ON.png" />
+          <Image Name="button Header Restart.png" />
+          <Image Name="button Header Shahoots ON.png" />
+          <Image Name="button Header Shahoots.png" />
+          <Image Name="button Header TTS ON.png" />
+          <Image Name="button Header TTS.png" />
+          <Image Name="button Header Validate ON.png" />
+          <Image Name="button Header Validate.png" />
+          <Image Name="button Learn ON.png" />
+          <Image Name="button Learn.png" />
+          <Image Name="button Next ON.png" />
+          <Image Name="button Next.png" />
+          <Image Name="button No ON.png" />
+          <Image Name="button No.png" />
+          <Image Name="button Previous ON.png" />
+          <Image Name="button Previous.png" />
+          <Image Name="button Shahoots ON.png" />
+          <Image Name="button Shahoots.png" />
+          <Image Name="button Yes ON.png" />
+          <Image Name="button Yes.png" />
+        </Folder>
+        <Folder Name="Default">
+          <Image Name="Button_Disable.png" />
+          <Image Name="Button_Normal.png" />
+          <Image Name="Button_Press.png" />
+        </Folder>
+        <Folder Name="Fonts">
+          <TTF Name="ChalkboardSE.ttc" />
+          <File Name="list" />
+        </Folder>
         <Image Name="background_mainscene.png" />
         <Image Name="background_toolbar.png" />
         <Image Name="bulle_vide.png" />
         <Project Name="ButtonModule.csd" Type="Node" />
         <Project Name="MainScene.csd" Type="Scene" />
         <Project Name="Mascotte.csd" Type="Node" />
+        <File Name="Modules.xml" />
         <Image Name="shahoots_remplacant.png" />
-        <Project Name="ToolBar.csd" Type="Layer" />
+        <Project Name="ToolBar.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>

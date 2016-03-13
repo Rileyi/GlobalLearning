@@ -6,8 +6,8 @@
       <ObjectData Name="Node" Tag="27" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Button" ActionTag="773164407" Tag="28" IconVisible="False" LeftMargin="-112.5000" RightMargin="-112.5000" TopMargin="-45.0000" BottomMargin="-45.0000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="225.0000" Y="90.0000" />
+          <AbstractNodeData Name="Button" ActionTag="773164407" Tag="28" IconVisible="False" LeftMargin="-111.0000" RightMargin="-111.0000" TopMargin="-28.5000" BottomMargin="-28.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="222.0000" Y="57.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

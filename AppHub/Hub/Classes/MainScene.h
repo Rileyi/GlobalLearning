@@ -29,6 +29,7 @@ public:
 protected:
 	void onEnter() override;
 	void buttonAppeared();
+	void runToolBar(bool);
 
 private:
 	void play(Ref* pSender, cocos2d::ui::Widget::TouchEventType type);

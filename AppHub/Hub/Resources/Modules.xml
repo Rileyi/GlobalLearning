@@ -1,8 +1,0 @@
-<?xml version = "1.0" encoding="UTF-8" standalone="yes" ?>
-
-<module_list>
-	<module name="coloriage" id="coloriage" />
-	<module name="dot link" id="dot_link" />
-	<module name="test" id="coloriage" />
-	<module name="test" id="coloriage" />
-</module_list>

@@ -36,7 +36,7 @@ bool MainScene::init()
 
 	// récupérer la taille de l'écran
 	size = Director::getInstance()->getWinSize();
-	size.height -= 60;
+	size.height -= 86;
 
 	// Register the readers for our custom classes
 	CSLoader* instance = CSLoader::getInstance();
@@ -84,10 +84,30 @@ void MainScene::buttonAppeared()
 }
 
 
+void MainScene::runToolBar(bool b)
+{
+	cocostudio::timeline::ActionTimeline* buttonTimeline = CSLoader::createTimeline("ToolBar.csb");
+	//stopAllActions();
+	runAction(buttonTimeline);
+
+	if (b)
+	{
+		buttonTimeline->play("other_to_menu", false);
+		tool_bar->getChildByName<cocos2d::ui::Button*>("Menu_button")->setEnabled(!b);
+	}
+	else
+	{
+		buttonTimeline->play("menu_to_other", false);
+		tool_bar->getChildByName<cocos2d::ui::Button*>("Menu_button")->setEnabled(!b);
+	}
+}
+
+
 void MainScene::onEnter()
 {
 	Layer::onEnter();
 	buttonAppeared();
+	runToolBar(true);
 	scheduleUpdate();
 }
 
@@ -95,7 +115,7 @@ void MainScene::onEnter()
 
 void MainScene::goToMenu(Ref* pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	if (type == cocos2d::ui::Widget::TouchEventType::BEGAN)
+	if (type == cocos2d::ui::Widget::TouchEventType::ENDED)
 	{
 		// create a scene. it's an autorelease object
 		auto scene = MainScene::createScene();
@@ -107,7 +127,7 @@ void MainScene::goToMenu(Ref* pSender, cocos2d::ui::Widget::TouchEventType type)
 
 void MainScene::shahootsAie(Ref* pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	if (type == cocos2d::ui::Widget::TouchEventType::BEGAN)
+	if (type == cocos2d::ui::Widget::TouchEventType::ENDED)
 	{
 		count_shahoots++;
 
@@ -125,7 +145,7 @@ void MainScene::shahootsAie(Ref* pSender, cocos2d::ui::Widget::TouchEventType ty
 
 void MainScene::shahootsPop(Ref* pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	if (type == cocos2d::ui::Widget::TouchEventType::BEGAN)
+	if (type == cocos2d::ui::Widget::TouchEventType::ENDED)
 	{
 		Node* shahoots = rootNode->getChildByName("Mascotte");
 
@@ -138,7 +158,7 @@ void MainScene::shahootsPop(Ref* pSender, cocos2d::ui::Widget::TouchEventType ty
 
 void MainScene::play(Ref* pSender, ui::Widget::TouchEventType type)
 {
-	if (type == cocos2d::ui::Widget::TouchEventType::BEGAN)
+	if (type == cocos2d::ui::Widget::TouchEventType::ENDED)
 	{
 		cocostudio::timeline::ActionTimeline* buttonTimeline = CSLoader::createTimeline("MainScene.csb");
 		// on attend la fin de l'animation avant de lancer la création du screen select
@@ -146,6 +166,7 @@ void MainScene::play(Ref* pSender, ui::Widget::TouchEventType type)
 		{
 			this->createSelectScreen();
 			rootNode->getChildByName("Tool_bar")->setVisible(true);
+			runToolBar(false);
 		});
 
 		stopAllActions();
@@ -158,7 +179,7 @@ void MainScene::play(Ref* pSender, ui::Widget::TouchEventType type)
 
 void MainScene::quit(Ref* pSender, ui::Widget::TouchEventType type)
 {
-	if (type == cocos2d::ui::Widget::TouchEventType::BEGAN)
+	if (type == cocos2d::ui::Widget::TouchEventType::ENDED)
 	{
 		CCDirector::getInstance()->end();
 		exit(0);
@@ -170,11 +191,14 @@ void MainScene::quit(Ref* pSender, ui::Widget::TouchEventType type)
 void MainScene::createSelectScreen()
 {
 	tinyxml2::XMLDocument document;
-	const std::string path = "Modules.xml";
+	const std::string MODULE = "res/Modules.xml";
 	std::vector<ButtonModule*> list;
+	const std::string EXT = ".png";
+	const std::string BIS = " ON";
+	const std::string PATH = "res/boutons/";
 
 	// ouvrir le document xml
-	if (document.LoadFile(path.c_str()) == tinyxml2::XML_NO_ERROR)
+	if (document.LoadFile(MODULE.c_str()) == tinyxml2::XML_NO_ERROR)
 	{
 		// on récupère la racine
 		tinyxml2::XMLHandle root(&document);
@@ -187,9 +211,13 @@ void MainScene::createSelectScreen()
 			{
 				ButtonModule* module = (ButtonModule*)(CSLoader::createNode("ButtonModule.csb"));
 
-				// on récupère les infos sur le module
-				module->getButton()->setTitleText(elem->Attribute("name"));
+				//module->getButton()->setTitleText(elem->Attribute("name"));
 				//module->setId = elem->Attribute("id");
+
+				// on défini les différentes images de notre bouton
+				module->getButton()->loadTextureNormal(PATH + elem->Attribute("img") + EXT);
+				module->getButton()->loadTexturePressed(PATH + elem->Attribute("img") + BIS + EXT);
+				module->getButton()->loadTextureDisabled(PATH + elem->Attribute("img") + BIS + EXT);
 
 				// on les ajoute à une liste
 				list.push_back(module);

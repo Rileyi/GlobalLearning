@@ -1,6 +1,4 @@
-﻿  MainScene.cpp
-c:\users\kuungfu-sheep\documents\cocos\cocosprojects\hub\classes\mainscene.cpp(217): warning C4018: '<' : incompatibilité signed/unsigned
-  60 fichier(s) copi�(s)
+﻿  60 fichier(s) copi�(s)
   Hub.vcxproj -> C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\proj.win32\Debug.win32\Hub.exe
   C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\Resources\res\ButtonModule.csb -> C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\proj.win32\Debug.win32\res\ButtonModule.csb
   C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\Resources\res\MainScene.csb -> C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\proj.win32\Debug.win32\res\MainScene.csb
