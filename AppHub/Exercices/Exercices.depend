@@ -226,11 +226,12 @@
 	"SubjectLearning.h"
 	"MoveLearning.h"
 
-1458300064 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Exercice.cpp
+1458318575 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Exercice.cpp
 	"Exercice.h"
 	"IO/Parser.h"
+	"Exception.h"
 
-1458300636 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Exercice.h
+1458318157 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Exercice.h
 	"IO/tinyxml2.h"
 	<iostream>
 	"RequirementList.h"
@@ -250,7 +251,7 @@
 	<android/log.h>
 	<assert.h>
 
-1455528239 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/RequirementList.h
+1458317297 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/RequirementList.h
 	<memory>
 	<vector>
 	<string>
@@ -263,7 +264,7 @@
 
 1455528239 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Definitions.h
 
-1458307204 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/IO/I_Loadable.h
+1458315985 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/IO/I_Loadable.h
 	"tinyxml2.h"
 
 1455528239 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/IO/I_Saveable.h
@@ -286,7 +287,7 @@
 	"Requirement.h"
 	"Definitions.h"
 
-1455528239 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/LearningList.h
+1458316919 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/LearningList.h
 	<memory>
 	<vector>
 	<string>
@@ -320,10 +321,11 @@
 1455528239 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Learning.cpp
 	"Learning.h"
 
-1458299376 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/LearningList.cpp
+1458318546 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/LearningList.cpp
 	"LearningList.h"
 	<iostream>
 	"IO/Parser.h"
+	"Exception.h"
 
 1455528239 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/MoveLearning.cpp
 	"MoveLearning.h"
@@ -336,10 +338,11 @@
 1455528239 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Requirement.cpp
 	"Requirement.h"
 
-1458290885 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/RequirementList.cpp
+1458318549 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/RequirementList.cpp
 	"RequirementList.h"
 	<iostream>
 	"IO/Parser.h"
+	"Exception.h"
 
 1458290931 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/SubjectLearning.cpp
 	"SubjectLearning.h"
@@ -360,23 +363,26 @@
 	<cstddef>
 	<cstdarg>
 
-1458296510 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/main.cpp
+1458318553 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/main.cpp
 	<iostream>
 	"Content/DotToDot/DotToDotExercice.h"
+	"Exception.h"
 
-1458301029 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/DotToDotExercice.cpp
+1458318563 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/DotToDotExercice.cpp
 	"DotToDotExercice.h"
+	"Exception.h"
 
-1458300622 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/DotToDotExercice.h
+1458317965 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/DotToDotExercice.h
 	"Exercice/Exercice.h"
 	<vector>
 	"Content/DotToDot/Dot.h"
 
-1458300892 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/Dot.cpp
+1458318537 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/Dot.cpp
 	"Dot.h"
 	<iostream>
+	"Exception.h"
 
-1458300908 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/Dot.h
+1458315985 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/Dot.h
 	"IO/I_Loadable.h"
 	<string>
 
@@ -387,4 +393,12 @@
 	<exception>
 	<ostream>
 	<string>
+
+1458310133 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exception.h
+	<exception>
+	<ostream>
+	<string>
+
+1458318542 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exception.cpp
+	"Exception.h"
 

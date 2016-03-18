@@ -10,7 +10,7 @@ class I_Loadable
 {
     public:
         virtual ~I_Loadable() = 0;
-        virtual bool loadFromXML(const tinyxml2::XMLElement *element) = 0;
+        virtual void loadFromXML(const tinyxml2::XMLElement *element) = 0;
 };
 
 /*

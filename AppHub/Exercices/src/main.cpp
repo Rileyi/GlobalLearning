@@ -1,17 +1,20 @@
 #include <iostream>
 
 #include "Content/DotToDot/DotToDotExercice.h"
-
-using namespace std;
+#include "Exception.h"
 
 int main()
 {
     DotToDotExercice ex;
 
-    if (ex.loadFromFile("butterfly.jpg.dots.xml"))
-        cout << "Loading succeeded" << endl;
-    else
-        cout << "Loading failed" << endl;
-
+    try
+    {
+		ex.loadFromFile("butterfly.jpg.dots.xml");
+		std::cout << "Loading succeeded" << std::endl;
+    }
+    catch(Exception &e)
+    {
+		std::cout << e.what() << std::endl;
+    }
     return 0;
 }

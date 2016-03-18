@@ -1,4 +1,5 @@
 #include "DotToDotExercice.h"
+#include "Exception.h"
 
 DotToDotExercice::DotToDotExercice() : _dots()
 {
@@ -21,33 +22,20 @@ DotToDotExercice::~DotToDotExercice()
 {
 }
 
-bool DotToDotExercice::loadContent(const tinyxml2::XMLElement *root)
+void DotToDotExercice::loadContent(const tinyxml2::XMLElement *root)
 {
+    if (root == nullptr)
+		throw Exception(Exception::Type::Parser, "loadContent: root element is null");
+
 	const tinyxml2::XMLElement *element = root->FirstChildElement(Exercice::XML_CONTENT_ELEMENT.c_str());
 	if (element == nullptr)
-	{
-		#ifdef DEBUG
-			std::cerr << "Error while loading: unable to find content element" << std::endl;
-		#endif // DEBUG
-		return false;
-	}
+		throw Exception(Exception::Type::Parser, "loadContent: unable to find content element");
     // Loop over all the children elements
     for (const tinyxml2::XMLElement* child = element->FirstChildElement(); child != nullptr; child = child->NextSiblingElement())
     {
         // Load dot
         Dot dot;
-        if (dot.loadFromXML(child) == false)
-        {
-			#ifdef DEBUG
-				std::cerr << "Error while loading dot" << std::endl;
-			#endif // DEBUG
-			return false;
-        }
-        else
-        {
-			std::cout << "Loaded " << dot.getNumber() << " sucessfully (" << dot.getX() << ";" << dot.getY() << ")" << std::endl;
-			_dots.push_back(dot);
-        }
+		dot.loadFromXML(child);
+		_dots.push_back(dot);
     }
-	return true;
 }
