@@ -3,6 +3,7 @@
 
 const std::string Exercice::XML_ELEMENT = "exercice";
 const std::string Exercice::XML_TYPE_ATTRIBUTE = "type";
+const std::string Exercice::XML_CONTENT_ELEMENT = "content";
 
 Exercice::Exercice() : _type(Exercice::Type::Undefined), _requirements(), _learnings()
 {

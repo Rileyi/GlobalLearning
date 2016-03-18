@@ -16,6 +16,7 @@ class Exercice
     public:
         static const std::string XML_ELEMENT;
         static const std::string XML_TYPE_ATTRIBUTE;
+        static const std::string XML_CONTENT_ELEMENT;
 
         enum class Type
         {
@@ -32,9 +33,9 @@ class Exercice
         bool loadFromFile(const std::string &path);
 
     protected:
-        bool loadRequirements(const tinyxml2::XMLElement *element);
-        bool loadLearnings(const tinyxml2::XMLElement *element);
-        virtual bool loadContent(const tinyxml2::XMLDocument &document) = 0;
+        bool loadRequirements(const tinyxml2::XMLElement *root);
+        bool loadLearnings(const tinyxml2::XMLElement *root);
+        virtual bool loadContent(const tinyxml2::XMLElement *root) = 0;
 
     // Attributes
     protected:

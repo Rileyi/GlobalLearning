@@ -1,12 +1,12 @@
 #include <iostream>
 
-#include "Exercice/Exercice.h"
+#include "Content/DotToDot/DotToDotExercice.h"
 
 using namespace std;
 
 int main()
 {
-    Exercice ex;
+    DotToDotExercice ex;
 
     if (ex.loadFromFile("butterfly.jpg.dots.xml"))
         cout << "Loading succeeded" << endl;

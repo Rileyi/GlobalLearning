@@ -226,11 +226,11 @@
 	"SubjectLearning.h"
 	"MoveLearning.h"
 
-1455528239 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Exercice.cpp
+1458300064 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Exercice.cpp
 	"Exercice.h"
 	"IO/Parser.h"
 
-1455528239 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Exercice.h
+1458300636 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Exercice.h
 	"IO/tinyxml2.h"
 	<iostream>
 	"RequirementList.h"
@@ -320,7 +320,7 @@
 1455528239 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/Learning.cpp
 	"Learning.h"
 
-1458290721 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/LearningList.cpp
+1458299376 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/LearningList.cpp
 	"LearningList.h"
 	<iostream>
 	"IO/Parser.h"
@@ -341,11 +341,11 @@
 	<iostream>
 	"IO/Parser.h"
 
-1458290669 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/SubjectLearning.cpp
+1458290931 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/SubjectLearning.cpp
 	"SubjectLearning.h"
 	"IO/Parser.h"
 
-1455528239 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/SubjectRequirement.cpp
+1458290923 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Exercice/SubjectRequirement.cpp
 	"SubjectRequirement.h"
 	"IO/Parser.h"
 
@@ -360,7 +360,23 @@
 	<cstddef>
 	<cstdarg>
 
-1455528239 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/main.cpp
+1458296510 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/main.cpp
 	<iostream>
+	"Content/DotToDot/DotToDotExercice.h"
+
+1458300666 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/DotToDotExercice.cpp
+	"DotToDotExercice.h"
+
+1458300622 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/DotToDotExercice.h
 	"Exercice/Exercice.h"
+	<vector>
+	"Content/DotToDot/Dot.h"
+
+1458298498 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/Dot.cpp
+	"Dot.h"
+	<iostream>
+
+1458300908 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/Dot.h
+	"IO/I_Loadable.h"
+	<string>
 
