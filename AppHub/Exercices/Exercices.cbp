@@ -36,13 +36,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Exception.cpp" />
-		<Unit filename="Exception.h" />
 		<Unit filename="src/Content/DotToDot/Dot.cpp" />
 		<Unit filename="src/Content/DotToDot/Dot.h" />
 		<Unit filename="src/Content/DotToDot/DotToDotExercice.cpp" />
 		<Unit filename="src/Content/DotToDot/DotToDotExercice.h" />
 		<Unit filename="src/Definitions.h" />
+		<Unit filename="src/Exception.cpp" />
+		<Unit filename="src/Exception.h" />
 		<Unit filename="src/Exercice/Exercice.cpp" />
 		<Unit filename="src/Exercice/Exercice.h" />
 		<Unit filename="src/Exercice/Learning.cpp" />
