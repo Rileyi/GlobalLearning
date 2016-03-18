@@ -1,5 +1,6 @@
 #include "Dot.h"
 #include <iostream>
+#include "Exception.h"
 
 const std::string Dot::XML_ELEMENT = "dot";
 const std::string Dot::XML_X_ATTRIBUTE = "x";
@@ -26,49 +27,27 @@ Dot& Dot::operator=(const Dot& other)
 	return *this;
 }
 
-bool Dot::loadFromXML(const tinyxml2::XMLElement *element)
+void Dot::loadFromXML(const tinyxml2::XMLElement *element)
 {
 	if (element->Name() != XML_ELEMENT)
-	{
-        #ifdef DEBUG
-            std::cerr << "Error while loading Dot: " << element->Name() << " is an incorrect element name" << std::endl;
-        #endif // DEBUG
-		return false;
-	}
+		throw Exception(Exception::Type::Parser, std::string(element->Name()) + " is an incorrect element name");
+
 	const tinyxml2::XMLAttribute *xAttribute = element->FindAttribute(XML_X_ATTRIBUTE.c_str());
 	const tinyxml2::XMLAttribute *yAttribute = element->FindAttribute(XML_Y_ATTRIBUTE.c_str());
 	const tinyxml2::XMLAttribute *numberAttribute = element->FindAttribute(XML_NUMBER_ATTRIBUTE.c_str());
 
-	if (xAttribute == nullptr or yAttribute == nullptr or numberAttribute == nullptr)
-	{
-		#ifdef DEBUG
-			std::cerr << "Error while loading Dot: Unable to find attribute" << std::endl;
-		#endif // DEBUG
-		return false;
-	}
+	if (xAttribute == nullptr)
+		throw Exception(Exception::Type::Parser, "Error while loading Dot: unable to find x attribute");
+	if (yAttribute == nullptr)
+		throw Exception(Exception::Type::Parser, "Error while loading Dot: unable to find y attribute");
+	if (numberAttribute == nullptr)
+		throw Exception(Exception::Type::Parser, "Error while loading Dot: unable to find number attribute");
 	if (xAttribute->QueryUnsignedValue(&_x) != tinyxml2::XML_NO_ERROR)
-	{
-		#ifdef DEBUG
-			std::cerr << "Error while loading Dot: no x attribute" << std::endl;
-		#endif // DEBUG
-		return false;
-	}
+		throw Exception(Exception::Type::Parser, "Error while loading Dot: unable to read x attribute");
 	if (yAttribute->QueryUnsignedValue(&_y) != tinyxml2::XML_NO_ERROR)
-	{
-		#ifdef DEBUG
-			std::cerr << "Error while loading Dot: no y attribute" << std::endl;
-		#endif // DEBUG
-		return false;
-	}
-
+		throw Exception(Exception::Type::Parser, "Error while loading Dot: unable to read y attribute");
 	if (numberAttribute->QueryIntValue(&_number) != tinyxml2::XML_NO_ERROR)
-	{
-		#ifdef DEBUG
-			std::cerr << "Error while loading Dot: no number attribute" << std::endl;
-		#endif // DEBUG
-		return false;
-	}
-	return true;
+		throw Exception(Exception::Type::Parser, "Error while loading Dot: unable to read number attribute");
 }
 
 unsigned int Dot::getX() const

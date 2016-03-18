@@ -30,12 +30,12 @@ class Exercice
         Exercice(const Exercice& other);
         Exercice& operator=(const Exercice& other);
 
-        bool loadFromFile(const std::string &path);
+        void loadFromFile(const std::string &path);
 
     protected:
-        bool loadRequirements(const tinyxml2::XMLElement *root);
-        bool loadLearnings(const tinyxml2::XMLElement *root);
-        virtual bool loadContent(const tinyxml2::XMLElement *root) = 0;
+        void loadRequirements(const tinyxml2::XMLElement *root);
+        void loadLearnings(const tinyxml2::XMLElement *root);
+        virtual void loadContent(const tinyxml2::XMLElement *root) = 0;
 
     // Attributes
     protected:

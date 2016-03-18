@@ -1,34 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="src/Exercice/Learning.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="80" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/Exercice/RequirementList.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="197" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="src/Exercice/LearningList.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="167" topLine="0" />
+			<Cursor1 position="1200" topLine="15" />
 		</Cursor>
 	</File>
-	<File name="src/Exercice/Exercice.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/Exercice/MoveRequirement.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="935" topLine="11" />
+			<Cursor1 position="43" topLine="6" />
 		</Cursor>
 	</File>
-	<File name="src/IO/I_Loadable.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/IO/I_Saveable.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="103" topLine="0" />
+			<Cursor1 position="252" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/Exercice/RequirementList.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/main.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1946" topLine="33" />
+			<Cursor1 position="241" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src/Exercice/SubjectRequirement.cpp" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -38,22 +28,7 @@
 	</File>
 	<File name="src/Exercice/LearningList.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1701" topLine="42" />
-		</Cursor>
-	</File>
-	<File name="src/IO/Parser.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="108" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/Exercice/MoveRequirement.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="43" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/main.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="88" topLine="0" />
+			<Cursor1 position="1433" topLine="34" />
 		</Cursor>
 	</File>
 	<File name="src/Exercice/SubjectLearning.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -61,14 +36,39 @@
 			<Cursor1 position="447" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/Exercice/Exercice.cpp" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/Content/DotToDot/Dot.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2441" topLine="66" />
+			<Cursor1 position="475" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/IO/I_Saveable.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/IO/I_Loadable.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="252" topLine="0" />
+			<Cursor1 position="334" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/IO/Parser.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="108" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Content/DotToDot/DotToDotExercice.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="375" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Exercice/Learning.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="80" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Exercice/MoveLearning.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="40" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Content/DotToDot/Dot.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1922" topLine="6" />
 		</Cursor>
 	</File>
 	<File name="src/Exercice/Requirement.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -76,9 +76,44 @@
 			<Cursor1 position="86" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/Exercice/MoveLearning.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/Content/DotToDot/DotToDotExercice.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="40" topLine="0" />
+			<Cursor1 position="1134" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="src/Exercice/Exercice.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1733" topLine="31" />
+		</Cursor>
+	</File>
+	<File name="src/IO/tinyxml2.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="23220" topLine="844" />
+		</Cursor>
+	</File>
+	<File name="Exception.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="270" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Exercice/RequirementList.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1061" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="src/Exercice/RequirementList.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4315" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="Exception.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="265" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Exercice/Exercice.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="725" topLine="14" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

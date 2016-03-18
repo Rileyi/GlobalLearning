@@ -15,7 +15,7 @@ class DotToDotExercice : public Exercice
 		DotToDotExercice& operator=(const DotToDotExercice& rhs);
 
 	protected:
-		bool loadContent(const tinyxml2::XMLElement *root);
+		void loadContent(const tinyxml2::XMLElement *root);
 		std::vector<Dot> _dots;
 };
 

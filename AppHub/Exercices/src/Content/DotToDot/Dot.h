@@ -19,7 +19,7 @@ class Dot : public I_Loadable //, public I_Saveable
         Dot& operator=(const Dot& other);
 
 		// I_Loadable implementation
-        bool loadFromXML(const tinyxml2::XMLElement *element);
+        void loadFromXML(const tinyxml2::XMLElement *element);
         // Getters
         unsigned int getX() const;
         unsigned int getY() const;
