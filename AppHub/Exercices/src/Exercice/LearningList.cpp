@@ -41,9 +41,19 @@ LearningList& LearningList::operator=(const LearningList& rhs)
 bool LearningList::loadFromXML(const tinyxml2::XMLElement *element)
 {
     if (element == nullptr)
+    {
+		#ifdef DEBUG
+            std::cerr << "Error while loading: nullptr given" << std::endl;
+        #endif // DEBUG
         return false;
+    }
     if (element->Name() != XML_ELEMENT)
+    {
+		#ifdef DEBUG
+            std::cerr << "Error while loading: " << element->Name() << " is an incorrect element name" << std::endl;
+        #endif // DEBUG
         return false;
+    }
     // Loop over all the children elements
     bool success;
     for (const tinyxml2::XMLElement* child = element->FirstChildElement(); child != nullptr; child = child->NextSiblingElement())
@@ -56,7 +66,7 @@ bool LearningList::loadFromXML(const tinyxml2::XMLElement *element)
         else
         {
 			#ifdef DEBUG
-				std::cerr << child->Name() << " is not a valid requirement" << std::endl;
+				std::cerr << child->Name() << " is not a valid learning" << std::endl;
 			#endif // DEBUG
 			success = false;
         }
@@ -69,11 +79,18 @@ bool LearningList::loadFromXML(const tinyxml2::XMLElement *element)
 bool LearningList::loadLevelLearningFromXML(const tinyxml2::XMLElement *child)
 {
 	const tinyxml2::XMLAttribute *classAttribute = child->FindAttribute("class");
-	const tinyxml2::XMLAttribute *valueAttribute = child->FindAttribute("value");
-	if (classAttribute == nullptr or valueAttribute == nullptr)
+	const tinyxml2::XMLAttribute *valueAttribute = child->FindAttribute("experience");
+	if (classAttribute == nullptr)
 	{
 		#ifdef DEBUG
-			std::cerr << "Unable to find attribute" << std::endl;
+			std::cerr << "Unable to find class attribute" << std::endl;
+		#endif // DEBUG
+		return false;
+	}
+	else if (valueAttribute == nullptr)
+	{
+		#ifdef DEBUG
+			std::cerr << "Unable to find experience attribute" << std::endl;
 		#endif // DEBUG
 		return false;
 	}
@@ -103,11 +120,18 @@ bool LearningList::loadLevelLearningFromXML(const tinyxml2::XMLElement *child)
 bool LearningList::loadMoveLearningFromXML(const tinyxml2::XMLElement *child)
 {
 	const tinyxml2::XMLAttribute *typeAttribute = child->FindAttribute("type");
-	const tinyxml2::XMLAttribute *valueAttribute = child->FindAttribute("value");
-	if (typeAttribute == nullptr or valueAttribute == nullptr)
+	const tinyxml2::XMLAttribute *valueAttribute = child->FindAttribute("experience");
+	if (typeAttribute == nullptr)
 	{
 		#ifdef DEBUG
-			std::cerr << "Unable to find attribute" << std::endl;
+			std::cerr << "Unable to find class attribute" << std::endl;
+		#endif // DEBUG
+		return false;
+	}
+	else if (valueAttribute == nullptr)
+	{
+		#ifdef DEBUG
+			std::cerr << "Unable to find experience attribute" << std::endl;
 		#endif // DEBUG
 		return false;
 	}

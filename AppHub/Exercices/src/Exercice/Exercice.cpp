@@ -43,17 +43,48 @@ bool Exercice::loadFromFile(const std::string &path)
     /* Check document structure */
     tinyxml2::XMLElement *root = document.RootElement();
     if (root->Name() != XML_ELEMENT)
+    {
+        #ifdef DEBUG
+            std::cerr << "Error while loading: " << root->Name() << " is an incorrect root element name" << std::endl;
+        #endif // DEBUG
         return false;
+    }
     /* Check exercice type */
     const char *type = root->Attribute(XML_TYPE_ATTRIBUTE.c_str());
     if (type == nullptr)
         return false;
     _type = Parser::exerciceType(type);
     if (_type == Exercice::Type::Undefined)
+    {
+        #ifdef DEBUG
+            std::cerr << "Error while loading: undefined exercice type" << std::endl;
+        #endif // DEBUG
         return false;
+    }
     /* Load requirements */
     if (loadRequirements(root) == false)
+    {
+        #ifdef DEBUG
+            std::cerr << "Error while loading exercice requirements" << std::endl;
+        #endif // DEBUG
         return false;
+    }
+    /* Load learnings */
+    if (loadLearnings(root) == false)
+    {
+        #ifdef DEBUG
+            std::cerr << "Error while loading exercice learnings" << std::endl;
+        #endif // DEBUG
+        return false;
+    }
+    /* Load content */
+    if (loadContent(root) == false)
+    {
+        #ifdef DEBUG
+            std::cerr << "Error while loading exercice content" << std::endl;
+        #endif // DEBUG
+        return false;
+    }
 
     return true;
 }
@@ -87,7 +118,7 @@ bool Exercice::loadLearnings(const tinyxml2::XMLElement *root)
         #endif // DEBUG
         return false;
     }
-    const tinyxml2::XMLElement *element = root->FirstChildElement(RequirementList::XML_ELEMENT.c_str());
+    const tinyxml2::XMLElement *element = root->FirstChildElement(LearningList::XML_ELEMENT.c_str());
     if (element == nullptr)
     {
         #ifdef DEBUG
@@ -96,31 +127,4 @@ bool Exercice::loadLearnings(const tinyxml2::XMLElement *root)
         return false;
     }
     return _learnings.loadFromXML(element);
-}
-
-bool Exercice::loadContent(const tinyxml2::XMLDocument &document)
-{
-    switch(_type)
-    {
-    case Exercice::Type::Undefined:
-        return false;
-        break;
-    case Exercice::Type::DotToDot:
-        return loadDotToDotContent(document);
-        break;
-    default:
-        return false;
-        break;
-    }
-}
-
-bool Exercice::loadDotToDotContent(const tinyxml2::XMLDocument &document)
-{
-    /*
-    TO DO
-    Get the data from the file
-    A dot has this structure in the XML file :
-    <dot number="0" x="x_axis_value" y="y_axis_value"/>
-    */
-    return true;
 }

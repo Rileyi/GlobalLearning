@@ -34,8 +34,7 @@ class Exercice
     protected:
         bool loadRequirements(const tinyxml2::XMLElement *element);
         bool loadLearnings(const tinyxml2::XMLElement *element);
-        bool loadContent(const tinyxml2::XMLDocument &document);
-        bool loadDotToDotContent(const tinyxml2::XMLDocument &document);
+        virtual bool loadContent(const tinyxml2::XMLDocument &document) = 0;
 
     // Attributes
     protected:
