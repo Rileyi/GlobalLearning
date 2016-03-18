@@ -1,5 +1,6 @@
 #include "Dot.h"
 #include <iostream>
+#include "../../../Exception.h"
 
 const std::string Dot::XML_ELEMENT = "dot";
 const std::string Dot::XML_X_ATTRIBUTE = "x";
@@ -30,6 +31,7 @@ bool Dot::loadFromXML(const tinyxml2::XMLElement *element)
 {
 	if (element->Name() != XML_ELEMENT)
 	{
+		throw Exception(Exception::Type::Parser, std::string(element->Name()) + " is an incorrect element name");
         #ifdef DEBUG
             std::cerr << "Error while loading Dot: " << element->Name() << " is an incorrect element name" << std::endl;
         #endif // DEBUG

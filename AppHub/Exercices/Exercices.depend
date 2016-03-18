@@ -263,7 +263,7 @@
 
 1455528239 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Definitions.h
 
-1455528239 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/IO/I_Loadable.h
+1458307204 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/IO/I_Loadable.h
 	"tinyxml2.h"
 
 1455528239 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/IO/I_Saveable.h
@@ -364,7 +364,7 @@
 	<iostream>
 	"Content/DotToDot/DotToDotExercice.h"
 
-1458300666 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/DotToDotExercice.cpp
+1458301029 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/DotToDotExercice.cpp
 	"DotToDotExercice.h"
 
 1458300622 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/DotToDotExercice.h
@@ -372,11 +372,19 @@
 	<vector>
 	"Content/DotToDot/Dot.h"
 
-1458298498 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/Dot.cpp
+1458300892 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/Dot.cpp
 	"Dot.h"
 	<iostream>
 
 1458300908 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/src/Content/DotToDot/Dot.h
 	"IO/I_Loadable.h"
+	<string>
+
+1458310173 source:/home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Exception.cpp
+	"Exception.h"
+
+1458310133 /home/strift/Documents/Xprize/GlobalLearning/AppHub/Exercices/Exception.h
+	<exception>
+	<ostream>
 	<string>
 
