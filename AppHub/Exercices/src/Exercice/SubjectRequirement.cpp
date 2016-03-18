@@ -1,7 +1,7 @@
 #include "SubjectRequirement.h"
 #include "IO/Parser.h"
 
-const std::string SubjectRequirement::XML_ELEMENT = "level";
+const std::string SubjectRequirement::XML_ELEMENT = "subject";
 const std::string SubjectRequirement::XML_TYPE_ATTRIBUTE = "type";
 
 SubjectRequirement::SubjectRequirement(SubjectType category, unsigned int level) : Requirement(level), _type(category)

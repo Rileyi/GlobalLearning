@@ -1,7 +1,7 @@
 #include "SubjectLearning.h"
 #include "IO/Parser.h"
 
-const std::string SubjectLearning::XML_ELEMENT = "level";
+const std::string SubjectLearning::XML_ELEMENT = "subject";
 const std::string SubjectLearning::XML_TYPE_ATTRIBUTE = "type";
 
 SubjectLearning::SubjectLearning(SubjectType category, unsigned int level) : Learning(level), _type(category)

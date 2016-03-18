@@ -56,7 +56,9 @@ bool RequirementList::loadFromXML(const tinyxml2::XMLElement *element)
         else
         {
 			#ifdef DEBUG
-				std::cerr << child->Name() << " is not a valid requirement" << std::endl;
+				std::cerr << child->Name() << " is not a valid requirement lulz" << std::endl;
+				std::cerr << "Valid subject element is: " << SubjectRequirement::XML_ELEMENT << std::endl;
+				std::cerr << "Valid move element is: " << MoveRequirement::XML_ELEMENT << std::endl;
 			#endif // DEBUG
 			success = false;
         }
