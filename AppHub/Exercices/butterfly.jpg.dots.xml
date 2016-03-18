@@ -9,7 +9,6 @@
 		<move type="drag-and-drop" experience="0"/>
 	</learnings>
 	<content>
-		<background filename="butterfly.jpg"/>
 		<dot number="0" x="99" y="97"/>
 		<dot number="1" x="172" y="164"/>
 		<dot number="2" x="221" y="140"/>
