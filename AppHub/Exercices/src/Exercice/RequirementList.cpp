@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "IO/Parser.h"
+#include "Exception.h"
 
 const std::string RequirementList::XML_ELEMENT = "requirements";
 
@@ -38,100 +39,82 @@ RequirementList& RequirementList::operator=(const RequirementList& rhs)
     return *this;
 }
 
-bool RequirementList::loadFromXML(const tinyxml2::XMLElement *element)
+void RequirementList::loadFromXML(const tinyxml2::XMLElement *element)
 {
     if (element == nullptr)
-        return false;
+		throw Exception(Exception::Type::Parser, "RequirementList::loadFromXML: given element is nullptr");
+
     if (element->Name() != XML_ELEMENT)
-        return false;
+		throw Exception(Exception::Type::Parser, "RequirementList::loadFromXML: " + std::string(element->Name()) + " is not a valid element name");
     // Loop over all the children elements
-    bool success;
     for (const tinyxml2::XMLElement* child = element->FirstChildElement(); child != nullptr; child = child->NextSiblingElement())
     {
         // Load requirement
         if (child->Name() == SubjectRequirement::XML_ELEMENT)
-			success = loadLevelRequirementFromXML(child);
+			loadLevelRequirementFromXML(child);
         else if (child->Name() == MoveRequirement::XML_ELEMENT)
-			success = loadMoveRequirementFromXML(child);
+			loadMoveRequirementFromXML(child);
         else
         {
-			#ifdef DEBUG
-				std::cerr << child->Name() << " is not a valid requirement" << std::endl;
-			#endif // DEBUG
-			success = false;
+			throw Exception(Exception::Type::Parser, "RequirementList::loadFromXML: " + std::string(child->Name()) + " is not a valid element name");
         }
-        if (success == false)
-			return false;
     }
-    return true;
 }
 
-bool RequirementList::loadLevelRequirementFromXML(const tinyxml2::XMLElement *child)
+void RequirementList::loadLevelRequirementFromXML(const tinyxml2::XMLElement *child)
 {
 	const tinyxml2::XMLAttribute *classAttribute = child->FindAttribute("class");
 	const tinyxml2::XMLAttribute *valueAttribute = child->FindAttribute("value");
-	if (classAttribute == nullptr or valueAttribute == nullptr)
+	if (classAttribute == nullptr)
 	{
-		#ifdef DEBUG
-			std::cerr << "Unable to find attribute" << std::endl;
-		#endif // DEBUG
-		return false;
+		throw Exception(Exception::Type::Parser, "RequirementList::loadLevelRequirementFromXML: unable to find class attribute");
+	}
+	else if (valueAttribute == nullptr)
+	{
+		throw Exception(Exception::Type::Parser, "RequirementList::loadLevelRequirementFromXML: unable to find value attribute");
 	}
 	else
 	{
 		SubjectType exerciceClass = Parser::subjectType(classAttribute->Value());
 		if (exerciceClass == SubjectType::Undefined)
 		{
-			#ifdef DEBUG
-				std::cerr << "Exercice class requirement undefined" << classAttribute->Value() << std::endl;
-			#endif // DEBUG
-			return false;
+			throw Exception(Exception::Type::Parser, "RequirementList::loadLevelRequirementFromXML: undefined exercice class requirement");
 		}
 		unsigned int value;
 		if (valueAttribute->QueryUnsignedValue(&value) != tinyxml2::XML_NO_ERROR)
 		{
-			#ifdef DEBUG
-				std::cerr << "Exercice level requirement undefined" << classAttribute->Value() << std::endl;
-			#endif // DEBUG
-			return false;
+			throw Exception(Exception::Type::Parser, "RequirementList::loadLevelRequirementFromXML: unable to read value attribute");
 		}
 		_data.push_back(RequirementPtr(new SubjectRequirement(exerciceClass, value)));
 	}
-	return true;
 }
 
-bool RequirementList::loadMoveRequirementFromXML(const tinyxml2::XMLElement *child)
+void RequirementList::loadMoveRequirementFromXML(const tinyxml2::XMLElement *child)
 {
 	const tinyxml2::XMLAttribute *typeAttribute = child->FindAttribute("type");
 	const tinyxml2::XMLAttribute *valueAttribute = child->FindAttribute("value");
-	if (typeAttribute == nullptr or valueAttribute == nullptr)
+	if (typeAttribute == nullptr)
 	{
-		#ifdef DEBUG
-			std::cerr << "Unable to find attribute" << std::endl;
-		#endif // DEBUG
-		return false;
+		throw Exception(Exception::Type::Parser, "RequirementList::loadMoveRequirementFromXML: unable to find type attribute");
+	}
+	else if (valueAttribute == nullptr)
+	{
+		throw Exception(Exception::Type::Parser, "RequirementList::loadMoveRequirementFromXML: unable to find value attribute");
 	}
 	else
 	{
 		MoveType moveType = Parser::moveType(typeAttribute->Value());
 		if (moveType == MoveType::Undefined)
 		{
-			#ifdef DEBUG
-				std::cerr << "Move type requirement undefined" << typeAttribute->Value() << std::endl;
-			#endif // DEBUG
-			return false;
+			throw Exception(Exception::Type::Parser, "RequirementList::loadMoveRequirementFromXML: undefined move type requirement");
 		}
 		unsigned int value;
 		if (valueAttribute->QueryUnsignedValue(&value) != tinyxml2::XML_NO_ERROR)
 		{
-			#ifdef DEBUG
-				std::cerr << "Move level requirement undefined" << typeAttribute->Value() << std::endl;
-			#endif // DEBUG
-			return false;
+			throw Exception(Exception::Type::Parser, "RequirementList::loadMoveRequirementFromXML: unable to read value attribute");
 		}
 		_data.push_back(RequirementPtr(new MoveRequirement(moveType, value)));
 	}
-	return true;
 }
 
 void RequirementList::appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *parent) const

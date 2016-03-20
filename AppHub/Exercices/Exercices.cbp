@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add option="-DDEBUG" />
 					<Add directory="src" />
+					<Add directory="src/Content/DotToDot" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -24,6 +25,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="src/Content/DotToDot" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -34,7 +36,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="src/Content/DotToDot/Dot.cpp" />
+		<Unit filename="src/Content/DotToDot/Dot.h" />
+		<Unit filename="src/Content/DotToDot/DotToDotExercice.cpp" />
+		<Unit filename="src/Content/DotToDot/DotToDotExercice.h" />
 		<Unit filename="src/Definitions.h" />
+		<Unit filename="src/Exception.cpp" />
+		<Unit filename="src/Exception.h" />
 		<Unit filename="src/Exercice/Exercice.cpp" />
 		<Unit filename="src/Exercice/Exercice.h" />
 		<Unit filename="src/Exercice/Learning.cpp" />

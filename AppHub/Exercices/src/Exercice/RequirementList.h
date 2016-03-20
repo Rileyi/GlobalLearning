@@ -28,7 +28,7 @@ class RequirementList : public I_Loadable, public I_Saveable
         RequirementList& operator=(const RequirementList& other);
 
         // I_Loadable implementation
-        bool loadFromXML(const tinyxml2::XMLElement *element);
+        void loadFromXML(const tinyxml2::XMLElement *element);
         // Saveable implementation
         void appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *parent = nullptr) const;
         // Add an exercice class level requirement
@@ -37,8 +37,8 @@ class RequirementList : public I_Loadable, public I_Saveable
         void add(MoveType category, unsigned int level);
 
     protected:
-        bool loadLevelRequirementFromXML(const tinyxml2::XMLElement *element);
-        bool loadMoveRequirementFromXML(const tinyxml2::XMLElement *element);
+        void loadLevelRequirementFromXML(const tinyxml2::XMLElement *element);
+        void loadMoveRequirementFromXML(const tinyxml2::XMLElement *element);
 
     // Attributes
     protected:

@@ -28,7 +28,7 @@ class LearningList : public I_Loadable, public I_Saveable
         LearningList& operator=(const LearningList& other);
 
         // I_Loadable implementation
-        bool loadFromXML(const tinyxml2::XMLElement *element);
+        void loadFromXML(const tinyxml2::XMLElement *element);
         // Saveable implementation
         void appendToXML(tinyxml2::XMLDocument &document, tinyxml2::XMLElement *parent = nullptr) const;
         // Add an exercice class level requirement
@@ -37,8 +37,8 @@ class LearningList : public I_Loadable, public I_Saveable
         void add(MoveType category, unsigned int level);
 
     protected:
-        bool loadLevelLearningFromXML(const tinyxml2::XMLElement *element);
-        bool loadMoveLearningFromXML(const tinyxml2::XMLElement *element);
+        void loadLevelLearningFromXML(const tinyxml2::XMLElement *element);
+        void loadMoveLearningFromXML(const tinyxml2::XMLElement *element);
 
     // Attributes
     protected:
