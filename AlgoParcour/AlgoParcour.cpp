@@ -15,7 +15,13 @@ int main()
     cout << "Quantite ecriture/lecture/mathematiques/eveil: ";
     cin >> readingAim >> writingAim >> mathsAim >> funAim;
 
+    generateGraph(N, 8, readingAim, writingAim, mathsAim, funAim);
 
+    return 0;
+}
+
+PreGraph* generateGraph(int length, int width, int readingAim, int writingAim, int mathsAim, int funAim)
+{
     //Initialisation de l'aleatoire
     srand(static_cast<int>(time(nullptr)));
 
@@ -40,7 +46,7 @@ int main()
         //Generation de la base, liste de modules +/-random ituant un point de depart
         //que l'on va adapter pour devenir un set correspondant au besoins de notre graphe
         //(ratio ecriture/lecture/mathematiques/eveil).
-        map<const Module*, int>* base = new map<const Module*, int>(generateBase(modules, N));
+        map<const Module*, int>* base = new map<const Module*, int>(generateBase(modules, length));
 
         //On va desormais ameillorer cette base par echange successif de modules
         do {}
@@ -74,17 +80,11 @@ int main()
 
         delete base;
 
-
-
-
-
     //condition d'arret
     //TODO peut etre a modifier en fonction du nombre de modules souhaitez du temps deja pris...
-    } while (++i<=9);
+    } while (++i<=width);
 
-
-
-    return 0;
+    return preGraph;
 }
 
 std::map<const Module* const, int> & readCSV(const string& filename)

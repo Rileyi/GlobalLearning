@@ -4,7 +4,7 @@
 #include "Module.h"
 #include "PreGraph.h"
 
-
+PreGraph* generateGraph(int length, int width, int reading, int writing, int maths, int fun);
 
 std::map<const Module* const, int> & readCSV(const std::string& filename);
 
