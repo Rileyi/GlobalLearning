@@ -2,7 +2,7 @@
 #define INTERSECTION_H
 
 #include "GraphElement.h"
-#include "Node.h"
+#include "ModuleGE.h"
 #include "Link.h"
 
 

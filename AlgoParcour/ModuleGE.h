@@ -1,18 +1,18 @@
-#ifndef NODE_H
-#define NODE_H
+#ifndef MODULEGE_H
+#define MODULEGE_H
 
 #include "InGE.h"
 #include "OutGE.h"
 #include "Link.h"
 
-class Node : public InGE, public OutGE
+class ModuleGE : public InGE, public OutGE
 {
     public:
-        Node(const Module*);
-        Node(const Module*, GraphElement* previous, GraphElement* next);
-        Node(const Node& other);
-        ~Node();
-        Node& operator=(const Node& other);
+        ModuleGE(const Module*);
+        ModuleGE(const Module*, GraphElement* previous, GraphElement* next);
+        ModuleGE(const ModuleGE& other);
+        ~ModuleGE();
+        ModuleGE& operator=(const ModuleGE& other);
 
         void moveAfter(Link&);
         void moveBefore(Link&);

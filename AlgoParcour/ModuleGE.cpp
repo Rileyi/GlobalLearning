@@ -1,19 +1,19 @@
-#include "Node.h"
+#include "ModuleGE.h"
 
 using namespace std;
 
-int Node::bestFork(map<const Module*, int>** modules, Link* forkPlace)
+int ModuleGE::bestFork(map<const Module*, int>** modules, Link* forkPlace)
 {
-    cout << "Node[" << m_module << "]->bestfork->start\n";
+    cout << "ModuleGE[" << m_module << "]->bestfork->start\n";
 
     map<const Module*, int>::iterator it = (*modules)->find(m_module);
 
-    cout << "Node[" << m_module << "]->bestfork>after find\n";
+    cout << "ModuleGE[" << m_module << "]->bestfork>after find\n";
 
     //Si le module du noeud est trouve
     if (it != (*modules)->end())
     {
-        cout << "Node[" << m_module << "]->bestfork->match\n";
+        cout << "ModuleGE[" << m_module << "]->bestfork->match\n";
         //On le retire de notre map
         if(it->second > 1)
         {
@@ -58,7 +58,7 @@ int Node::bestFork(map<const Module*, int>** modules, Link* forkPlace)
 }
 
 
-Side Node::bestJunction(map<const Module*, int>** modules, Link* junctionPlace, Side* side,
+Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPlace, Side* side,
                         GraphElement* callingNode, int* distance)
 {
     cout << "Node[" << m_module << "]->bestJunction->start\n";
@@ -182,7 +182,7 @@ Side Node::bestJunction(map<const Module*, int>** modules, Link* junctionPlace, 
     }
 }
 
-bool Node::contains(map<const Module*, int>** modules) const
+bool ModuleGE::contains(map<const Module*, int>** modules) const
 {
     if (m_module != nullptr)
     {
@@ -201,7 +201,7 @@ bool Node::contains(map<const Module*, int>** modules) const
 }
 
 
-void Node::moveAt(const Link& link)
+void ModuleGE::moveAt(const Link& link)
 {
     //On commence par retirer le node de ses deux voisins directs
     if (m_previous != nullptr)
@@ -220,7 +220,7 @@ void Node::moveAt(const Link& link)
     m_next->changePrevious(link.getBefore(), this);
 }
 
-void Node::moveBefore(Link& link)
+void ModuleGE::moveBefore(Link& link)
 {
     if (link.getBefore() != this)
     {
@@ -236,7 +236,7 @@ void Node::moveBefore(Link& link)
     }
 }
 
-void Node::moveAfter(Link& link)
+void ModuleGE::moveAfter(Link& link)
 {
     if (link.getAfter() != this)
     {
@@ -252,7 +252,7 @@ void Node::moveAfter(Link& link)
     }
 }
 
-void Node::display(GraphElement* /*callingGE unused*/, int l)
+void ModuleGE::display(GraphElement* /*callingGE unused*/, int l)
 {
     cout << '-';
     if (m_module == nullptr)
@@ -270,23 +270,23 @@ void Node::display(GraphElement* /*callingGE unused*/, int l)
     }
 }
 
-Node::Node(const Module* module) :
+ModuleGE::ModuleGE(const Module* module) :
     InGE(nullptr), OutGE(nullptr), m_module(module)
 {}
 
 
-Node::Node(const Module* module, GraphElement* previous, GraphElement* next) :
+ModuleGE::ModuleGE(const Module* module, GraphElement* previous, GraphElement* next) :
     InGE(previous), OutGE(next), m_module(module)
 {}
 
-Node::~Node()
+ModuleGE::~ModuleGE()
 {}
 
-Node::Node(const Node& other) :
+ModuleGE::ModuleGE(const ModuleGE& other) :
     InGE(other.m_previous), OutGE(other.m_next), m_module(other.m_module)
 {}
 
-Node& Node::operator=(const Node& rhs)
+ModuleGE& ModuleGE::operator=(const ModuleGE& rhs)
 {
     if (this == &rhs) return *this;
     m_module = rhs.m_module;

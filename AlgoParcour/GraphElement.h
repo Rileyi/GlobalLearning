@@ -5,7 +5,7 @@
 #include "Side.h"
 #include "Link.h"
 
-class Node;
+class ModuleGE;
 class Junction;
 class Fork;
 

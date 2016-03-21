@@ -7,12 +7,12 @@
 	"InGE.h"
 	"Link.h"
 
-1455926416 c:\users\alexandre\documents\github\globallearning\algoparcour\intersection.h
+1458568013 c:\users\alexandre\documents\github\globallearning\algoparcour\intersection.h
 	"GraphElement.h"
-	"Node.h"
+	"ModuleGE.h"
 	"Link.h"
 
-1456502938 c:\users\alexandre\documents\github\globallearning\algoparcour\graphelement.h
+1458568013 c:\users\alexandre\documents\github\globallearning\algoparcour\graphelement.h
 	"Module.h"
 	"Side.h"
 	"Link.h"
@@ -78,9 +78,9 @@
 1456483894 source:c:\users\alexandre\documents\github\globallearning\algoparcour\pregraph.cpp
 	"PreGraph.h"
 
-1458490583 c:\users\alexandre\documents\github\globallearning\algoparcour\pregraph.h
+1458568013 c:\users\alexandre\documents\github\globallearning\algoparcour\pregraph.h
 	<map>
-	"Node.h"
+	"ModuleGE.h"
 	"Fork.h"
 	"Junction.h"
 
@@ -95,4 +95,12 @@
 	"stdafx.h"
 	"Module.h"
 	"PreGraph.h"
+
+1458568013 c:\users\alexandre\documents\github\globallearning\algoparcour\modulege.h
+	"InGE.h"
+	"OutGE.h"
+	"Link.h"
+
+1458568132 source:c:\users\alexandre\documents\github\globallearning\algoparcour\modulege.cpp
+	"ModuleGE.h"
 
