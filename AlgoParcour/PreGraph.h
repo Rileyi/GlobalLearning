@@ -11,7 +11,7 @@ class PreGraph
 {
     public:
         PreGraph(std::map<const Module*, int>& modules);
-        void add(std::map<const Module*, int>*& modules);
+        bool add(std::map<const Module*, int>*& modules);
         ModuleGE* getContenu(){return m_contenu;};
         PreGraph(const PreGraph& other);
         ~PreGraph();

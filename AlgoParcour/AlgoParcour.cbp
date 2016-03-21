@@ -63,8 +63,8 @@
 		<Unit filename="Link.h" />
 		<Unit filename="Module.cpp" />
 		<Unit filename="Module.h" />
-		<Unit filename="Node.cpp" />
-		<Unit filename="Node.h" />
+		<Unit filename="ModuleGE.cpp" />
+		<Unit filename="ModuleGE.h" />
 		<Unit filename="OutGE.cpp" />
 		<Unit filename="OutGE.h" />
 		<Unit filename="PreGraph.cpp" />

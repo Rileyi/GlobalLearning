@@ -9,7 +9,7 @@ class ModuleGE;
 class Junction;
 class Fork;
 
-class GraphElement
+typedef class GraphElement
 {
     public:
         virtual ~GraphElement() {}
@@ -51,6 +51,6 @@ class GraphElement
         virtual bool contains(std::map<const Module*, int>** modules) const =0;
     protected:
     private:
-};
+} GE;
 
 #endif // GRAPHELEMENT_H

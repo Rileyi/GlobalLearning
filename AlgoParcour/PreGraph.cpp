@@ -24,7 +24,7 @@ PreGraph::PreGraph(map<const Module*, int>& modules) :
 }
 
 
-void PreGraph::add(map<const Module*, int>*& modules)
+bool PreGraph::add(map<const Module*, int>*& modules)
 {
     cout <<"add->start\n";
     Link* forkPlace = new Link();
@@ -34,7 +34,7 @@ void PreGraph::add(map<const Module*, int>*& modules)
     {
         cout << it->second << '*' << *(it->first) << '\n';
     }
-    if (forkPlace->isEmpty()) return;
+    if (forkPlace->isEmpty()) return false;
     forkPlace->getAfter()->display();
     cout <<'\n';
     Link* junctionPlace = new Link();
@@ -44,7 +44,7 @@ void PreGraph::add(map<const Module*, int>*& modules)
     Side forkSide = forkPlace->getAfter()->bestJunction(&modules, junctionPlace, &junctionSide,
                                             forkPlace->getBefore(), &distance);
     cout <<"add->afterBestJunction\n";
-    if (junctionPlace->isEmpty()) return;
+    if (junctionPlace->isEmpty()) return false;
 
     junctionPlace->getAfter()->display();
     cout <<'\n';
@@ -129,8 +129,7 @@ void PreGraph::add(map<const Module*, int>*& modules)
     delete forkPlace;
     delete junctionPlace;
 
-    m_contenu->display();
-    cout <<'\n';
+    return true;
 }
 
 PreGraph::~PreGraph()

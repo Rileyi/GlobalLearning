@@ -27,7 +27,7 @@ int ModuleGE::bestFork(map<const Module*, int>** modules, Link* forkPlace)
         cout << "Node[" << m_module << "]->bestfork->module erased\n";
 
         //On sauve this->n_next car il va etre modifie lorsque va deplacer le module
-        GraphElement* next = m_next;
+        GE* next = m_next;
 
         //Si le point de fourche est deja trouve, on replace le module avant le point de fourche:
         if (!forkPlace->isEmpty())
@@ -96,7 +96,7 @@ Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPla
             }
 
             cout << "Node[" << m_module << "]->bestJunction->recursive call\n";
-            GraphElement* previousJunctionGE = junctionPlace->getAfter();
+            GE* previousJunctionGE = junctionPlace->getAfter();
             Side returnSide = m_next == nullptr ? *side
                     : m_next->bestJunction(modules, junctionPlace, side, this, distance);
 
@@ -129,8 +129,8 @@ Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPla
 
             if (!junctionPlace->isEmpty())
             {
-                GraphElement* next = m_next;
-                GraphElement* previous = this;
+                GE* next = m_next;
+                GE* previous = this;
                 previous = m_previous;
                 cout << "Node[" << m_module << "]->bestJunction->moving node\n";
                 moveBefore(*junctionPlace);
@@ -161,8 +161,8 @@ Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPla
                 (*modules)->erase(it);
             }
 
-            GraphElement* previous = m_previous;
-            GraphElement* next = junctionPlace->getBefore() == this  ?  this  :  m_next;
+            GE* previous = m_previous;
+            GE* next = junctionPlace->getBefore() == this  ?  this  :  m_next;
 
             cout << "Node[" << m_module << "]->moving node\n";
             moveAfter(*junctionPlace);
