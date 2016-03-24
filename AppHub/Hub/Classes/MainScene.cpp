@@ -106,6 +106,12 @@ void MainScene::runToolBar(bool b)
 void MainScene::onEnter()
 {
 	Layer::onEnter();
+
+	// on gère la musique
+	//CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("music_background.wav", true);
+	// set the 'background music' volume level (from 0 to 1)
+	//CocosDenshion::SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(0.1);
+
 	buttonAppeared();
 	runToolBar(true);
 	scheduleUpdate();
