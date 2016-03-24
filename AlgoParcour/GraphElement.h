@@ -1,15 +1,23 @@
 #ifndef GRAPHELEMENT_H
 #define GRAPHELEMENT_H
 
+#include <vector>
+
 #include "Module.h"
 #include "Side.h"
 #include "Link.h"
 
-class Node;
+class ModuleGE;
 class Junction;
 class Fork;
 
-class GraphElement
+struct twoInts
+{
+    int fst, snd;
+    twoInts(int a, int b) : fst(a), snd(b) {};
+};
+
+typedef class GraphElement
 {
     public:
         virtual ~GraphElement() {}
@@ -25,6 +33,9 @@ class GraphElement
 
         virtual void display(GraphElement* callingGE, int l) =0;
         void display() {display(nullptr,0);}
+
+        virtual const ModuleGE* getModuleGE() const =0;
+        virtual std::vector<const ModuleGE*>* getNextModuleGEs() const =0;
 
         //Recherche une fourche (ne la cree pas) de facon recursive dans le graphe
         //
@@ -49,8 +60,14 @@ class GraphElement
                 Side* side, GraphElement* callingNode, int* distance) =0;
 
         virtual bool contains(std::map<const Module*, int>** modules) const =0;
+
+        virtual void distanceAndValidity(std::map<const GraphElement*, twoInts*>* distancesMap,
+                const GraphElement* callingGE, int distance, int w,
+                std::string* errors) const =0;
+
+
     protected:
     private:
-};
+} GE;
 
 #endif // GRAPHELEMENT_H

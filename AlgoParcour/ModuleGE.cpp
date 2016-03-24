@@ -1,19 +1,19 @@
-#include "Node.h"
+#include "ModuleGE.h"
 
 using namespace std;
 
-int Node::bestFork(map<const Module*, int>** modules, Link* forkPlace)
+int ModuleGE::bestFork(map<const Module*, int>** modules, Link* forkPlace)
 {
-    cout << "Node[" << m_module << "]->bestfork->start\n";
+    cout << "ModuleGE[" << m_module << "]->bestfork->start\n";
 
     map<const Module*, int>::iterator it = (*modules)->find(m_module);
 
-    cout << "Node[" << m_module << "]->bestfork>after find\n";
+    cout << "ModuleGE[" << m_module << "]->bestfork>after find\n";
 
     //Si le module du noeud est trouve
     if (it != (*modules)->end())
     {
-        cout << "Node[" << m_module << "]->bestfork->match\n";
+        cout << "ModuleGE[" << m_module << "]->bestfork->match\n";
         //On le retire de notre map
         if(it->second > 1)
         {
@@ -27,7 +27,7 @@ int Node::bestFork(map<const Module*, int>** modules, Link* forkPlace)
         cout << "Node[" << m_module << "]->bestfork->module erased\n";
 
         //On sauve this->n_next car il va etre modifie lorsque va deplacer le module
-        GraphElement* next = m_next;
+        GE* next = m_next;
 
         //Si le point de fourche est deja trouve, on replace le module avant le point de fourche:
         if (!forkPlace->isEmpty())
@@ -58,7 +58,7 @@ int Node::bestFork(map<const Module*, int>** modules, Link* forkPlace)
 }
 
 
-Side Node::bestJunction(map<const Module*, int>** modules, Link* junctionPlace, Side* side,
+Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPlace, Side* side,
                         GraphElement* callingNode, int* distance)
 {
     cout << "Node[" << m_module << "]->bestJunction->start\n";
@@ -96,7 +96,7 @@ Side Node::bestJunction(map<const Module*, int>** modules, Link* junctionPlace, 
             }
 
             cout << "Node[" << m_module << "]->bestJunction->recursive call\n";
-            GraphElement* previousJunctionGE = junctionPlace->getAfter();
+            GE* previousJunctionGE = junctionPlace->getAfter();
             Side returnSide = m_next == nullptr ? *side
                     : m_next->bestJunction(modules, junctionPlace, side, this, distance);
 
@@ -129,8 +129,8 @@ Side Node::bestJunction(map<const Module*, int>** modules, Link* junctionPlace, 
 
             if (!junctionPlace->isEmpty())
             {
-                GraphElement* next = m_next;
-                GraphElement* previous = this;
+                GE* next = m_next;
+                GE* previous = this;
                 previous = m_previous;
                 cout << "Node[" << m_module << "]->bestJunction->moving node\n";
                 moveBefore(*junctionPlace);
@@ -161,8 +161,8 @@ Side Node::bestJunction(map<const Module*, int>** modules, Link* junctionPlace, 
                 (*modules)->erase(it);
             }
 
-            GraphElement* previous = m_previous;
-            GraphElement* next = junctionPlace->getBefore() == this  ?  this  :  m_next;
+            GE* previous = m_previous;
+            GE* next = junctionPlace->getBefore() == this  ?  this  :  m_next;
 
             cout << "Node[" << m_module << "]->moving node\n";
             moveAfter(*junctionPlace);
@@ -182,7 +182,7 @@ Side Node::bestJunction(map<const Module*, int>** modules, Link* junctionPlace, 
     }
 }
 
-bool Node::contains(map<const Module*, int>** modules) const
+bool ModuleGE::contains(map<const Module*, int>** modules) const
 {
     if (m_module != nullptr)
     {
@@ -201,7 +201,7 @@ bool Node::contains(map<const Module*, int>** modules) const
 }
 
 
-void Node::moveAt(const Link& link)
+void ModuleGE::moveAt(const Link& link)
 {
     //On commence par retirer le node de ses deux voisins directs
     if (m_previous != nullptr)
@@ -220,7 +220,7 @@ void Node::moveAt(const Link& link)
     m_next->changePrevious(link.getBefore(), this);
 }
 
-void Node::moveBefore(Link& link)
+void ModuleGE::moveBefore(Link& link)
 {
     if (link.getBefore() != this)
     {
@@ -236,7 +236,7 @@ void Node::moveBefore(Link& link)
     }
 }
 
-void Node::moveAfter(Link& link)
+void ModuleGE::moveAfter(Link& link)
 {
     if (link.getAfter() != this)
     {
@@ -252,7 +252,120 @@ void Node::moveAfter(Link& link)
     }
 }
 
-void Node::display(GraphElement* /*callingGE unused*/, int l)
+void ModuleGE::distanceAndValidity(std::map<const GraphElement*, twoInts*>* distancesMap,
+        const GraphElement* callingGE, int distance, int w, std::string* errors) const
+{
+    cout << "Node[" << toString() << "]->distance and validity check\n";
+
+    if (distancesMap->find(this) != distancesMap->end())
+    {
+        *errors += "Same moduleGE (" + toString() + ") reached twice (inner cycle?).\n";
+        cout << "Node[" << toString() << "]->Error: " << *errors;
+        return;
+    }
+
+    ++w;
+
+    if (callingGE == nullptr)
+    {
+
+        (*distancesMap)[this] = new twoInts(distance, w);
+        cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance << ")\n";
+
+
+        if (m_module != nullptr)
+        {
+            *errors += "abnormal starting point (moduleGE[" + m_module->toString() + "]).\n";
+            cout << "Node[" << toString() << "]->Error: " << *errors;
+        }
+        if (m_previous != nullptr)
+        {
+            *errors += "Unexpected GE before starting node.\n";
+            cout << "Node[" << toString() << "]->Error: " << *errors;
+        }
+
+
+
+        if (m_next == nullptr)
+        {
+            *errors += "ModuleGe[" + toString() + "]: no next element.\n";
+            cout << "Node[" << toString() << "]->Error: " << *errors << "\n";
+            return;
+        }
+
+
+        cout << "Node[" << toString() << "]->recursive call on next GE\n";
+        m_next->distanceAndValidity(distancesMap, this, 0, w, errors);
+        cout << "Node[" << toString() << "]->back from recursive call\n";
+
+        return;
+    }
+
+    else if (callingGE == m_next)
+    {
+
+        (*distancesMap)[this] = new twoInts(distance, w);
+        cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance  << ")\n";
+
+        if (m_module == nullptr)
+        {
+            *errors += "Unexpected empty moduleGE.\n";
+            cout << "Node[" << toString() << "]->Error: " << *errors;
+        }
+
+        if (m_previous == nullptr)
+        {
+            *errors += "ModuleGe[" + toString() + "]: no previous element.\n";
+            cout << "Node[" << toString() << "]->Error: " << *errors;
+            return;
+        }
+
+        cout << "Node[" << toString() << "]->recursive call on previous GE\n";
+        m_previous->distanceAndValidity(distancesMap, this, distance-1, w, errors);
+        cout << "Node[" << toString() << "]->back from recursive call\n";
+
+        return;
+    }
+
+    else if (callingGE == m_previous)
+    {
+        (*distancesMap)[this] = new twoInts(distance+1, w);
+        cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance+1 << ")\n";
+
+        if (m_module == nullptr)
+        {
+            if (m_next == nullptr) return;
+
+            *errors += "Unexpected empty moduleGE.\n";
+            cout << "Node[" << toString() << "]->Error: " << *errors;
+        }
+    }
+
+    else
+    {
+        (*distancesMap)[this] = new twoInts(distance+1, w);
+        cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance+1 << ")\n";
+
+        *errors += "ModuleGe[" + toString() + "]: broken link.\n";
+        cout << "Node[" << toString() << "]->Error: " << *errors;
+        return;
+    }
+
+    if (m_next == nullptr)
+    {
+        *errors += "ModuleGe[" + toString() + "]: no next element.\n";
+        cout << "Node[" << toString() << "]->Error: " << *errors << "\n";
+        return;
+    }
+
+
+    cout << "Node[" << toString() << "]->recursive call on next GE\n";
+    m_next->distanceAndValidity(distancesMap, this, distance+1, w, errors);
+    cout << "Node[" << toString() << "]->back from recursive call\n";
+}
+
+
+void ModuleGE::display(GraphElement* /*callingGE unused*/, int l)
 {
     cout << '-';
     if (m_module == nullptr)
@@ -270,23 +383,37 @@ void Node::display(GraphElement* /*callingGE unused*/, int l)
     }
 }
 
-Node::Node(const Module* module) :
+std::string ModuleGE::toString() const
+{
+    if (m_module == nullptr)
+    {
+        return "####";
+    }
+    else
+    {
+        stringstream os;
+        os << *m_module;
+        return os.str();
+    }
+}
+
+ModuleGE::ModuleGE(const Module* module) :
     InGE(nullptr), OutGE(nullptr), m_module(module)
 {}
 
 
-Node::Node(const Module* module, GraphElement* previous, GraphElement* next) :
+ModuleGE::ModuleGE(const Module* module, GraphElement* previous, GraphElement* next) :
     InGE(previous), OutGE(next), m_module(module)
 {}
 
-Node::~Node()
+ModuleGE::~ModuleGE()
 {}
 
-Node::Node(const Node& other) :
+ModuleGE::ModuleGE(const ModuleGE& other) :
     InGE(other.m_previous), OutGE(other.m_next), m_module(other.m_module)
 {}
 
-Node& Node::operator=(const Node& rhs)
+ModuleGE& ModuleGE::operator=(const ModuleGE& rhs)
 {
     if (this == &rhs) return *this;
     m_module = rhs.m_module;

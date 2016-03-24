@@ -237,6 +237,160 @@ void Fork::display(GraphElement* /*callingGE unused*/, int l)
     m_right->display(this, l+1);
 }
 
+vector<const ModuleGE*>* Fork::getNextModuleGEs() const
+{
+    vector<const ModuleGE*>* l = new vector<const ModuleGE*>();
+
+    if (m_left != nullptr)
+    {
+        const ModuleGE* mge = m_left->getModuleGE();
+        if (nullptr != mge) l->push_back(mge);
+        else
+        {
+            cout << " FLREC";
+            vector<const ModuleGE*>* ll = m_left->getNextModuleGEs();
+            l->insert(l->end(), ll->begin(), ll->end());
+            delete ll;
+        }
+    }
+
+    if (m_right != nullptr)
+    {
+        const ModuleGE* mge = m_right->getModuleGE();
+        if (nullptr != mge) l->push_back(mge);
+        else
+        {
+            cout << " FRREC";
+            vector<const ModuleGE*>* lr = m_right->getNextModuleGEs();
+            l->insert(l->end(), lr->begin(), lr->end());
+            delete lr;
+        }
+    }
+
+    cout << " FRET";
+    return l;
+}
+
+void Fork::distanceAndValidity(std::map<const GraphElement*, twoInts*>* distancesMap,
+        const GraphElement* callingGE, int distance, int w,
+        std::string* errors) const
+{
+    cout << "Fork->distance and validity check\n";
+
+    if (m_previous == nullptr)
+    {
+        *errors += "No previous GE at a fork.\n";
+        cout << "Fork->Error: " << *errors;
+    }
+    if (m_right == nullptr)
+    {
+        *errors += "No right GE at a fork.\n";
+        cout << "Fork->Error: " << *errors;
+    }
+    if (m_left == nullptr)
+    {
+        *errors += "No left GE at a fork.\n";
+        cout << "Fork->Error: " << *errors;
+    }
+
+    if (distancesMap->find(this) == distancesMap->end())
+    {
+        cout << "Fork->fork not found in the map\n";
+
+        (*distancesMap)[this] = new twoInts(distance, w);
+        cout << "Fork->fork added to the map\n";
+
+        if (callingGE == m_previous)
+        {
+            (*distancesMap)[this] = new twoInts(distance, w);
+            cout << "Fork->fork added to the map (d=" << distance  << ")\n";
+
+            if (m_left != nullptr)
+            {
+                cout << "Fork->recursive call on left GE\n";
+                m_left->distanceAndValidity(distancesMap, this, distance, w, errors);
+                cout << "Fork->back from recursive call\n";
+                ++w;
+            }
+
+            return;
+        }
+
+        else if (callingGE == m_right)
+        {
+            *errors += "Unexpected new left fork while moving backward (crossing?).\n";
+            cout << "Fork->Error: " << *errors;
+        }
+
+        else if (callingGE != m_left)
+        {
+            *errors += "Broken link at a fork.\n";
+            cout << "Fork->Error: " << *errors;
+        }
+
+        if (m_previous != nullptr)
+        {
+            cout << "Fork->recursive call on previous GE\n";
+            m_previous->distanceAndValidity(distancesMap, this, distance, w, errors);
+            cout << "Fork->back from recursive call\n";
+        }
+
+        /*if (m_left != callingGE  &&  m_left != nullptr)
+        {
+            cout << "Fork->recursive call on left GE\n";
+            m_left->distanceAndValidity(distancesMap, this, distance, w, errors);
+            cout << "Fork->back from recursive call\n";
+        }
+
+        if (m_right != callingGE  &&  m_right != nullptr)
+        {
+            cout << "Fork->recursive call on right GE\n";
+            m_right->distanceAndValidity(distancesMap, this, distance, w, errors);
+            cout << "Fork->back from recursive call\n";
+        }*/
+    }
+
+    else
+    {
+        if ((*distancesMap)[this]->fst != distance)
+        {
+            *errors += "Unequal distances between paths.\n";
+            cout << "Fork->Error: " << *errors;
+            cout << "(" << distance  << "/" << (*distancesMap)[this]->fst << ")\n";
+        }
+
+        if (callingGE == m_previous)
+        {
+            *errors += "Already encountered fork while moving forward (cycle?).\n";
+            cout << "Fork->Error: " << *errors;
+        }
+
+        else if (callingGE == m_left)
+        {
+            *errors += "Already encountered right fork while moving backward (WTF?).\n";
+            cout << "Fork->Error: " << *errors;
+        }
+
+        else if (callingGE != m_right)
+        {
+            *errors += "Broken link at a fork.\n";
+            cout << "Fork->Error: " << *errors;
+        }
+
+        else if ((*distancesMap)[this]->fst < 0)
+        {
+            *errors += "Fork encountered 3 times (cycle?).\n";
+            cout << "Fork->Error: " << *errors;
+        }
+
+        else
+        {
+            (*distancesMap)[this]->fst *= -1;
+            cout << "Fork->fork already encountered once\n";
+        }
+    }
+}
+
 Fork::Fork() : Intersection(), InGE(nullptr) {}
 
 Fork::Fork(GraphElement* left, GraphElement* right, GraphElement* previous) :

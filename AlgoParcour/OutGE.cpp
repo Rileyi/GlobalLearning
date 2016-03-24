@@ -22,6 +22,16 @@ void OutGE::changeNext(GraphElement* oldGE, GraphElement* newGE)
     }
 }
 
+std::vector<const ModuleGE*>* OutGE::getNextModuleGEs() const
+{
+    if (m_next == nullptr) return new std::vector<const ModuleGE*>();
+    const ModuleGE* mge = m_next->getModuleGE();
+    if (mge != nullptr)
+    {
+        return new std::vector<const ModuleGE*>(1, mge);
+    }
+    return m_next->getNextModuleGEs();
+}
 
 void OutGE::recursiveDelete()
 {

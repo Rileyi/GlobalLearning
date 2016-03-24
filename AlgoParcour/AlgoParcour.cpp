@@ -8,14 +8,22 @@ int main()
     cout << "Algorithm de creation des parcours journaliers de modules.\n";
 
 
-    int N;
-    cout << "Nombre de module par set: ";
+    int N,L;
+    cout << "Longueur (nombre de modules par set): ";
     cin >> N;
+    cout << "Largeur: ";
+    cin >> L;
     int readingAim, writingAim, mathsAim, funAim;
     cout << "Quantite ecriture/lecture/mathematiques/eveil: ";
     cin >> readingAim >> writingAim >> mathsAim >> funAim;
 
+    generateGraph(N, L, readingAim, writingAim, mathsAim, funAim);
 
+    return 0;
+}
+
+UsableGraph* generateGraph(int length, int width, int readingAim, int writingAim, int mathsAim, int funAim)
+{
     //Initialisation de l'aleatoire
     srand(static_cast<int>(time(nullptr)));
 
@@ -30,7 +38,8 @@ int main()
 
     PreGraph* preGraph = nullptr;
 
-    int i=0;
+    int success=0;
+    int fails=0;
     do
     {
         //Etape II:
@@ -40,7 +49,7 @@ int main()
         //Generation de la base, liste de modules +/-random ituant un point de depart
         //que l'on va adapter pour devenir un set correspondant au besoins de notre graphe
         //(ratio ecriture/lecture/mathematiques/eveil).
-        map<const Module*, int>* base = new map<const Module*, int>(generateBase(modules, N));
+        map<const Module*, int>* base = new map<const Module*, int>(generateBase(modules, length));
 
         //On va desormais ameillorer cette base par echange successif de modules
         do {}
@@ -60,31 +69,37 @@ int main()
         //representation plus classique de graphe (matrice d'adjacence par exemple)
 
         //On innitialise le graphe en creant le premier chemin
-        if (i==0)
+        if (success==0)
         {
             preGraph = new PreGraph(*base);
+            ++success;
         }
         else
         {
             //Puis on ajoute un par un les autres sets
             //L'algo derriere la methode ajouter permet de reperer le redondances
             //et donc de generer le squelette du graphe final
-            preGraph->add(base);
+            ++ (preGraph->add(base) ? success : fails);
         }
+
+        preGraph->getContenu()->display();
+        cout <<'\n';
 
         delete base;
 
+    } while (success < width  &&  fails < width);
 
+    UsableGraph* graph =
+        new UsableGraph(preGraph, length+2, width, readingAim, writingAim, mathsAim, funAim);
+    delete preGraph;
 
+    if (graph->isValid())
+    {
+        cout << "\nGraph of dimensions (" << graph->getLength() << "," << graph->getWidth() << "):\n";
+        graph->display();
+    }
 
-
-    //condition d'arret
-    //TODO peut etre a modifier en fonction du nombre de modules souhaitez du temps deja pris...
-    } while (++i<=9);
-
-
-
-    return 0;
+    return graph;
 }
 
 std::map<const Module* const, int> & readCSV(const string& filename)
@@ -244,7 +259,7 @@ bool exchange(std::map<const Module*, int> & base,
 
     //Idem pour les modules candidats
     //On enleve juste la redondance qui ne donnerais que des scores negatifs
-    set<const ModuleScoreStruct*, ModuleScoreStruct> scoreCandidats;
+    /*set<const ModuleScoreStruct*, ModuleScoreStruct> scoreCandidats;
     for (map<const Module* const, int>::const_iterator it = candidats.begin();
                                            it != candidats.end(); ++it)
     {
@@ -254,76 +269,76 @@ bool exchange(std::map<const Module*, int> & base,
                               + min(it->first->getMaths()  , max(-mathsDiff  , 0))   //
                               + min(it->first->getFun()    , max(-funDiff    , 0))   //
                               - (base.find(it->first) != base.end()  ?  base[it->first] * 10  :  0)));//frequence
-    }
+    }*/ //peu performant pour effectuer des bon choix, n'allege presque jamais la complexite
+
 
     for (const ModuleScoreStruct* moduleBase : scoreBase)
     {
-        for (set<const ModuleScoreStruct*, ModuleScoreStruct>::const_reverse_iterator rit = scoreCandidats.rbegin();
-                rit != scoreCandidats.rend(); ++rit)
+        int meilleurScore = 0;
+        const Module* meilleurCandidat = nullptr;
+        for (map<const Module* const, int>::const_reverse_iterator
+             rit = candidats.rbegin(); rit != candidats.rend(); ++rit)
         {
 
             //sinon on calcul l'apport reel optenu en cas d'echange
-            int ra = (*rit)->module->getReading() - moduleBase->module->getReading();
+            int ra = rit->first->getReading() - moduleBase->module->getReading();
             ra = (readingDiff>0
                   ? (ra >= 0 ||  readingDiff >= -ra  ?  -ra  :   ra+2*readingDiff)
                   : (ra <= 0 || -readingDiff >=  ra  ?   ra  :  -ra-2*readingDiff));
-            int wa = (*rit)->module->getWriting() - moduleBase->module->getWriting();
+            int wa = rit->first->getWriting() - moduleBase->module->getWriting();
             wa = (writingDiff>0
                   ? (wa >= 0 ||  writingDiff >= -wa  ?  -wa  :   wa+2*writingDiff)
                   : (wa <= 0 || -writingDiff >=  wa  ?   wa  :  -wa-2*writingDiff));
-            int ma = (*rit)->module->getMaths() - moduleBase->module->getMaths();
+            int ma = rit->first->getMaths() - moduleBase->module->getMaths();
             ma = (mathsDiff>0
                   ? (ma >= 0 ||  mathsDiff >= -ma  ?  -ma  :   ma+2*mathsDiff)
                   : (ma <= 0 || -mathsDiff >=  ma  ?   ma  :  -ma-2*mathsDiff));
-            int fa = (*rit)->module->getFun() - moduleBase->module->getFun();
+            int fa = rit->first->getFun() - moduleBase->module->getFun();
             fa = (funDiff>0
                   ? (fa >= 0 ||  funDiff >= -fa ? -fa :  fa+2*funDiff)
                   : (fa <= 0 || -funDiff >=  fa ?  fa : -fa-2*funDiff));
             int r = (base[moduleBase->module]-1) *10;
-            r -= (base.find((*rit)->module) == base.end()  ?  0  :  base[(*rit)->module] * 10);
+            r -= (base.find(rit->first) == base.end()  ?  0  :  base[rit->first] * 10);
 
-
-            if (wa + ra + ma + fa + r >0)
+            //On choisi le meilleur candidat (celui avec le meilleur score) au fil des iteration
+            int score = wa + ra + ma + fa + r;
+            if (score > meilleurScore)
             {
-
-
-                //Si cet apport est positif, on effectue l'echange :
-                //On ajoute le nouveau module a la base (ou augmente sa frequence si il y est deja)
-                if (base.find((*rit)->module) == base.end())
-                {
-                    base[(*rit)->module] = 1;
-                }
-                else
-                {
-                    ++(base[(*rit)->module]);
-                }
-
-                //Et on retire le precedent module (ou diminue sa frequence le cas echeant)
-                if (--base[moduleBase->module] == 0)
-                {
-                    base.erase(moduleBase->module);
-                }
-
-                //travail termine
-                for (const ModuleScoreStruct* moduleScore : scoreBase)
-                {
-                    delete moduleScore;
-                }
-                for (const ModuleScoreStruct* moduleScore : scoreCandidats)
-                {
-                    delete moduleScore;
-                }
-                return true;
+                meilleurCandidat = rit->first;
+                meilleurScore = score;
             }
-            //Sinon, on continue
         }
+
+        if (meilleurScore >0)
+        {
+            //Si le meilleur candidat donne un apport positif, on effectue l'echange :
+            //On ajoute le nouveau module a la base (ou augmente sa frequence si il y est deja)
+            if (base.find(meilleurCandidat) == base.end())
+            {
+                base[meilleurCandidat] = 1;
+            }
+            else
+            {
+                ++(base[meilleurCandidat]);
+            }
+
+            //Et on retire le precedent module (ou diminue sa frequence le cas echeant)
+            if (--base[moduleBase->module] == 0)
+            {
+                base.erase(moduleBase->module);
+            }
+
+            //travail termine
+            for (const ModuleScoreStruct* moduleScore : scoreBase)
+            {
+                delete moduleScore;
+            }
+            return true;
+        }
+        //Sinon, on essaye d'echanger un autre module
     }
 
     for (const ModuleScoreStruct* moduleScore : scoreBase)
-    {
-        delete moduleScore;
-    }
-    for (const ModuleScoreStruct* moduleScore : scoreCandidats)
     {
         delete moduleScore;
     }

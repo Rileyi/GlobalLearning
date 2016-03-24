@@ -2,7 +2,7 @@
 #define INTERSECTION_H
 
 #include "GraphElement.h"
-#include "Node.h"
+#include "ModuleGE.h"
 #include "Link.h"
 
 
@@ -20,6 +20,8 @@ class Intersection : public virtual GraphElement
         void setLeft(GraphElement* val) { m_left = val; }
         GraphElement* getRight() const { return m_right; }
         void setRight(GraphElement* val) { m_right = val; }
+
+        const ModuleGE* getModuleGE() const override {return nullptr;}
 
     protected:
         GraphElement* m_left;

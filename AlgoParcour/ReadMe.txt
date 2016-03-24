@@ -2,29 +2,13 @@
     APPLICATION CONSOLE : Vue d'ensemble du projet AlgoParcour
 ========================================================================
 
-AppWizard a créé cette application AlgoParcour pour vous.
+PreGraph* generateGraph(int length, int width, int reading, int writing, int maths, int fun) genere le graphe.
 
-Ce fichier contient un résumé du contenu de chacun des fichiers qui constituent votre application AlgoParcour.
+Le pregraph contient (pour l'instant) juste un pointer sur le premier noeud.
 
+Chaque element du graphe est un GraphElement (ou GE) (classe virtuelle).
+Cette classe se decline en:
+-Node (element qui contienne un "module", ainsi qu'un GE suivant et un GE precedent),
+-Fork (contient un GE precedant, un GE suivant droit, et un GE suivant gauche),
+-Junction (contient un GE suivant, un GE precedant droit, et un GE precedant gauche)
 
-AlgoParcour.vcxproj
-    Il s'agit du fichier projet principal pour les projets VC++ générés à l'aide d'un Assistant Application. Il contient des informations sur la version de Visual C++ utilisée pour générer le fichier ainsi que des informations relatives aux plateformes, configurations et fonctionnalités du projet que vous avez sélectionnées dans l'Assistant Application.
-
-AlgoParcour.vcxproj.filters
-    Il s'agit du fichier de filtres pour les projets VC++ générés à l'aide d'un Assistant Application. Il contient des informations sur l'association entre les fichiers de votre projet et les filtres. Cette association est utilisée dans l'IDE pour afficher le regroupement des fichiers qui ont des extensions similaires sous un nœud spécifique (par exemple, les fichiers ".cpp" sont associés au filtre "Fichiers sources").
-
-AlgoParcour.cpp
-    Il s'agit du fichier source principal de l'application.
-
-/////////////////////////////////////////////////////////////////////////////
-Autres fichiers standard :
-
-StdAfx.h, StdAfx.cpp
-    Ces fichiers sont utilisés pour générer un fichier d'en-tête précompilé (PCH) AlgoParcour.pch et un fichier de type précompilé nommé StdAfx.obj.
-
-/////////////////////////////////////////////////////////////////////////////
-Autres remarques :
-
-AppWizard utilise des commentaires "TODO:" pour indiquer les parties du code source où vous devrez ajouter ou modifier du code.
-
-/////////////////////////////////////////////////////////////////////////////

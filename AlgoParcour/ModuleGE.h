@@ -1,24 +1,26 @@
-#ifndef NODE_H
-#define NODE_H
+#ifndef MODULEGE_H
+#define MODULEGE_H
 
 #include "InGE.h"
 #include "OutGE.h"
 #include "Link.h"
 
-class Node : public InGE, public OutGE
+class ModuleGE : public InGE, public OutGE
 {
     public:
-        Node(const Module*);
-        Node(const Module*, GraphElement* previous, GraphElement* next);
-        Node(const Node& other);
-        ~Node();
-        Node& operator=(const Node& other);
+        ModuleGE(const Module*);
+        ModuleGE(const Module*, GraphElement* previous, GraphElement* next);
+        ModuleGE(const ModuleGE& other);
+        ~ModuleGE();
+        ModuleGE& operator=(const ModuleGE& other);
 
         void moveAfter(Link&);
         void moveBefore(Link&);
 
         using GraphElement::display;
         void display(GraphElement* callingGE, int l) override;
+
+        const ModuleGE* getModuleGE() const override {return this;}
 
         const Module* getModule() const { return m_module; }
         void setModule(const Module* m) { m_module = m; }
@@ -29,6 +31,12 @@ class Node : public InGE, public OutGE
                 Side* side, GraphElement* callingNode, int* distance) override;
 
         bool contains(std::map<const Module*, int>** modules) const override;
+
+        void distanceAndValidity(std::map<const GraphElement*, twoInts*>* distancesMap,
+                const GraphElement* callingGE, int distance, int w,
+                std::string* errors) const override;
+
+        std::string toString() const;
 
     protected:
     private:

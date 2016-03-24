@@ -3,28 +3,27 @@
 using namespace std;
 
 PreGraph::PreGraph(map<const Module*, int>& modules) :
-    m_contenu(new Node(nullptr))
+    m_contenu(new ModuleGE(nullptr))
 {
-    Node* currentNode = m_contenu;
+    ModuleGE* currentNode = m_contenu;
     for(map<const Module*, int>::iterator it = modules.begin();
         it != modules.end(); ++it)
     {
         while(--(it->second) >= 0)
         {
-            Node* newNode = new Node(it->first, currentNode, nullptr);
+            ModuleGE* newNode = new ModuleGE(it->first, currentNode, nullptr);
             currentNode->setNext(newNode);
             currentNode = newNode;
         }
     }
 
-    currentNode->setNext(new Node(nullptr, currentNode, nullptr));
+    currentNode->setNext(new ModuleGE(nullptr, currentNode, nullptr));
 
-    m_contenu->display();
     cout <<'\n';
 }
 
 
-void PreGraph::add(map<const Module*, int>*& modules)
+bool PreGraph::add(map<const Module*, int>*& modules)
 {
     cout <<"add->start\n";
     Link* forkPlace = new Link();
@@ -34,7 +33,7 @@ void PreGraph::add(map<const Module*, int>*& modules)
     {
         cout << it->second << '*' << *(it->first) << '\n';
     }
-    if (forkPlace->isEmpty()) return;
+    if (forkPlace->isEmpty()) return false;
     forkPlace->getAfter()->display();
     cout <<'\n';
     Link* junctionPlace = new Link();
@@ -44,7 +43,7 @@ void PreGraph::add(map<const Module*, int>*& modules)
     Side forkSide = forkPlace->getAfter()->bestJunction(&modules, junctionPlace, &junctionSide,
                                             forkPlace->getBefore(), &distance);
     cout <<"add->afterBestJunction\n";
-    if (junctionPlace->isEmpty()) return;
+    if (junctionPlace->isEmpty()) return false;
 
     junctionPlace->getAfter()->display();
     cout <<'\n';
@@ -84,7 +83,7 @@ void PreGraph::add(map<const Module*, int>*& modules)
             cout << it->second << '*' << *(it->first) << '\n';
         }
         map<const Module*, int>::iterator it = modules->begin();
-        Node* firstNode = new Node(it->first, fork, nullptr);
+        ModuleGE* firstNode = new ModuleGE(it->first, fork, nullptr);
 
         if (forkSide == Side::left)
         {
@@ -97,13 +96,13 @@ void PreGraph::add(map<const Module*, int>*& modules)
             fork->setRight(firstNode);
         }
         cout <<"add->forked first Node: " << *(it->first) << '\n';
-        Node* lastNode = firstNode;
+        ModuleGE* lastNode = firstNode;
         for(--(it->second) ; it != modules->end(); ++it)
         {
             while(--(it->second) >= 0)
             {
                 cout <<"add->node " << *(it->first) << '\n';
-                Node* newNode = new Node(it->first, lastNode, nullptr);
+                ModuleGE* newNode = new ModuleGE(it->first, lastNode, nullptr);
                 lastNode->setNext(newNode);
                 lastNode = newNode;
             }
@@ -129,8 +128,7 @@ void PreGraph::add(map<const Module*, int>*& modules)
     delete forkPlace;
     delete junctionPlace;
 
-    m_contenu->display();
-    cout <<'\n';
+    return true;
 }
 
 PreGraph::~PreGraph()

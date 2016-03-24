@@ -29,6 +29,10 @@ class Junction : public Intersection, public OutGE
 
         bool contains(std::map<const Module*, int>** modules) const override;
 
+        void distanceAndValidity(std::map<const GraphElement*, twoInts*>* distancesMap,
+                const GraphElement* callingGE, int distance, int w,
+                std::string* errors) const override;
+
     protected:
     private:
 };

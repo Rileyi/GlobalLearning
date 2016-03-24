@@ -3,7 +3,7 @@
 
 #include <map>
 
-#include "Node.h"
+#include "ModuleGE.h"
 #include "Fork.h"
 #include "Junction.h"
 
@@ -11,13 +11,14 @@ class PreGraph
 {
     public:
         PreGraph(std::map<const Module*, int>& modules);
-        void add(std::map<const Module*, int>*& modules);
+        bool add(std::map<const Module*, int>*& modules);
+        ModuleGE* getContenu(){return m_contenu;};
         PreGraph(const PreGraph& other);
         ~PreGraph();
         PreGraph& operator=(const PreGraph& other);
     protected:
     private:
-        Node* m_contenu;
+        ModuleGE* m_contenu;
 };
 
 #endif // PREGRAPH_H
