@@ -98,7 +98,7 @@ Side Junction::bestJunction(map<const Module*, int>** modules, Link* junctionPla
                 else
                 {
                     cout <<"Junction->bestJunction->new junction chosen\n";
-                    delete modules;
+                    delete *modules;
                     *modules = *modules2;
                     *junctionPlace = *junctionPlace2;
                     *side = *side2;
