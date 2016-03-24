@@ -252,6 +252,119 @@ void ModuleGE::moveAfter(Link& link)
     }
 }
 
+void ModuleGE::distanceAndValidity(std::map<const GraphElement*, twoInts*>* distancesMap,
+        const GraphElement* callingGE, int distance, int w, std::string* errors) const
+{
+    cout << "Node[" << toString() << "]->distance and validity check\n";
+
+    if (distancesMap->find(this) != distancesMap->end())
+    {
+        *errors += "Same moduleGE (" + toString() + ") reached twice (inner cycle?).\n";
+        cout << "Node[" << toString() << "]->Error: " << *errors;
+        return;
+    }
+
+    ++w;
+
+    if (callingGE == nullptr)
+    {
+
+        (*distancesMap)[this] = new twoInts(distance, w);
+        cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance << ")\n";
+
+
+        if (m_module != nullptr)
+        {
+            *errors += "abnormal starting point (moduleGE[" + m_module->toString() + "]).\n";
+            cout << "Node[" << toString() << "]->Error: " << *errors;
+        }
+        if (m_previous != nullptr)
+        {
+            *errors += "Unexpected GE before starting node.\n";
+            cout << "Node[" << toString() << "]->Error: " << *errors;
+        }
+
+
+
+        if (m_next == nullptr)
+        {
+            *errors += "ModuleGe[" + toString() + "]: no next element.\n";
+            cout << "Node[" << toString() << "]->Error: " << *errors << "\n";
+            return;
+        }
+
+
+        cout << "Node[" << toString() << "]->recursive call on next GE\n";
+        m_next->distanceAndValidity(distancesMap, this, 0, w, errors);
+        cout << "Node[" << toString() << "]->back from recursive call\n";
+
+        return;
+    }
+
+    else if (callingGE == m_next)
+    {
+
+        (*distancesMap)[this] = new twoInts(distance, w);
+        cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance  << ")\n";
+
+        if (m_module == nullptr)
+        {
+            *errors += "Unexpected empty moduleGE.\n";
+            cout << "Node[" << toString() << "]->Error: " << *errors;
+        }
+
+        if (m_previous == nullptr)
+        {
+            *errors += "ModuleGe[" + toString() + "]: no previous element.\n";
+            cout << "Node[" << toString() << "]->Error: " << *errors;
+            return;
+        }
+
+        cout << "Node[" << toString() << "]->recursive call on previous GE\n";
+        m_previous->distanceAndValidity(distancesMap, this, distance-1, w, errors);
+        cout << "Node[" << toString() << "]->back from recursive call\n";
+
+        return;
+    }
+
+    else if (callingGE == m_previous)
+    {
+        (*distancesMap)[this] = new twoInts(distance+1, w);
+        cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance+1 << ")\n";
+
+        if (m_module == nullptr)
+        {
+            if (m_next == nullptr) return;
+
+            *errors += "Unexpected empty moduleGE.\n";
+            cout << "Node[" << toString() << "]->Error: " << *errors;
+        }
+    }
+
+    else
+    {
+        (*distancesMap)[this] = new twoInts(distance+1, w);
+        cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance+1 << ")\n";
+
+        *errors += "ModuleGe[" + toString() + "]: broken link.\n";
+        cout << "Node[" << toString() << "]->Error: " << *errors;
+        return;
+    }
+
+    if (m_next == nullptr)
+    {
+        *errors += "ModuleGe[" + toString() + "]: no next element.\n";
+        cout << "Node[" << toString() << "]->Error: " << *errors << "\n";
+        return;
+    }
+
+
+    cout << "Node[" << toString() << "]->recursive call on next GE\n";
+    m_next->distanceAndValidity(distancesMap, this, distance+1, w, errors);
+    cout << "Node[" << toString() << "]->back from recursive call\n";
+}
+
+
 void ModuleGE::display(GraphElement* /*callingGE unused*/, int l)
 {
     cout << '-';
@@ -267,6 +380,20 @@ void ModuleGE::display(GraphElement* /*callingGE unused*/, int l)
     if (m_next != nullptr)
     {
         m_next->display(this, l+6);
+    }
+}
+
+std::string ModuleGE::toString() const
+{
+    if (m_module == nullptr)
+    {
+        return "####";
+    }
+    else
+    {
+        stringstream os;
+        os << *m_module;
+        return os.str();
     }
 }
 

@@ -22,7 +22,7 @@ int main()
     return 0;
 }
 
-PreGraph* generateGraph(int length, int width, int readingAim, int writingAim, int mathsAim, int funAim)
+UsableGraph* generateGraph(int length, int width, int readingAim, int writingAim, int mathsAim, int funAim)
 {
     //Initialisation de l'aleatoire
     srand(static_cast<int>(time(nullptr)));
@@ -89,7 +89,17 @@ PreGraph* generateGraph(int length, int width, int readingAim, int writingAim, i
 
     } while (success < width  &&  fails < width);
 
-    return preGraph;
+    UsableGraph* graph =
+        new UsableGraph(preGraph, length+2, width, readingAim, writingAim, mathsAim, funAim);
+    delete preGraph;
+
+    if (graph->isValid())
+    {
+        cout << "\nGraph of dimensions (" << graph->getLength() << "," << graph->getWidth() << "):\n";
+        graph->display();
+    }
+
+    return graph;
 }
 
 std::map<const Module* const, int> & readCSV(const string& filename)

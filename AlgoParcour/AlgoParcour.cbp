@@ -65,11 +65,15 @@
 		<Unit filename="Module.h" />
 		<Unit filename="ModuleGE.cpp" />
 		<Unit filename="ModuleGE.h" />
+		<Unit filename="ModuleNode.cpp" />
+		<Unit filename="ModuleNode.h" />
 		<Unit filename="OutGE.cpp" />
 		<Unit filename="OutGE.h" />
 		<Unit filename="PreGraph.cpp" />
 		<Unit filename="PreGraph.h" />
 		<Unit filename="Side.h" />
+		<Unit filename="UsableGraph.cpp" />
+		<Unit filename="UsableGraph.h" />
 		<Unit filename="stdafx.cpp" />
 		<Unit filename="stdafx.h" />
 		<Extensions>

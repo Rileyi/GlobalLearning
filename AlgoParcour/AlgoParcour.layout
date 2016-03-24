@@ -2,69 +2,129 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug Win32" />
-	<File name="PreGraph.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GraphElement.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3976" topLine="21" />
+			<Cursor1 position="996" topLine="22" />
 		</Cursor>
 	</File>
-	<File name="Junction.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Junction.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="904" topLine="6" />
+			<Cursor1 position="543" topLine="3" />
 		</Cursor>
 	</File>
-	<File name="Intersection.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="UsableGraph.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="95" topLine="0" />
+			<Cursor1 position="2161" topLine="72" />
 		</Cursor>
 	</File>
-	<File name="Fork.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Junction.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="865" topLine="6" />
+			<Cursor1 position="6242" topLine="166" />
 		</Cursor>
 	</File>
-	<File name="GraphElement.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ModuleGE.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2397" topLine="35" />
+			<Cursor1 position="7837" topLine="200" />
 		</Cursor>
 	</File>
-	<File name="AlgoParcour.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="AlgoParcour.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="10678" topLine="258" />
+			<Cursor1 position="823" topLine="13" />
 		</Cursor>
 	</File>
-	<File name="AlgoParcour.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Fork.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="83" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="PreGraph.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="229" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="Fork.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6601" topLine="155" />
-		</Cursor>
-	</File>
-	<File name="Junction.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5314" topLine="105" />
-		</Cursor>
-	</File>
-	<File name="InGE.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="296" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="OutGE.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="7" />
+			<Cursor1 position="8392" topLine="242" />
 		</Cursor>
 	</File>
 	<File name="ModuleGE.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="34" topLine="0" />
+			<Cursor1 position="564" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="InGE.cpp" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OutGE.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="640" topLine="19" />
+		</Cursor>
+	</File>
+	<File name="Module.h" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="402" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Link.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="57" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="PreGraph.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="326" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ModuleNode.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="665" topLine="47" />
+		</Cursor>
+	</File>
+	<File name="ModuleNode.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="782" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="PreGraph.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="614" topLine="126" />
+		</Cursor>
+	</File>
+	<File name="OutGE.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="374" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Fork.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="670" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="Intersection.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Intersection.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="695" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="AlgoParcour.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3264" topLine="81" />
+		</Cursor>
+	</File>
+	<File name="InGE.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="296" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="Link.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="339" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="Module.cpp" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="422" topLine="54" />
+		</Cursor>
+	</File>
+	<File name="UsableGraph.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="666" topLine="56" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

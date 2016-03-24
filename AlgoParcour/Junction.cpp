@@ -170,6 +170,100 @@ void Junction::display(GraphElement* callingGE, int l)
     }
 }
 
+
+void Junction::distanceAndValidity(std::map<const GraphElement*, twoInts*>* distancesMap,
+        const GraphElement* callingGE, int distance, int w,
+        std::string* errors) const
+{
+    cout << "Junction->distance and validity check\n";
+
+    if (distancesMap->find(this) != distancesMap->end())
+    {
+        *errors += "Same junction reached twice (cycle?).\n";
+        cout << "Junction->Error: " << *errors;
+    }
+
+    if (m_next == nullptr)
+    {
+        *errors += "No next GE at a junction.\n";
+        cout << "Junction->Error: " << *errors;
+    }
+    if (m_right == nullptr)
+    {
+        *errors += "No right GE at a junction.\n";
+        cout << "Junction->Error: " << *errors;
+    }
+    if (m_left == nullptr)
+    {
+        *errors += "No left GE at a junction.\n";
+        cout << "Junction->Error: " << *errors;
+    }
+
+    (*distancesMap)[this] = new twoInts(distance, w);
+    cout << "Junction->added to the map (d=" << distance  << ")\n";
+
+    if (callingGE == m_left)
+    {
+        if (m_right != nullptr)
+        {
+            cout << "Junction->right recursive call\n";
+            m_right->distanceAndValidity(distancesMap, this, distance, w, errors);
+            cout << "Junction->back from recursive call\n";
+            ++w;
+        }
+        if (m_next != nullptr)
+        {
+            cout << "Junction->next recursive call\n";
+            m_next->distanceAndValidity(distancesMap, this, distance, w, errors);
+            cout << "Junction->back from recursive call\n";
+        }
+    }
+
+    else if (callingGE == m_right)
+    {
+        *errors += "Reaching a junction by the right (crossing?).\n";
+        cout << "Junction->Error: " << *errors;
+
+        if (m_left != nullptr)
+        {
+            cout << "Junction->left recursive call\n";
+            m_left->distanceAndValidity(distancesMap, this, distance, w, errors);
+            cout << "Junction->back from recursive call\n";
+            ++w;
+        }
+        if (m_next != nullptr)
+        {
+            cout << "Junction->next recursive call\n";
+            m_next->distanceAndValidity(distancesMap, this, distance, w, errors);
+            cout << "Junction->back from recursive call\n";
+        }
+    }
+
+    else if (callingGE == m_next)
+    {
+        if (m_left != nullptr)
+        {
+            cout << "Junction->left recursive call\n";
+            m_left->distanceAndValidity(distancesMap, this, distance, w, errors);
+            cout << "Junction->back from recursive call\n";
+            ++w;
+        }
+        if (m_next != nullptr)
+        {
+            cout << "Junction->right recursive call\n";
+            m_right->distanceAndValidity(distancesMap, this, distance, w, errors);
+            cout << "Junction->back from recursive call\n";
+        }
+    }
+
+    else
+    {
+        *errors += "Broken link at a junction.\n";
+        cout << "Junction->Error: " << *errors;
+    }
+}
+
+
 Junction::Junction() : Intersection(), OutGE(nullptr) {}
 
 Junction::Junction(GraphElement* left, GraphElement* right, GraphElement* next) :

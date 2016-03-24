@@ -21,6 +21,8 @@ class Intersection : public virtual GraphElement
         GraphElement* getRight() const { return m_right; }
         void setRight(GraphElement* val) { m_right = val; }
 
+        const ModuleGE* getModuleGE() const override {return nullptr;}
+
     protected:
         GraphElement* m_left;
         GraphElement* m_right;

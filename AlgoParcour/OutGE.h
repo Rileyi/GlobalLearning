@@ -14,6 +14,8 @@ class OutGE : public virtual GraphElement
 
         void changeNext(GraphElement* oldGE, GraphElement* newGE) override;
 
+        std::vector<const ModuleGE*>* getNextModuleGEs() const override;
+
         void recursiveDelete() override;
 
         GraphElement* getNext() { return m_next; }

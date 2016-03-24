@@ -20,6 +20,8 @@ class ModuleGE : public InGE, public OutGE
         using GraphElement::display;
         void display(GraphElement* callingGE, int l) override;
 
+        const ModuleGE* getModuleGE() const override {return this;}
+
         const Module* getModule() const { return m_module; }
         void setModule(const Module* m) { m_module = m; }
 
@@ -29,6 +31,12 @@ class ModuleGE : public InGE, public OutGE
                 Side* side, GraphElement* callingNode, int* distance) override;
 
         bool contains(std::map<const Module*, int>** modules) const override;
+
+        void distanceAndValidity(std::map<const GraphElement*, twoInts*>* distancesMap,
+                const GraphElement* callingGE, int distance, int w,
+                std::string* errors) const override;
+
+        std::string toString() const;
 
     protected:
     private:

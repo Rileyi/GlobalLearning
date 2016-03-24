@@ -1,6 +1,5 @@
 #include "Link.h"
 
-
 Link::Link() : m_before(nullptr), m_after(nullptr) {}
 
 Link::Link(GraphElement* before, GraphElement* after) :

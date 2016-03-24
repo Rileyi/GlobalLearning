@@ -19,7 +19,6 @@ PreGraph::PreGraph(map<const Module*, int>& modules) :
 
     currentNode->setNext(new ModuleGE(nullptr, currentNode, nullptr));
 
-    m_contenu->display();
     cout <<'\n';
 }
 
