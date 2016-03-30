@@ -130,8 +130,7 @@ Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPla
             if (!junctionPlace->isEmpty())
             {
                 GE* next = m_next;
-                GE* previous = this;
-                previous = m_previous;
+                GE* previous = m_previous;
                 cout << "Node[" << m_module << "]->bestJunction->moving node\n";
                 moveBefore(*junctionPlace);
                 cout << "Node[" << m_module << "]->bestJunction->recursive call and exit\n";

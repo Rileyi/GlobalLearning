@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ALGOPARCOUR_H
+#define ALGOPARCOUR_H
 
 #include "stdafx.h"
 #include "Module.h"
@@ -32,3 +33,5 @@ struct ModuleScoreStruct
         return left->module < right->module;
     };
 };
+
+#endif

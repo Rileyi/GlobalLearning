@@ -5,6 +5,10 @@
 #include "OutGE.h"
 #include "Link.h"
 
+#if defined _MSC_VER
+    #pragma warning(disable:4250)
+#endif
+
 class Junction : public Intersection, public OutGE
 {
     public:
