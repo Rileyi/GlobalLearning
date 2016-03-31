@@ -130,8 +130,7 @@ Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPla
             if (!junctionPlace->isEmpty())
             {
                 GE* next = m_next;
-                GE* previous = this;
-                previous = m_previous;
+                GE* previous = m_previous;
                 cout << "Node[" << m_module << "]->bestJunction->moving node\n";
                 moveBefore(*junctionPlace);
                 cout << "Node[" << m_module << "]->bestJunction->recursive call and exit\n";
@@ -253,7 +252,7 @@ void ModuleGE::moveAfter(Link& link)
 }
 
 void ModuleGE::distanceAndValidity(std::map<const GraphElement*, twoInts*>* distancesMap,
-        const GraphElement* callingGE, int distance, int w, std::string* errors) const
+        const GraphElement* callingGE, int distance, int* w, std::string* errors) const
 {
     cout << "Node[" << toString() << "]->distance and validity check\n";
 
@@ -264,12 +263,12 @@ void ModuleGE::distanceAndValidity(std::map<const GraphElement*, twoInts*>* dist
         return;
     }
 
-    ++w;
+    ++*w;
 
     if (callingGE == nullptr)
     {
 
-        (*distancesMap)[this] = new twoInts(distance, w);
+        (*distancesMap)[this] = new twoInts(distance, *w);
         cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance << ")\n";
 
 
@@ -304,7 +303,7 @@ void ModuleGE::distanceAndValidity(std::map<const GraphElement*, twoInts*>* dist
     else if (callingGE == m_next)
     {
 
-        (*distancesMap)[this] = new twoInts(distance, w);
+        (*distancesMap)[this] = new twoInts(distance, *w);
         cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance  << ")\n";
 
         if (m_module == nullptr)
@@ -329,7 +328,7 @@ void ModuleGE::distanceAndValidity(std::map<const GraphElement*, twoInts*>* dist
 
     else if (callingGE == m_previous)
     {
-        (*distancesMap)[this] = new twoInts(distance+1, w);
+        (*distancesMap)[this] = new twoInts(distance+1, *w);
         cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance+1 << ")\n";
 
         if (m_module == nullptr)
@@ -343,7 +342,7 @@ void ModuleGE::distanceAndValidity(std::map<const GraphElement*, twoInts*>* dist
 
     else
     {
-        (*distancesMap)[this] = new twoInts(distance+1, w);
+        (*distancesMap)[this] = new twoInts(distance+1, *w);
         cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance+1 << ")\n";
 
         *errors += "ModuleGe[" + toString() + "]: broken link.\n";

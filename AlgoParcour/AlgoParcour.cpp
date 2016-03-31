@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "AlgoParcour.h"
 
 using namespace std;
@@ -17,13 +16,21 @@ int main()
     cout << "Quantite ecriture/lecture/mathematiques/eveil: ";
     cin >> readingAim >> writingAim >> mathsAim >> funAim;
 
-    generateGraph(N, L, readingAim, writingAim, mathsAim, funAim);
+    generateGraph(N, L, readingAim, writingAim, mathsAim, funAim)->display();
 
     return 0;
 }
 
 UsableGraph* generateGraph(int length, int width, int readingAim, int writingAim, int mathsAim, int funAim)
 {
+
+    std::ofstream out("coutLog.txt");
+    std::streambuf *coutbuf = std::cout.rdbuf();
+    std::cout.rdbuf(out.rdbuf());
+
+    cout << "Asked graph properties: length=" << length << " ; width=" << width << '\n';
+    cout << "                        r=" << readingAim << " ; w=" << writingAim << " ; m=" << mathsAim << " ; f=" << funAim << '\n';
+
     //Initialisation de l'aleatoire
     srand(static_cast<int>(time(nullptr)));
 
@@ -33,6 +40,12 @@ UsableGraph* generateGraph(int length, int width, int readingAim, int writingAim
     //Ici cette etape est remplacee par la lecture d'un simple fichier csv suppose contenir
     //la liste de ces modules.
     map<const Module* const, int> modules = readCSV("modules.csv");
+    if (modules.size() == 0)
+    {
+        cout << "Pas de modules disponibles.\nAbandon.\n";
+        return nullptr;
+    }
+
     //La map modules contient les pointeur vers les modules, chacun associe un entier
     //correspondant au nombre d'apparition du module dans le graphe
 
@@ -98,6 +111,8 @@ UsableGraph* generateGraph(int length, int width, int readingAim, int writingAim
         cout << "\nGraph of dimensions (" << graph->getLength() << "," << graph->getWidth() << "):\n";
         graph->display();
     }
+
+    std::cout.rdbuf(coutbuf);
 
     return graph;
 }

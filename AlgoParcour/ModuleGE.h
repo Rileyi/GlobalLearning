@@ -3,7 +3,10 @@
 
 #include "InGE.h"
 #include "OutGE.h"
-#include "Link.h"
+
+#if defined _MSC_VER
+    #pragma warning(disable:4250)
+#endif
 
 class ModuleGE : public InGE, public OutGE
 {
@@ -33,7 +36,7 @@ class ModuleGE : public InGE, public OutGE
         bool contains(std::map<const Module*, int>** modules) const override;
 
         void distanceAndValidity(std::map<const GraphElement*, twoInts*>* distancesMap,
-                const GraphElement* callingGE, int distance, int w,
+                const GraphElement* callingGE, int distance, int* w,
                 std::string* errors) const override;
 
         std::string toString() const;

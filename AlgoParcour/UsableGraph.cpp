@@ -22,7 +22,9 @@ UsableGraph::UsableGraph(PreGraph* preGraph, int length, int maxWidth,
     string validityErrors = "";
 
     cout << "Getting the GE map and checking for validity.\n";
-    preGraph->getContenu()->distanceAndValidity(geMap, nullptr, 0, 0, &validityErrors);
+    int* w = new int(0);
+    preGraph->getContenu()->distanceAndValidity(geMap, nullptr, 0, w, &validityErrors);
+    delete w;
 
     if (validityErrors.compare("") != 0)
     {

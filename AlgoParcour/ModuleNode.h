@@ -1,10 +1,9 @@
 #ifndef MODULENODE_H_INCLUDED
 #define MODULENODE_H_INCLUDED
 
-#include <vector>
 #include "ModuleGE.h"
 
-class ModuleNode
+class ModuleNode //: public cocos2d::Node
 {
     public:
         ModuleNode(const ModuleGE* m);
