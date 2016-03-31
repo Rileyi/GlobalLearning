@@ -209,7 +209,6 @@ void Junction::distanceAndValidity(std::map<const GraphElement*, twoInts*>* dist
             cout << "Junction->right recursive call\n";
             m_right->distanceAndValidity(distancesMap, this, distance, w, errors);
             cout << "Junction->back from recursive call\n";
-            ++w;
         }
         if (m_next != nullptr)
         {
@@ -229,7 +228,6 @@ void Junction::distanceAndValidity(std::map<const GraphElement*, twoInts*>* dist
             cout << "Junction->left recursive call\n";
             m_left->distanceAndValidity(distancesMap, this, distance, w, errors);
             cout << "Junction->back from recursive call\n";
-            ++w;
         }
         if (m_next != nullptr)
         {
@@ -246,7 +244,6 @@ void Junction::distanceAndValidity(std::map<const GraphElement*, twoInts*>* dist
             cout << "Junction->left recursive call\n";
             m_left->distanceAndValidity(distancesMap, this, distance, w, errors);
             cout << "Junction->back from recursive call\n";
-            ++w;
         }
         if (m_next != nullptr)
         {
