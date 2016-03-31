@@ -2,14 +2,14 @@
 
 using namespace std;
 
-ModuleNode::ModuleNode(const ModuleGE* m) : m_module(m->getModule()),
+ModuleNode::ModuleNode(const ModuleGE* m) : Module(*(m->getModule())),
     m_previous(new vector<ModuleNode*>()), m_next(new vector<ModuleNode*>())
 {}
 
 ModuleNode::~ModuleNode()
 {}
 
-ModuleNode::ModuleNode(const ModuleNode& other) : m_module(other.getModule()),
+ModuleNode::ModuleNode(const ModuleNode& other) : Module(other),
     m_previous(other.getPrevious()), m_next(other.getNext())
 {}
 
@@ -17,7 +17,7 @@ ModuleNode& ModuleNode::operator=(const ModuleNode& other)
 {
     if (this != &other)
     {
-        m_module = other.getModule();
+        Module::operator=(other);
         m_previous = other.getPrevious();
         m_next = other.getNext();
     }
@@ -26,8 +26,7 @@ ModuleNode& ModuleNode::operator=(const ModuleNode& other)
 
 void ModuleNode::display() const
 {
-    if (m_module != nullptr) cout << *m_module;
-    else cout << "####";
+    cout << *this;
 }
 
 

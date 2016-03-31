@@ -7,8 +7,7 @@
 class UsableGraph
 {
     public:
-        UsableGraph(PreGraph* preGraph, int length, int maxWidth,
-                    int askedReading, int askedWriting, int askedMaths, int askedFun
+        UsableGraph(PreGraph* preGraph, int length, int maxWidth, const Module& asked
                     //, int authorizedDifference, int negligibleDifference
                     );
         UsableGraph(const UsableGraph& other);
@@ -31,22 +30,10 @@ class UsableGraph
         int getMaxWidth() const {return m_maxWidth;}
         unsigned int getWidth() const;
         //int getNumberOfPaths() const {return m_numberOfPaths;}
-        int getAskedReading() const {return m_askedReading;}
-        int getAskedWriting() const {return m_askedWriting;}
-        int getAskedMaths() const {return m_askedMaths;}
-        int getAskedFun() const {return m_askedFun;}
-        /*int getAverageReading() const {return m_averageReading;}
-        int getAverageWriting() const {return m_averageWriting;}
-        int getAverageMaths() const {return m_averageMaths;}
-        int getAverageFun() const {return m_averageFun;}
-        int getMaxReading() const {return m_maxReading;}
-        int getMaxWriting() const {return m_maxWriting;}
-        int getMaxMaths() const {return m_maxMaths;}
-        int getMaxFun() const {return m_maxFun;}
-        int getMinReading() const {return m_minReading;}
-        int getMinWriting() const {return m_minWriting;}
-        int getMinMaths() const {return m_minMaths;}
-        int getMinFun() const {return m_minFun;}
+        const Module& askedTotal() const {return m_asked;}
+        /*const Module& averageTotal() const {return m_average;}
+        const Module& maxTotal() const {return m_max;}
+        const Module& minTotal() const {return m_min;}
         int getAuthorizedDifference() const {return m_authorizedDifference;}
         int getNegligibleDifference() const {return m_negligibleDifference;}
         int getMaxDifference() const {return m_maxDifference;}
@@ -62,10 +49,10 @@ class UsableGraph
         //int m_width;
         //int m_numberOfPaths;
 
-        int m_askedReading, m_askedWriting, m_askedMaths, m_askedFun;
-        //int m_averageReading, m_averageWriting, m_averageMaths, m_averageFun;
-        //int m_minReading, m_minWriting, m_minMaths, m_minFun;
-        //int m_maxReading, m_maxWriting, m_maxMaths, m_maxFun;
+        const Module m_asked;
+        //const Module m_average;
+        //const Module m_min;
+        //const Module m_max;
 
         //int m_authorizedDifference, m_negligibleDifference, m_maxDifference, m_averageDifference;
 

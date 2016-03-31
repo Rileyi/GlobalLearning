@@ -2,16 +2,12 @@
 
 using namespace std;
 
-UsableGraph::UsableGraph(PreGraph* preGraph, int length, int maxWidth,
-                         int askedReading, int askedWriting, int askedMaths, int askedFun
+UsableGraph::UsableGraph(PreGraph* preGraph, int length, int maxWidth, const Module& asked
                          //, int authorizedDifference, int negligibleDifference
                          ) :
     m_nodes(new vector<std::list<ModuleNode*>>()), m_currentNode(nullptr),
     m_length(length), m_maxWidth(maxWidth), //m_width(0), //m_numberOfPaths(0),
-    m_askedReading(askedReading), m_askedWriting(askedWriting), m_askedMaths(askedMaths), m_askedFun(askedFun),
-    //m_averageReading(0), m_averageWriting(0), m_averageMaths(0), m_averageFun(0),
-    //m_minReading(0), m_minWriting(0), m_minMaths(0), m_minFun(0),
-    //m_maxReading(0), m_maxWriting(0), m_maxMaths(0), m_maxFun(0),
+    m_asked(asked), //m_average(0), m_min(0), m_max(0)
     //m_authorizedDifference(authorizedDifference), m_negligibleDifference(negligibleDifference),
     //m_maxDifference(0), m_averageDifference(0),
     m_errors("")
@@ -99,10 +95,7 @@ UsableGraph::UsableGraph(const UsableGraph& other) :
     m_nodes(new vector<std::list<ModuleNode*>>(*(other.m_nodes))),
     m_currentNode(other.m_currentNode),
     m_length(other.m_length), m_maxWidth(other.m_maxWidth), //m_width(other.m_width), //m_numberOfPaths(0),
-    m_askedReading(other.m_askedReading), m_askedWriting(other.m_askedWriting), m_askedMaths(other.m_askedMaths), m_askedFun(other.m_askedFun),
-    //m_averageReading(other.m_averageReading), m_averageWriting(other.m_averageWriting), m_averageMaths(other.m_averageMaths), m_averageFun(other.m_averageFun),
-    //m_minReading(other.m_minReading), m_minWriting(other.m_minWriting), m_minMaths(other.m_minMaths), m_minFun(other.m_minFun),
-    //m_maxReading(other.m_maxReading), m_maxWriting(other.m_maxWriting), m_maxMaths(other.m_maxMaths), m_maxFun(other.m_maxFun),
+    m_asked(other.m_asked), //m_average(other.m_average), m_min(other.m_min), m_max(other.m_max),
     //m_authorizedDifference(other.m_authorizedDifference), m_negligibleDifference(other.m_negligibleDifference),
     //m_maxDifference(other.m_maxDifference), m_averageDifference(other.m_averageDifference),
     m_errors(other.m_errors)

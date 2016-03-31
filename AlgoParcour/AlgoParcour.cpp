@@ -21,7 +21,11 @@ int main()
     return 0;
 }
 
-UsableGraph* generateGraph(int length, int width, int readingAim, int writingAim, int mathsAim, int funAim)
+
+UsableGraph* generateGraph(int length, int width, int reading, int writing, int maths, int fun)
+{ return generateGraph(length, width, Module(reading, writing, maths, fun)); }
+
+UsableGraph* generateGraph(int length, int width, const Module& aim)
 {
 
     std::ofstream out("coutLog.txt");
@@ -29,7 +33,8 @@ UsableGraph* generateGraph(int length, int width, int readingAim, int writingAim
     std::cout.rdbuf(out.rdbuf());
 
     cout << "Asked graph properties: length=" << length << " ; width=" << width << '\n';
-    cout << "                        r=" << readingAim << " ; w=" << writingAim << " ; m=" << mathsAim << " ; f=" << funAim << '\n';
+    cout << "                        r=" << aim.getReading() << " ; w=" << aim.getWriting()
+                              << " ; m=" << aim.getMaths() << " ; f=" << aim.getFun() << '\n';
 
     //Initialisation de l'aleatoire
     srand(static_cast<int>(time(nullptr)));
@@ -66,7 +71,7 @@ UsableGraph* generateGraph(int length, int width, int readingAim, int writingAim
 
         //On va desormais ameillorer cette base par echange successif de modules
         do {}
-        while (exchange(*base, modules, readingAim, writingAim, mathsAim, funAim));
+        while (exchange(*base, modules, aim));
 
         cout << "\nSet :\n";
         for (map<const Module*, int>::const_iterator it = base->begin();
@@ -103,7 +108,7 @@ UsableGraph* generateGraph(int length, int width, int readingAim, int writingAim
     } while (success < width  &&  fails < width);
 
     UsableGraph* graph =
-        new UsableGraph(preGraph, length+2, width, readingAim, writingAim, mathsAim, funAim);
+        new UsableGraph(preGraph, length+2, width, aim);
     delete preGraph;
 
     if (graph->isValid())
@@ -234,58 +239,29 @@ std::map<const Module*, int>& generateBase(
 //Cherche un module a echanger pour ameillorer la base et effectue cet echange
 bool exchange(std::map<const Module*, int> & base,
               std::map<const Module* const, int> const& candidats,
-              int readingAim, int writingAim, int mathsAim, int funAim)
+              const Module& aim)
 {
     //On commence par calculer le total ecriture/lecture/mathematiques/eveil
-    int writingTotal = 0, readingTotal = 0, mathsTotal = 0, funTotal = 0;
+    Module total;
     for (map<const Module* const, int>::const_iterator it = base.begin();
             it != base.end(); ++it)
     {
-        writingTotal += (it->first->getWriting()) * (it->second);
-        readingTotal += (it->first->getReading()) * (it->second);
-        mathsTotal   += (it->first->getMaths()  ) * (it->second);
-        funTotal     += (it->first->getFun()    ) * (it->second);
+        total += *(it->first) * (it->second);
     }
 
     //On en deduit l'ecart entre ce que l'on a et ce que l'on veux
-    int writingDiff = writingTotal - writingAim;
-    int readingDiff = readingTotal - readingAim;
-    int mathsDiff = mathsTotal - mathsAim;
-    int funDiff = funTotal - funAim;
+    Module diff = total - aim;
 
     //Puis on note et on ordone chaque module de la base selon son apport,
     //sa frequence, et sa redondance par rapport aux autres modules dans le set.
     set< ModuleScoreStruct*, ModuleScoreStruct> scoreBase;
     for (map<const Module* const, int>::const_iterator it = base.begin();
                                            it != base.end(); ++it)
-    {
-        scoreBase.insert(new  ModuleScoreStruct(it->first,
-                                                max(it->first->getWriting() - max(writingDiff, 0), 0) //apport
-                                                + max(it->first->getReading() - max(readingDiff, 0), 0) //
-                                                + max(it->first->getMaths()   - max(mathsDiff  , 0), 0) //
-                                                + max(it->first->getFun()     - max(funDiff    , 0), 0) //
-                                                - min(it->first->getWriting(), max(writingDiff, 0))     //redondance
-                                                - min(it->first->getReading(), max(readingDiff, 0))     //
-                                                - min(it->first->getMaths()  , max(mathsDiff  , 0))     //
-                                                - min(it->first->getFun()    , max(funDiff    , 0))     //
-                                                - (it->second - 1) * 10));                              //frequence
+    {                           //frequence*/
+        scoreBase.insert(new ModuleScoreStruct(it->first,
+                (max(*(it->first) - max (diff, 0), 0) - min(*(it->first), max(diff, 0))).totalValue()
+                - (it->second - 1) * 10));
     }
-
-
-    //Idem pour les modules candidats
-    //On enleve juste la redondance qui ne donnerais que des scores negatifs
-    /*set<const ModuleScoreStruct*, ModuleScoreStruct> scoreCandidats;
-    for (map<const Module* const, int>::const_iterator it = candidats.begin();
-                                           it != candidats.end(); ++it)
-    {
-        scoreCandidats.insert(new  ModuleScoreStruct(it->first,
-                              min(it->first->getWriting(), max(-writingDiff, 0))   //apport
-                              + min(it->first->getReading(), max(-readingDiff, 0))   //
-                              + min(it->first->getMaths()  , max(-mathsDiff  , 0))   //
-                              + min(it->first->getFun()    , max(-funDiff    , 0))   //
-                              - (base.find(it->first) != base.end()  ?  base[it->first] * 10  :  0)));//frequence
-    }*/ //peu performant pour effectuer des bon choix, n'allege presque jamais la complexite
-
 
     for (const ModuleScoreStruct* moduleBase : scoreBase)
     {
@@ -294,29 +270,16 @@ bool exchange(std::map<const Module*, int> & base,
         for (map<const Module* const, int>::const_reverse_iterator
              rit = candidats.rbegin(); rit != candidats.rend(); ++rit)
         {
+            //On calcul l'apport reel optenu en cas d'echange
+            int score = calculateScore(*(moduleBase->module), *(rit->first), diff);
 
-            //sinon on calcul l'apport reel optenu en cas d'echange
-            int ra = rit->first->getReading() - moduleBase->module->getReading();
-            ra = (readingDiff>0
-                  ? (ra >= 0 ||  readingDiff >= -ra  ?  -ra  :   ra+2*readingDiff)
-                  : (ra <= 0 || -readingDiff >=  ra  ?   ra  :  -ra-2*readingDiff));
-            int wa = rit->first->getWriting() - moduleBase->module->getWriting();
-            wa = (writingDiff>0
-                  ? (wa >= 0 ||  writingDiff >= -wa  ?  -wa  :   wa+2*writingDiff)
-                  : (wa <= 0 || -writingDiff >=  wa  ?   wa  :  -wa-2*writingDiff));
-            int ma = rit->first->getMaths() - moduleBase->module->getMaths();
-            ma = (mathsDiff>0
-                  ? (ma >= 0 ||  mathsDiff >= -ma  ?  -ma  :   ma+2*mathsDiff)
-                  : (ma <= 0 || -mathsDiff >=  ma  ?   ma  :  -ma-2*mathsDiff));
-            int fa = rit->first->getFun() - moduleBase->module->getFun();
-            fa = (funDiff>0
-                  ? (fa >= 0 ||  funDiff >= -fa ? -fa :  fa+2*funDiff)
-                  : (fa <= 0 || -funDiff >=  fa ?  fa : -fa-2*funDiff));
-            int r = (base[moduleBase->module]-1) *10;
-            r -= (base.find(rit->first) == base.end()  ?  0  :  base[rit->first] * 10);
+            //Puis on y ajoute un malus lie a la reaparition du module a plusieur endroits du graphe
+            int malus = (base[moduleBase->module]-1) *10;
+            malus -= (base.find(rit->first) == base.end()  ?  0  :  base[rit->first] * 10);
+
+            score += malus;
 
             //On choisi le meilleur candidat (celui avec le meilleur score) au fil des iteration
-            int score = wa + ra + ma + fa + r;
             if (score > meilleurScore)
             {
                 meilleurCandidat = rit->first;

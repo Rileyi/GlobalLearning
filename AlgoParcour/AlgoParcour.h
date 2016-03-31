@@ -3,6 +3,7 @@
 
 #include "UsableGraph.h"
 
+UsableGraph* generateGraph(int length, int width, const Module& aim);
 UsableGraph* generateGraph(int length, int width, int reading, int writing, int maths, int fun);
 
 std::map<const Module* const, int> & readCSV(const std::string& filename);
@@ -15,7 +16,7 @@ std::map<const Module*, int>& generateBase(std::map<const Module* const, int> & 
 //Cherche un module a echanger pour ameillorer le set et effectue cet echange
 bool exchange(std::map<const Module*, int> & base,
               std::map<const Module* const, int> const& candidats,
-              int reading, int writing, int maths, int fun);
+              const Module& aim);
 
 
 struct ModuleScoreStruct

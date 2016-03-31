@@ -3,7 +3,7 @@
 
 #include "ModuleGE.h"
 
-class ModuleNode //: public cocos2d::Node
+class ModuleNode : public Module //, public cocos2d::Node
 {
     public:
         ModuleNode(const ModuleGE* m);
@@ -15,7 +15,6 @@ class ModuleNode //: public cocos2d::Node
 
         std::vector<ModuleNode*>* getPrevious() const { return m_previous; }
         std::vector<ModuleNode*>* getNext() const { return m_next; }
-        const Module* getModule() const {return m_module;}
 
         void addNext(ModuleNode* moduleNode);
         void addNext(std::vector<ModuleNode*>& moduleNodes);
@@ -28,7 +27,6 @@ class ModuleNode //: public cocos2d::Node
     protected:
 
     private:
-        const Module* m_module;
         std::vector<ModuleNode*>* m_previous;
         std::vector<ModuleNode*>* m_next;
 };
