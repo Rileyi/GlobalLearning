@@ -1,9 +1,6 @@
 #ifndef PREGRAPH_H
 #define PREGRAPH_H
 
-#include <map>
-
-#include "ModuleGE.h"
 #include "Fork.h"
 #include "Junction.h"
 

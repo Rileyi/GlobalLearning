@@ -272,7 +272,7 @@ vector<const ModuleGE*>* Fork::getNextModuleGEs() const
 }
 
 void Fork::distanceAndValidity(std::map<const GraphElement*, twoInts*>* distancesMap,
-        const GraphElement* callingGE, int distance, int w,
+        const GraphElement* callingGE, int distance, int* w,
         std::string* errors) const
 {
     cout << "Fork->distance and validity check\n";
@@ -297,12 +297,12 @@ void Fork::distanceAndValidity(std::map<const GraphElement*, twoInts*>* distance
     {
         cout << "Fork->fork not found in the map\n";
 
-        (*distancesMap)[this] = new twoInts(distance, w);
+        (*distancesMap)[this] = new twoInts(distance, *w);
         cout << "Fork->fork added to the map\n";
 
         if (callingGE == m_previous)
         {
-            (*distancesMap)[this] = new twoInts(distance, w);
+            (*distancesMap)[this] = new twoInts(distance, *w);
             cout << "Fork->fork added to the map (d=" << distance  << ")\n";
 
             if (m_left != nullptr)
@@ -310,7 +310,6 @@ void Fork::distanceAndValidity(std::map<const GraphElement*, twoInts*>* distance
                 cout << "Fork->recursive call on left GE\n";
                 m_left->distanceAndValidity(distancesMap, this, distance, w, errors);
                 cout << "Fork->back from recursive call\n";
-                ++w;
             }
 
             return;

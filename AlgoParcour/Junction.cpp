@@ -172,7 +172,7 @@ void Junction::display(GraphElement* callingGE, int l)
 
 
 void Junction::distanceAndValidity(std::map<const GraphElement*, twoInts*>* distancesMap,
-        const GraphElement* callingGE, int distance, int w,
+        const GraphElement* callingGE, int distance, int* w,
         std::string* errors) const
 {
     cout << "Junction->distance and validity check\n";
@@ -199,7 +199,7 @@ void Junction::distanceAndValidity(std::map<const GraphElement*, twoInts*>* dist
         cout << "Junction->Error: " << *errors;
     }
 
-    (*distancesMap)[this] = new twoInts(distance, w);
+    (*distancesMap)[this] = new twoInts(distance, *w);
     cout << "Junction->added to the map (d=" << distance  << ")\n";
 
     if (callingGE == m_left)

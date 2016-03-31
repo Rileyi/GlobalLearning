@@ -1,8 +1,6 @@
 #ifndef GRAPHELEMENT_H
 #define GRAPHELEMENT_H
 
-#include <vector>
-
 #include "Module.h"
 #include "Side.h"
 #include "Link.h"
@@ -62,7 +60,7 @@ typedef class GraphElement
         virtual bool contains(std::map<const Module*, int>** modules) const =0;
 
         virtual void distanceAndValidity(std::map<const GraphElement*, twoInts*>* distancesMap,
-                const GraphElement* callingGE, int distance, int w,
+                const GraphElement* callingGE, int distance, int* w,
                 std::string* errors) const =0;
 
 

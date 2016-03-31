@@ -1,4 +1,6 @@
-Asked graph properties: length=5 ; width=5                        r=100 ; w=100 ; m=100 ; f=200Lecture du fihier contenant la liste de modules:
+Asked graph properties: length=10 ; width=8
+                        r=200 ; w=200 ; m=300 ; f=300
+Lecture du fihier contenant la liste de modules:
 modules.csvFichier correctement ouvert.
 Verrification du contenu:
 Puzzle: 5 0 0 95
@@ -6,75 +8,114 @@ ConnectsTheDots: 0 0 30 70
 HiddenObjects: 5 0 20 75
 CowTrainMaths: 0 0 70 30
 CowTrainReading: 70 0 0 30
-TimeReading: 0 0 95 5
-Ordering: 0 0 75 25
-HoledText: 80 10 0 10
-HoledWords: 65 25 0 10
-WritingLetters: 0 75 0 25
-WritingWords: 0 90 0 10
-NumberInWords/Figure: 15 0 75 10
-AlphabetSong: 20 0 0 80
-TextReading: 65 0 0 35
 TextUnderstanding: 95 0 0 5
+Ordering: 0 0 75 25
+WritingWords: 0 90 0 10
+HoledText: 80 10 0 10
+TimeReading: 0 0 95 5
+NumberInWords/Figure: 15 0 75 10
+TextReading: 65 0 0 35
+WritingLetters: 0 75 0 25
+HoledWords: 65 25 0 10
+AlphabetSong: 20 0 0 80
 
 Set :
-1*[Con5] : ConnectsTheDots: 0 0 30 70
+1*[Puz6] : Puzzle: 5 0 0 95
+1*[Cow3] : CowTrainMaths: 0 0 70 30
+1*[Ord8] : Ordering: 0 0 75 25
 1*[Wri2] : WritingWords: 0 90 0 10
-1*[Num0] : NumberInWords/Figure: 15 0 75 10
+1*[Hol9] : HoledText: 80 10 0 10
+2*[Num0] : NumberInWords/Figure: 15 0 75 10
+1*[Wri4] : WritingLetters: 0 75 0 25
+1*[Hol0] : HoledWords: 65 25 0 10
 1*[Alp2] : AlphabetSong: 20 0 0 80
-1*[Tex1] : TextReading: 65 0 0 35
 
--####--Con5--Wri2--Num0--Alp2--Tex1--####-
+-####--Puz6--Cow3--Ord8--Wri2--Hol9--Num0--Num0--Wri4--Hol0--Alp2--####-
 
 Set :
+1*[Puz6] : Puzzle: 5 0 0 95
+1*[Con5] : ConnectsTheDots: 0 0 30 70
+1*[Hid3] : HiddenObjects: 5 0 20 75
+1*[Tex7] : TextUnderstanding: 95 0 0 5
+1*[Ord8] : Ordering: 0 0 75 25
+2*[Wri2] : WritingWords: 0 90 0 10
+1*[Hol9] : HoledText: 80 10 0 10
 1*[Tim1] : TimeReading: 0 0 95 5
-1*[Hol0] : HoledWords: 65 25 0 10
-1*[Wri4] : WritingLetters: 0 75 0 25
-2*[Alp2] : AlphabetSong: 20 0 0 80
+1*[Num0] : NumberInWords/Figure: 15 0 75 10
 add->start
 ModuleGE[####]->bestfork->start
 ModuleGE[####]->bestfork>after find
 Node[####]->bestfork->no match
-ModuleGE[Con5]->bestfork->start
-ModuleGE[Con5]->bestfork>after find
-Node[Con5]->bestfork->no match
-Node[Con5]->bestfork->new fork place
+ModuleGE[Puz6]->bestfork->start
+ModuleGE[Puz6]->bestfork>after find
+ModuleGE[Puz6]->bestfork->match
+Node[Puz6]->bestfork->module erased
+Node[Puz6]->bestfork->recursive call and exit
+ModuleGE[Cow3]->bestfork->start
+ModuleGE[Cow3]->bestfork>after find
+Node[Cow3]->bestfork->no match
+Node[Cow3]->bestfork->new fork place
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+ModuleGE[Ord8]->bestfork->match
+Node[Ord8]->bestfork->module erased
+Node[Ord8]->bestfork->moving
+Node[Ord8]->bestfork->recursive call and exit
 ModuleGE[Wri2]->bestfork->start
 ModuleGE[Wri2]->bestfork>after find
-Node[Wri2]->bestfork->no match
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->moving
+Node[Wri2]->bestfork->recursive call and exit
+ModuleGE[Hol9]->bestfork->start
+ModuleGE[Hol9]->bestfork>after find
+ModuleGE[Hol9]->bestfork->match
+Node[Hol9]->bestfork->module erased
+Node[Hol9]->bestfork->moving
+Node[Hol9]->bestfork->recursive call and exit
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+ModuleGE[Num0]->bestfork->match
+Node[Num0]->bestfork->module erased
+Node[Num0]->bestfork->moving
+Node[Num0]->bestfork->recursive call and exit
 ModuleGE[Num0]->bestfork->start
 ModuleGE[Num0]->bestfork>after find
 Node[Num0]->bestfork->no match
+ModuleGE[Wri4]->bestfork->start
+ModuleGE[Wri4]->bestfork>after find
+Node[Wri4]->bestfork->no match
+ModuleGE[Hol0]->bestfork->start
+ModuleGE[Hol0]->bestfork>after find
+Node[Hol0]->bestfork->no match
 ModuleGE[Alp2]->bestfork->start
 ModuleGE[Alp2]->bestfork>after find
-ModuleGE[Alp2]->bestfork->match
-Node[Alp2]->bestfork->module erased
-Node[Alp2]->bestfork->moving
-Node[Alp2]->bestfork->recursive call and exit
-ModuleGE[Tex1]->bestfork->start
-ModuleGE[Tex1]->bestfork>after find
-Node[Tex1]->bestfork->no match
+Node[Alp2]->bestfork->no match
 ModuleGE[####]->bestfork->start
 ModuleGE[####]->bestfork>after find
 Node[####]->bestfork->no match
 add->after bestFork
+1*Con5
+1*Hid3
+1*Tex7
+1*Wri2
 1*Tim1
-1*Hol0
-1*Wri4
-1*Alp2
--Con5--Wri2--Num0--Tex1--####-
-Node[Con5]->bestJunction->start
-Node[Con5]->bestJunction->forward
-Node[Con5]->bestJunction->module not found
-Node[Wri2]->bestJunction->start
-Node[Wri2]->bestJunction->forward
-Node[Wri2]->bestJunction->module not found
+-Cow3--Num0--Wri4--Hol0--Alp2--####-
+Node[Cow3]->bestJunction->start
+Node[Cow3]->bestJunction->forward
+Node[Cow3]->bestJunction->module not found
 Node[Num0]->bestJunction->start
 Node[Num0]->bestJunction->forward
 Node[Num0]->bestJunction->module not found
-Node[Tex1]->bestJunction->start
-Node[Tex1]->bestJunction->forward
-Node[Tex1]->bestJunction->module not found
+Node[Wri4]->bestJunction->start
+Node[Wri4]->bestJunction->forward
+Node[Wri4]->bestJunction->module not found
+Node[Hol0]->bestJunction->start
+Node[Hol0]->bestJunction->forward
+Node[Hol0]->bestJunction->module not found
+Node[Alp2]->bestJunction->start
+Node[Alp2]->bestJunction->forward
+Node[Alp2]->bestJunction->module not found
 Node[####]->bestJunction->start
 Node[####]->bestJunction->forward
 Node[####]->bestJunction->module found or nullptr
@@ -86,63 +127,409 @@ add->afterBestJunction
 -####-
 add->path
 add->Modules left:
+1*Con5
+1*Hid3
+1*Tex7
+1*Wri2
 1*Tim1
-1*Hol0
-1*Wri4
-1*Alp2
 add->forking right
-add->forked first Node: Tim1
-add->node Hol0
-add->node Wri4
-add->node Alp2
+add->forked first Node: Con5
+add->node Hid3
+add->node Tex7
+add->node Wri2
+add->node Tim1
 add->pathed
 add->junction right
 add->juncted
--####--Alp2-<-Con5--Wri2--Num0--Tex1->-####-
-            <-Tim1--Hol0--Wri4--Alp2->
+-####--Puz6--Ord8--Wri2--Hol9--Num0-<-Cow3--Num0--Wri4--Hol0--Alp2->-####-
+                                    <-Con5--Hid3--Tex7--Wri2--Tim1->
 
 Set :
-1*[Puz6] : Puzzle: 5 0 0 95
 1*[Con5] : ConnectsTheDots: 0 0 30 70
+1*[Hid3] : HiddenObjects: 5 0 20 75
 1*[Cow3] : CowTrainMaths: 0 0 70 30
+1*[Ord8] : Ordering: 0 0 75 25
 1*[Wri2] : WritingWords: 0 90 0 10
-1*[Tex7] : TextUnderstanding: 95 0 0 5
+1*[Hol9] : HoledText: 80 10 0 10
+1*[Tim1] : TimeReading: 0 0 95 5
+1*[Tex1] : TextReading: 65 0 0 35
+1*[Wri4] : WritingLetters: 0 75 0 25
+1*[Hol0] : HoledWords: 65 25 0 10
 add->start
 ModuleGE[####]->bestfork->start
 ModuleGE[####]->bestfork>after find
 Node[####]->bestfork->no match
-ModuleGE[Alp2]->bestfork->start
-ModuleGE[Alp2]->bestfork>after find
-Node[Alp2]->bestfork->no match
-Node[Alp2]->bestfork->new fork place
+ModuleGE[Puz6]->bestfork->start
+ModuleGE[Puz6]->bestfork>after find
+Node[Puz6]->bestfork->no match
+Node[Puz6]->bestfork->new fork place
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+ModuleGE[Ord8]->bestfork->match
+Node[Ord8]->bestfork->module erased
+Node[Ord8]->bestfork->moving
+Node[Ord8]->bestfork->recursive call and exit
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->moving
+Node[Wri2]->bestfork->recursive call and exit
+ModuleGE[Hol9]->bestfork->start
+ModuleGE[Hol9]->bestfork>after find
+ModuleGE[Hol9]->bestfork->match
+Node[Hol9]->bestfork->module erased
+Node[Hol9]->bestfork->moving
+Node[Hol9]->bestfork->recursive call and exit
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+Node[Num0]->bestfork->no match
 Fork->bestFork->start
 Fork->bestFork->fork place already found, exit
 add->after bestFork
-1*Puz6
 1*Con5
+1*Hid3
 1*Cow3
-1*Wri2
-1*Tex7
--Alp2-<-Con5--Wri2--Num0--Tex1->-####-
-      <-Tim1--Hol0--Wri4--Alp2->
-Node[Alp2]->bestJunction->start
-Node[Alp2]->bestJunction->forward
-Node[Alp2]->bestJunction->module not found
+1*Tim1
+1*Tex1
+1*Wri4
+1*Hol0
+-Puz6--Num0-<-Cow3--Num0--Wri4--Hol0--Alp2->-####-
+            <-Con5--Hid3--Tex7--Wri2--Tim1->
+Node[Puz6]->bestJunction->start
+Node[Puz6]->bestJunction->forward
+Node[Puz6]->bestJunction->module not found
+Node[Num0]->bestJunction->start
+Node[Num0]->bestJunction->forward
+Node[Num0]->bestJunction->module not found
 Fork->bestJunction->start
 Fork->bestJunction->moving forward
 Fork->bestJunction->side = both
 Fork->bestJunction->left recursive call
+Node[Cow3]->bestJunction->start
+Node[Cow3]->bestJunction->forward
+Node[Cow3]->bestJunction->module found or nullptr
+Node[Cow3]->bestJunction->removing module
+Node[Cow3]->bestJunction->new junction place
+Node[Cow3]->bestJunction->recursive call
+Node[Num0]->bestJunction->start
+Node[Num0]->bestJunction->forward
+Node[Num0]->bestJunction->module not found
+Node[Num0]->bestJunction->moving node
+Node[Num0]->bestJunction->recursive call and exit
+Node[Wri4]->bestJunction->start
+Node[Wri4]->bestJunction->forward
+Node[Wri4]->bestJunction->module found or nullptr
+Node[Wri4]->bestJunction->removing module
+Node[Wri4]->bestJunction->recursive call
+Node[Hol0]->bestJunction->start
+Node[Hol0]->bestJunction->forward
+Node[Hol0]->bestJunction->module found or nullptr
+Node[Hol0]->bestJunction->removing module
+Node[Hol0]->bestJunction->recursive call
+Node[Alp2]->bestJunction->start
+Node[Alp2]->bestJunction->forward
+Node[Alp2]->bestJunction->module not found
+Node[Alp2]->bestJunction->moving node
+Node[Alp2]->bestJunction->recursive call and exit
+Junction->bestJunction
+Junction->bestJunction->moving forward
+Junction->bestJunction->contains() call
+Junction->bestJunction->contains() returned true (good result)
+Junction->bestJunction->exit
+Node[Hol0]->bestJunction->junctionPlace still on this path
+Node[Hol0]->bestJunction->exit
+Node[Wri4]->bestJunction->junctionPlace still on this path
+Node[Wri4]->bestJunction->exit
+Node[Cow3]->bestJunction->junctionPlace still on this path
+Node[Cow3]->bestJunction->exit
+Fork->bestJunction->right recursive call
 Node[Con5]->bestJunction->start
 Node[Con5]->bestJunction->forward
 Node[Con5]->bestJunction->module found or nullptr
 Node[Con5]->bestJunction->removing module
 Node[Con5]->bestJunction->new junction place
 Node[Con5]->bestJunction->recursive call
+Node[Hid3]->bestJunction->start
+Node[Hid3]->bestJunction->forward
+Node[Hid3]->bestJunction->module found or nullptr
+Node[Hid3]->bestJunction->removing module
+Node[Hid3]->bestJunction->recursive call
+Node[Tex7]->bestJunction->start
+Node[Tex7]->bestJunction->forward
+Node[Tex7]->bestJunction->module not found
+Node[Tex7]->bestJunction->moving node
+Node[Tex7]->bestJunction->recursive call and exit
+Node[Wri2]->bestJunction->start
+Node[Wri2]->bestJunction->forward
+Node[Wri2]->bestJunction->module not found
+Node[Wri2]->bestJunction->moving node
+Node[Wri2]->bestJunction->recursive call and exit
+Node[Tim1]->bestJunction->start
+Node[Tim1]->bestJunction->forward
+Node[Tim1]->bestJunction->module found or nullptr
+Node[Tim1]->bestJunction->removing module
+Node[Tim1]->bestJunction->recursive call
+Junction->bestJunction
+Junction->bestJunction->moving forward
+Junction->bestJunction->contains() call
+Junction->bestJunction->contains() returned true (good result)
+Junction->bestJunction->exit
+Node[Tim1]->bestJunction->junctionPlace still on this path
+Node[Tim1]->bestJunction->exit
+Node[Hid3]->bestJunction->junctionPlace still on this path
+Node[Hid3]->bestJunction->exit
+Node[Con5]->bestJunction->junctionPlace still on this path
+Node[Con5]->bestJunction->exit
+Fork->bestJunction->back from recursive calls
+Fork->bestJunction->choosing left
+Fork->bestJunction->exit
+add->afterBestJunction
+-Cow3--Wri4--Hol0->-####-
+add->path
+add->Modules left:
+1*Con5
+1*Hid3
+1*Tim1
+1*Tex1
+add->forking left
+add->forked first Node: Con5
+add->node Hid3
+add->node Tim1
+add->node Tex1
+add->pathed
+add->junction left
+add->juncted
+-####--Ord8--Wri2--Hol9-<-Con5--Hid3--Tim1--Tex1->-Cow3--Wri4--Hol0->-####-
+                        <-Puz6--Num0-<-Num0--Alp2->
+                                     <-Tex7--Wri2--Con5--Hid3--Tim1->
+
+Set :
+1*[Cow3] : CowTrainMaths: 0 0 70 30
+1*[Ord8] : Ordering: 0 0 75 25
+2*[Wri2] : WritingWords: 0 90 0 10
+2*[Num0] : NumberInWords/Figure: 15 0 75 10
+1*[Tex1] : TextReading: 65 0 0 35
+1*[Hol0] : HoledWords: 65 25 0 10
+2*[Alp2] : AlphabetSong: 20 0 0 80
+add->start
+ModuleGE[####]->bestfork->start
+ModuleGE[####]->bestfork>after find
+Node[####]->bestfork->no match
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+ModuleGE[Ord8]->bestfork->match
+Node[Ord8]->bestfork->module erased
+Node[Ord8]->bestfork->recursive call and exit
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->recursive call and exit
+ModuleGE[Hol9]->bestfork->start
+ModuleGE[Hol9]->bestfork>after find
+Node[Hol9]->bestfork->no match
+Node[Hol9]->bestfork->new fork place
+Fork->bestFork->start
+Fork->bestFork->fork place already found, exit
+add->after bestFork
+1*Cow3
+1*Wri2
+2*Num0
+1*Tex1
+1*Hol0
+2*Alp2
+-Hol9-<-Con5--Hid3--Tim1--Tex1->-Cow3--Wri4--Hol0->-####-
+      <-Puz6--Num0-<-Num0--Alp2->
+                   <-Tex7--Wri2--Con5--Hid3--Tim1->
+Node[Hol9]->bestJunction->start
+Node[Hol9]->bestJunction->forward
+Node[Hol9]->bestJunction->module not found
+Fork->bestJunction->start
+Fork->bestJunction->moving forward
+Fork->bestJunction->side = both
+Fork->bestJunction->left recursive call
+Node[Con5]->bestJunction->start
+Node[Con5]->bestJunction->forward
+Node[Con5]->bestJunction->module not found
+Node[Hid3]->bestJunction->start
+Node[Hid3]->bestJunction->forward
+Node[Hid3]->bestJunction->module not found
+Node[Tim1]->bestJunction->start
+Node[Tim1]->bestJunction->forward
+Node[Tim1]->bestJunction->module not found
+Node[Tex1]->bestJunction->start
+Node[Tex1]->bestJunction->forward
+Node[Tex1]->bestJunction->module found or nullptr
+Node[Tex1]->bestJunction->removing module
+Node[Tex1]->bestJunction->new junction place
+Node[Tex1]->bestJunction->recursive call
+Junction->bestJunction
+Junction->bestJunction->moving forward
+Junction->bestJunction->contains() call
+Junction->bestJunction->contains() returned false=> junction place is bad
+Junction->bestJunction->compatible side => forward recursive call
+Node[Cow3]->bestJunction->start
+Node[Cow3]->bestJunction->forward
+Node[Cow3]->bestJunction->module found or nullptr
+Node[Cow3]->bestJunction->removing module
+Node[Cow3]->bestJunction->new junction place
+Node[Cow3]->bestJunction->recursive call
+Node[Wri4]->bestJunction->start
+Node[Wri4]->bestJunction->forward
+Node[Wri4]->bestJunction->module not found
+Node[Wri4]->bestJunction->moving node
+Node[Wri4]->bestJunction->recursive call and exit
+Node[Hol0]->bestJunction->start
+Node[Hol0]->bestJunction->forward
+Node[Hol0]->bestJunction->module found or nullptr
+Node[Hol0]->bestJunction->removing module
+Node[Hol0]->bestJunction->recursive call
+Junction->bestJunction
+Junction->bestJunction->moving forward
+Junction->bestJunction->contains() call
+Junction->bestJunction->contains() returned true (good result)
+Junction->bestJunction->exit
+Node[Hol0]->bestJunction->junctionPlace still on this path
+Node[Hol0]->bestJunction->exit
+Node[Cow3]->bestJunction->junctionPlace still on this path
+Node[Cow3]->bestJunction->exit
+Junction->bestJunction->back from recursive call, exit
+Node[Tex1]->bestJunction->junctionPlace was moved to another area
+Node[Tex1]->bestJunction->replacing module in the list
+Node[Tex1]->bestJunction->exit
+Fork->bestJunction->right recursive call
+Node[Puz6]->bestJunction->start
+Node[Puz6]->bestJunction->forward
+Node[Puz6]->bestJunction->module not found
+Node[Num0]->bestJunction->start
+Node[Num0]->bestJunction->forward
+Node[Num0]->bestJunction->module found or nullptr
+Node[Num0]->bestJunction->removing module
+Node[Num0]->bestJunction->new junction place
+Node[Num0]->bestJunction->recursive call
+Fork->bestJunction->start
+Fork->bestJunction->moving forward
+Fork->bestJunction->junctionPlace already found
+Fork->bestJunction->right contains() call
+Fork->bestJunction->right bestFork fails
+Fork->bestJunction->this junction place is bad => junction place not found
+Fork->bestJunction->side = right => right recursive call
+Node[Tex7]->bestJunction->start
+Node[Tex7]->bestJunction->forward
+Node[Tex7]->bestJunction->module not found
 Node[Wri2]->bestJunction->start
 Node[Wri2]->bestJunction->forward
 Node[Wri2]->bestJunction->module found or nullptr
 Node[Wri2]->bestJunction->removing module
+Node[Wri2]->bestJunction->new junction place
 Node[Wri2]->bestJunction->recursive call
+Node[Con5]->bestJunction->start
+Node[Con5]->bestJunction->forward
+Node[Con5]->bestJunction->module not found
+Node[Con5]->bestJunction->moving node
+Node[Con5]->bestJunction->recursive call and exit
+Node[Hid3]->bestJunction->start
+Node[Hid3]->bestJunction->forward
+Node[Hid3]->bestJunction->module not found
+Node[Hid3]->bestJunction->moving node
+Node[Hid3]->bestJunction->recursive call and exit
+Node[Tim1]->bestJunction->start
+Node[Tim1]->bestJunction->forward
+Node[Tim1]->bestJunction->module not found
+Node[Tim1]->bestJunction->moving node
+Node[Tim1]->bestJunction->recursive call and exit
+Junction->bestJunction
+Junction->bestJunction->moving forward
+Junction->bestJunction->contains() call
+Junction->bestJunction->contains() returned true (good result)
+Junction->bestJunction->exit
+Node[Wri2]->bestJunction->junctionPlace still on this path
+Node[Wri2]->bestJunction->exit
+Fork->bestJunction->back from right recursive call
+Fork->bestJunction->exit
+Node[Num0]->bestJunction->junctionPlace was moved to another area
+Node[Num0]->bestJunction->replacing module in the list
+Node[Num0]->bestJunction->exit
+Fork->bestJunction->back from recursive calls
+Fork->bestJunction->choosing left
+Fork->bestJunction->exit
+add->afterBestJunction
+-Cow3--Hol0->-####-
+add->path
+add->Modules left:
+1*Wri2
+2*Num0
+1*Tex1
+2*Alp2
+add->forking left
+add->forked first Node: Wri2
+add->node Num0
+add->node Num0
+add->node Tex1
+add->node Alp2
+add->node Alp2
+add->pathed
+add->junction left
+add->juncted
+-####--Ord8--Wri2-<-Wri2--Num0--Num0--Tex1--Alp2--Alp2->-Cow3--Hol0->-####-
+                  <-Hol9-<-Con5--Hid3--Tim1--Tex1->-Wri4->
+                         <-Puz6--Num0-<-Num0--Alp2->
+                                      <-Tex7--Con5--Hid3--Tim1--Wri2->
+
+Set :
+2*[Hid3] : HiddenObjects: 5 0 20 75
+1*[Wri2] : WritingWords: 0 90 0 10
+1*[Hol9] : HoledText: 80 10 0 10
+2*[Tim1] : TimeReading: 0 0 95 5
+1*[Num0] : NumberInWords/Figure: 15 0 75 10
+1*[Wri4] : WritingLetters: 0 75 0 25
+1*[Hol0] : HoledWords: 65 25 0 10
+1*[Alp2] : AlphabetSong: 20 0 0 80
+add->start
+ModuleGE[####]->bestfork->start
+ModuleGE[####]->bestfork>after find
+Node[####]->bestfork->no match
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+Node[Ord8]->bestfork->no match
+Node[Ord8]->bestfork->new fork place
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->moving
+Node[Wri2]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->fork place already found, exit
+add->after bestFork
+2*Hid3
+1*Hol9
+2*Tim1
+1*Num0
+1*Wri4
+1*Hol0
+1*Alp2
+-Ord8-<-Wri2--Num0--Num0--Tex1--Alp2--Alp2->-Cow3--Hol0->-####-
+      <-Hol9-<-Con5--Hid3--Tim1--Tex1->-Wri4->
+             <-Puz6--Num0-<-Num0--Alp2->
+                          <-Tex7--Con5--Hid3--Tim1--Wri2->
+Node[Ord8]->bestJunction->start
+Node[Ord8]->bestJunction->forward
+Node[Ord8]->bestJunction->module not found
+Fork->bestJunction->start
+Fork->bestJunction->moving forward
+Fork->bestJunction->side = both
+Fork->bestJunction->left recursive call
+Node[Wri2]->bestJunction->start
+Node[Wri2]->bestJunction->forward
+Node[Wri2]->bestJunction->module not found
+Node[Num0]->bestJunction->start
+Node[Num0]->bestJunction->forward
+Node[Num0]->bestJunction->module found or nullptr
+Node[Num0]->bestJunction->removing module
+Node[Num0]->bestJunction->new junction place
+Node[Num0]->bestJunction->recursive call
 Node[Num0]->bestJunction->start
 Node[Num0]->bestJunction->forward
 Node[Num0]->bestJunction->module not found
@@ -153,154 +540,489 @@ Node[Tex1]->bestJunction->forward
 Node[Tex1]->bestJunction->module not found
 Node[Tex1]->bestJunction->moving node
 Node[Tex1]->bestJunction->recursive call and exit
+Node[Alp2]->bestJunction->start
+Node[Alp2]->bestJunction->forward
+Node[Alp2]->bestJunction->module found or nullptr
+Node[Alp2]->bestJunction->removing module
+Node[Alp2]->bestJunction->recursive call
+Node[Alp2]->bestJunction->start
+Node[Alp2]->bestJunction->forward
+Node[Alp2]->bestJunction->module not found
+Node[Alp2]->bestJunction->moving node
+Node[Alp2]->bestJunction->recursive call and exit
+Junction->bestJunction
+Junction->bestJunction->moving forward
+Junction->bestJunction->contains() call
+Junction->bestJunction->contains() returned false=> junction place is bad
+Junction->bestJunction->compatible side => forward recursive call
+Node[Cow3]->bestJunction->start
+Node[Cow3]->bestJunction->forward
+Node[Cow3]->bestJunction->module not found
+Node[Hol0]->bestJunction->start
+Node[Hol0]->bestJunction->forward
+Node[Hol0]->bestJunction->module found or nullptr
+Node[Hol0]->bestJunction->removing module
+Node[Hol0]->bestJunction->new junction place
+Node[Hol0]->bestJunction->recursive call
 Junction->bestJunction
 Junction->bestJunction->moving forward
 Junction->bestJunction->contains() call
 Junction->bestJunction->contains() returned true (good result)
 Junction->bestJunction->exit
-Node[Wri2]->bestJunction->junctionPlace still on this path
-Node[Wri2]->bestJunction->exit
-Node[Con5]->bestJunction->junctionPlace still on this path
-Node[Con5]->bestJunction->exit
+Node[Hol0]->bestJunction->junctionPlace still on this path
+Node[Hol0]->bestJunction->exit
+Junction->bestJunction->back from recursive call, exit
+Node[Alp2]->bestJunction->junctionPlace was moved to another area
+Node[Alp2]->bestJunction->replacing module in the list
+Node[Alp2]->bestJunction->exit
+Node[Num0]->bestJunction->junctionPlace was moved to another area
+Node[Num0]->bestJunction->replacing module in the list
+Node[Num0]->bestJunction->exit
 Fork->bestJunction->right recursive call
+Node[Hol9]->bestJunction->start
+Node[Hol9]->bestJunction->forward
+Node[Hol9]->bestJunction->module found or nullptr
+Node[Hol9]->bestJunction->removing module
+Node[Hol9]->bestJunction->new junction place
+Node[Hol9]->bestJunction->recursive call
+Fork->bestJunction->start
+Fork->bestJunction->moving forward
+Fork->bestJunction->junctionPlace already found
+Fork->bestJunction->right contains() call
+Fork->bestJunction->right bestFork fails
+Fork->bestJunction->this junction place is bad => junction place not found
+Fork->bestJunction->side = right => right recursive call
+Node[Puz6]->bestJunction->start
+Node[Puz6]->bestJunction->forward
+Node[Puz6]->bestJunction->module not found
+Node[Num0]->bestJunction->start
+Node[Num0]->bestJunction->forward
+Node[Num0]->bestJunction->module found or nullptr
+Node[Num0]->bestJunction->removing module
+Node[Num0]->bestJunction->new junction place
+Node[Num0]->bestJunction->recursive call
+Fork->bestJunction->start
+Fork->bestJunction->moving forward
+Fork->bestJunction->junctionPlace already found
+Fork->bestJunction->right contains() call
+Fork->bestJunction->right bestFork fails
+Fork->bestJunction->this junction place is bad => junction place not found
+Fork->bestJunction->side = right => right recursive call
+Node[Tex7]->bestJunction->start
+Node[Tex7]->bestJunction->forward
+Node[Tex7]->bestJunction->module not found
+Node[Con5]->bestJunction->start
+Node[Con5]->bestJunction->forward
+Node[Con5]->bestJunction->module not found
+Node[Hid3]->bestJunction->start
+Node[Hid3]->bestJunction->forward
+Node[Hid3]->bestJunction->module found or nullptr
+Node[Hid3]->bestJunction->removing module
+Node[Hid3]->bestJunction->new junction place
+Node[Hid3]->bestJunction->recursive call
 Node[Tim1]->bestJunction->start
 Node[Tim1]->bestJunction->forward
-Node[Tim1]->bestJunction->module not found
-Node[Hol0]->bestJunction->start
-Node[Hol0]->bestJunction->forward
-Node[Hol0]->bestJunction->module not found
+Node[Tim1]->bestJunction->module found or nullptr
+Node[Tim1]->bestJunction->removing module
+Node[Tim1]->bestJunction->recursive call
+Node[Wri2]->bestJunction->start
+Node[Wri2]->bestJunction->forward
+Node[Wri2]->bestJunction->module not found
+Node[Wri2]->bestJunction->moving node
+Node[Wri2]->bestJunction->recursive call and exit
+Junction->bestJunction
+Junction->bestJunction->moving forward
+Junction->bestJunction->contains() call
+Junction->bestJunction->contains() returned true (good result)
+Junction->bestJunction->exit
+Node[Tim1]->bestJunction->junctionPlace still on this path
+Node[Tim1]->bestJunction->exit
+Node[Hid3]->bestJunction->junctionPlace still on this path
+Node[Hid3]->bestJunction->exit
+Fork->bestJunction->back from right recursive call
+Fork->bestJunction->exit
+Node[Num0]->bestJunction->junctionPlace was moved to another area
+Node[Num0]->bestJunction->replacing module in the list
+Node[Num0]->bestJunction->exit
+Fork->bestJunction->back from right recursive call
+Fork->bestJunction->exit
+Node[Hol9]->bestJunction->junctionPlace was moved to another area
+Node[Hol9]->bestJunction->replacing module in the list
+Node[Hol9]->bestJunction->exit
+Fork->bestJunction->back from recursive calls
+Fork->bestJunction->choosing right
+Fork->bestJunction->exit
+add->afterBestJunction
+-Hid3--Tim1->
+add->path
+add->Modules left:
+1*Hid3
+1*Hol9
+1*Tim1
+1*Num0
+1*Wri4
+1*Hol0
+1*Alp2
+add->forking right
+add->forked first Node: Hid3
+add->node Hol9
+add->node Tim1
+add->node Num0
+add->node Wri4
+add->node Hol0
+add->node Alp2
+add->pathed
+add->junction right
+add->juncted
+-####--Wri2-<-Ord8-<-Wri2--Num0--Tex1--Alp2--Num0--Alp2->-Cow3--Hol0->-####-
+                   <-Hol9-<-Con5--Hid3--Tim1--Tex1->-Wri4->
+                          <-Puz6--Num0-<-Num0--Alp2->
+                                       <-Tex7--Con5--Wri2->-Hid3--Tim1->
+            <-Hid3--Hol9--Tim1--Num0--Wri4--Hol0--Alp2->
+
+Set :
+1*[Con5] : ConnectsTheDots: 0 0 30 70
+1*[Hid3] : HiddenObjects: 5 0 20 75
+1*[Ord8] : Ordering: 0 0 75 25
+2*[Wri2] : WritingWords: 0 90 0 10
+2*[Hol9] : HoledText: 80 10 0 10
+1*[Tim1] : TimeReading: 0 0 95 5
+1*[Num0] : NumberInWords/Figure: 15 0 75 10
+1*[Alp2] : AlphabetSong: 20 0 0 80
+add->start
+ModuleGE[####]->bestfork->start
+ModuleGE[####]->bestfork>after find
+Node[####]->bestfork->no match
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Hid3]->bestfork->start
+ModuleGE[Hid3]->bestfork>after find
+ModuleGE[Hid3]->bestfork->match
+Node[Hid3]->bestfork->module erased
+Node[Hid3]->bestfork->recursive call and exit
+ModuleGE[Hol9]->bestfork->start
+ModuleGE[Hol9]->bestfork>after find
+ModuleGE[Hol9]->bestfork->match
+Node[Hol9]->bestfork->module erased
+Node[Hol9]->bestfork->recursive call and exit
+ModuleGE[Tim1]->bestfork->start
+ModuleGE[Tim1]->bestfork>after find
+ModuleGE[Tim1]->bestfork->match
+Node[Tim1]->bestfork->module erased
+Node[Tim1]->bestfork->recursive call and exit
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+ModuleGE[Num0]->bestfork->match
+Node[Num0]->bestfork->module erased
+Node[Num0]->bestfork->recursive call and exit
+ModuleGE[Wri4]->bestfork->start
+ModuleGE[Wri4]->bestfork>after find
+Node[Wri4]->bestfork->no match
+Node[Wri4]->bestfork->new fork place
+ModuleGE[Hol0]->bestfork->start
+ModuleGE[Hol0]->bestfork>after find
+Node[Hol0]->bestfork->no match
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+ModuleGE[Alp2]->bestfork->match
+Node[Alp2]->bestfork->module erased
+Node[Alp2]->bestfork->moving
+Node[Alp2]->bestfork->recursive call and exit
+Junction->bestFork
+Fork->bestFork->left recursive call
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+ModuleGE[Ord8]->bestfork->match
+Node[Ord8]->bestfork->module erased
+Node[Ord8]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Hol9]->bestfork->start
+ModuleGE[Hol9]->bestfork>after find
+ModuleGE[Hol9]->bestfork->match
+Node[Hol9]->bestfork->module erased
+Node[Hol9]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Puz6]->bestfork->start
+ModuleGE[Puz6]->bestfork>after find
+Node[Puz6]->bestfork->no match
+Node[Puz6]->bestfork->new fork place
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+ModuleGE[Num0]->bestfork->match
+Node[Num0]->bestfork->module erased
+Node[Num0]->bestfork->moving
+Node[Num0]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->fork place already found, exit
+Fork->bestFork->left recursive call
+ModuleGE[Con5]->bestfork->start
+ModuleGE[Con5]->bestfork>after find
+ModuleGE[Con5]->bestfork->match
+Node[Con5]->bestfork->module erased
+Node[Con5]->bestfork->recursive call and exit
+ModuleGE[Hid3]->bestfork->start
+ModuleGE[Hid3]->bestfork>after find
+ModuleGE[Hid3]->bestfork->match
+Node[Hid3]->bestfork->module erased
+Node[Hid3]->bestfork->recursive call and exit
+ModuleGE[Tim1]->bestfork->start
+ModuleGE[Tim1]->bestfork>after find
+ModuleGE[Tim1]->bestfork->match
+Node[Tim1]->bestfork->module erased
+Node[Tim1]->bestfork->recursive call and exit
+ModuleGE[Tex1]->bestfork->start
+ModuleGE[Tex1]->bestfork>after find
+Node[Tex1]->bestfork->no match
+Node[Tex1]->bestfork->new fork place
+Junction->bestFork
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left>=right, delete and exit
+Fork->bestFork->left recursive call
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->recursive call and exit
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+ModuleGE[Num0]->bestfork->match
+Node[Num0]->bestfork->module erased
+Node[Num0]->bestfork->recursive call and exit
+ModuleGE[Tex1]->bestfork->start
+ModuleGE[Tex1]->bestfork>after find
+Node[Tex1]->bestfork->no match
+Node[Tex1]->bestfork->new fork place
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+ModuleGE[Alp2]->bestfork->match
+Node[Alp2]->bestfork->module erased
+Node[Alp2]->bestfork->moving
+Node[Alp2]->bestfork->recursive call and exit
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+Node[Num0]->bestfork->no match
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+Node[Alp2]->bestfork->no match
+Junction->bestFork
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left<right, delete and exit
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left>=right, delete and exit
+add->after bestFork
+1*Wri2
+1*Hol9
+1*Num0
+1*Alp2
+-Tex1->-Wri4->
+Node[Tex1]->bestJunction->start
+Node[Tex1]->bestJunction->forward
+Node[Tex1]->bestJunction->module not found
+Junction->bestJunction
+Junction->bestJunction->moving forward
+Junction->bestJunction->contains() call
+Junction->bestJunction->contains() returned false=> junction place is bad
+Junction->bestJunction->compatible side => forward recursive call
 Node[Wri4]->bestJunction->start
 Node[Wri4]->bestJunction->forward
 Node[Wri4]->bestJunction->module not found
+Junction->bestJunction
+Junction->bestJunction->moving forward
+Junction->bestJunction->contains() call
+Junction->bestJunction->contains() returned false=> junction place is bad
+Junction->bestJunction->not compatible side
+Junction->bestJunction->exit
+Junction->bestJunction->back from recursive call, exit
+add->afterBestJunction
+-####--Wri2-<-Ord8-<-Wri2--Num0--Alp2--Tex1--Num0--Alp2->-Cow3--Hol0->-####-
+                   <-Hol9-<-Con5--Hid3--Tim1--Tex1->-Wri4->
+                          <-Num0--Puz6-<-Num0--Alp2->
+                                       <-Tex7--Con5--Wri2->-Hid3--Tim1->
+            <-Hid3--Hol9--Tim1--Num0--Alp2--Wri4--Hol0->
+
+Set :
+2*[Con5] : ConnectsTheDots: 0 0 30 70
+1*[Cow3] : CowTrainMaths: 0 0 70 30
+1*[Cow5] : CowTrainReading: 70 0 0 30
+1*[Ord8] : Ordering: 0 0 75 25
+1*[Wri2] : WritingWords: 0 90 0 10
+1*[Tim1] : TimeReading: 0 0 95 5
+1*[Tex1] : TextReading: 65 0 0 35
+1*[Wri4] : WritingLetters: 0 75 0 25
+1*[Hol0] : HoledWords: 65 25 0 10
+add->start
+ModuleGE[####]->bestfork->start
+ModuleGE[####]->bestfork>after find
+Node[####]->bestfork->no match
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Hid3]->bestfork->start
+ModuleGE[Hid3]->bestfork>after find
+Node[Hid3]->bestfork->no match
+Node[Hid3]->bestfork->new fork place
+ModuleGE[Hol9]->bestfork->start
+ModuleGE[Hol9]->bestfork>after find
+Node[Hol9]->bestfork->no match
+ModuleGE[Tim1]->bestfork->start
+ModuleGE[Tim1]->bestfork>after find
+ModuleGE[Tim1]->bestfork->match
+Node[Tim1]->bestfork->module erased
+Node[Tim1]->bestfork->moving
+Node[Tim1]->bestfork->recursive call and exit
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+Node[Num0]->bestfork->no match
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+Node[Alp2]->bestfork->no match
+ModuleGE[Wri4]->bestfork->start
+ModuleGE[Wri4]->bestfork>after find
+ModuleGE[Wri4]->bestfork->match
+Node[Wri4]->bestfork->module erased
+Node[Wri4]->bestfork->moving
+Node[Wri4]->bestfork->recursive call and exit
+ModuleGE[Hol0]->bestfork->start
+ModuleGE[Hol0]->bestfork>after find
+ModuleGE[Hol0]->bestfork->match
+Node[Hol0]->bestfork->module erased
+Node[Hol0]->bestfork->moving
+Node[Hol0]->bestfork->recursive call and exit
+Junction->bestFork
+Fork->bestFork->left recursive call
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+ModuleGE[Ord8]->bestfork->match
+Node[Ord8]->bestfork->module erased
+Node[Ord8]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Hol9]->bestfork->start
+ModuleGE[Hol9]->bestfork>after find
+Node[Hol9]->bestfork->no match
+Node[Hol9]->bestfork->new fork place
+Fork->bestFork->start
+Fork->bestFork->fork place already found, exit
+Fork->bestFork->left recursive call
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+Node[Wri2]->bestfork->no match
+Node[Wri2]->bestfork->new fork place
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+Node[Num0]->bestfork->no match
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+Node[Alp2]->bestfork->no match
+ModuleGE[Tex1]->bestfork->start
+ModuleGE[Tex1]->bestfork>after find
+ModuleGE[Tex1]->bestfork->match
+Node[Tex1]->bestfork->module erased
+Node[Tex1]->bestfork->moving
+Node[Tex1]->bestfork->recursive call and exit
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+Node[Num0]->bestfork->no match
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+Node[Alp2]->bestfork->no match
+Junction->bestFork
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left>=right, delete and exit
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left<right, delete and exit
+add->after bestFork
+2*Con5
+1*Cow3
+1*Cow5
+1*Ord8
+1*Tex1
+-Hid3--Hol9--Num0--Alp2->
+Node[Hid3]->bestJunction->start
+Node[Hid3]->bestJunction->forward
+Node[Hid3]->bestJunction->module not found
+Node[Hol9]->bestJunction->start
+Node[Hol9]->bestJunction->forward
+Node[Hol9]->bestJunction->module not found
+Node[Num0]->bestJunction->start
+Node[Num0]->bestJunction->forward
+Node[Num0]->bestJunction->module not found
 Node[Alp2]->bestJunction->start
 Node[Alp2]->bestJunction->forward
 Node[Alp2]->bestJunction->module not found
 Junction->bestJunction
 Junction->bestJunction->moving forward
 Junction->bestJunction->contains() call
-Junction->bestJunction->contains() returned true (good result)
-Junction->bestJunction->new junction place
-Junction->bestJunction->exit
-Fork->bestJunction->back from recursive calls
-Fork->bestJunction->choosing left
-Fork->bestJunction->exit
-add->afterBestJunction
--Con5--Wri2->-####-
-add->path
-add->Modules left:
-1*Puz6
-1*Cow3
-1*Tex7
-add->forking left
-add->forked first Node: Puz6
-add->node Cow3
-add->node Tex7
-add->pathed
-add->junction left
-add->juncted
--####-<-Puz6--Cow3--Tex7->-Con5--Wri2->-####-
-      <-Alp2-<-Num0--Tex1->
-             <-Tim1--Hol0--Wri4--Alp2->
-
-Set :
-1*[Puz6] : Puzzle: 5 0 0 95
-1*[Con5] : ConnectsTheDots: 0 0 30 70
-1*[Hol9] : HoledText: 80 10 0 10
-1*[Wri2] : WritingWords: 0 90 0 10
-1*[Num0] : NumberInWords/Figure: 15 0 75 10
-add->start
-ModuleGE[####]->bestfork->start
-ModuleGE[####]->bestfork>after find
-Node[####]->bestfork->no match
-Fork->bestFork->start
-Fork->bestFork->right recursive call
-ModuleGE[Alp2]->bestfork->start
-ModuleGE[Alp2]->bestfork>after find
-Node[Alp2]->bestfork->no match
-Node[Alp2]->bestfork->new fork place
-Fork->bestFork->start
-Fork->bestFork->fork place already found, exit
-Fork->bestFork->left recursive call
-ModuleGE[Puz6]->bestfork->start
-ModuleGE[Puz6]->bestfork>after find
-ModuleGE[Puz6]->bestfork->match
-Node[Puz6]->bestfork->module erased
-Node[Puz6]->bestfork->recursive call and exit
-ModuleGE[Cow3]->bestfork->start
-ModuleGE[Cow3]->bestfork>after find
-Node[Cow3]->bestfork->no match
-Node[Cow3]->bestfork->new fork place
-ModuleGE[Tex7]->bestfork->start
-ModuleGE[Tex7]->bestfork>after find
-Node[Tex7]->bestfork->no match
-Junction->bestFork
-Fork->bestFork->back from recursive calls
-Fork->bestFork->left>=right, delete and exit
-add->after bestFork
-1*Con5
-1*Hol9
-1*Wri2
-1*Num0
--Cow3--Tex7->-Con5--Wri2->-####-
-Node[Cow3]->bestJunction->start
-Node[Cow3]->bestJunction->forward
-Node[Cow3]->bestJunction->module not found
-Node[Tex7]->bestJunction->start
-Node[Tex7]->bestJunction->forward
-Node[Tex7]->bestJunction->module not found
+Junction->bestJunction->contains() returned false=> junction place is bad
+Junction->bestJunction->compatible side => forward recursive call
+Node[Hid3]->bestJunction->start
+Node[Hid3]->bestJunction->forward
+Node[Hid3]->bestJunction->module not found
+Node[Tim1]->bestJunction->start
+Node[Tim1]->bestJunction->forward
+Node[Tim1]->bestJunction->module not found
 Junction->bestJunction
 Junction->bestJunction->moving forward
 Junction->bestJunction->contains() call
 Junction->bestJunction->contains() returned true (good result)
 Junction->bestJunction->new junction place
-Junction->bestJunction->side != calling side => back recursive call
-Junction->bestJunction->right recursive call
-Node[Tex1]->bestJunction->start
-Node[Tex1]->bestJunction->backward
-Node[Tex1]->bestJunction->module not found, recursive call
-Node[Num0]->bestJunction->start
-Node[Num0]->bestJunction->backward
-Node[Num0]->bestJunction->module found, removing module
-Node[Num0]->moving node
-Node[Num0]->bestJunction->recursive call
-Fork->bestJunction->start
-Fork->bestJunction->moving backward
-Fork->bestJunction->exit
-Node[Num0]->bestJunction->exit
-Node[Tex1]->bestJunction->exit
-Junction->bestJunction->back from back recursive call
-Junction->bestJunction->new junction chosen
+Junction->bestJunction->exit
+Junction->bestJunction->back from recursive call, exit
 add->afterBestJunction
--Num0->
+>
 add->path
 add->Modules left:
-1*Hol9
+2*Con5
+1*Cow3
+1*Cow5
+1*Ord8
+1*Tex1
 add->forking right
-add->forked first Node: Hol9
+add->forked first Node: Con5
+add->node Con5
+add->node Cow3
+add->node Cow5
+add->node Ord8
+add->node Tex1
 add->pathed
-add->junction left
+add->junction right
 add->juncted
--####-<-Puz6-<-Cow3--Tex7->-Con5--Wri2->-####-
-             <-Hol9->-Num0->
-      <-Alp2-<-Tex1->
-             <-Tim1--Hol0--Wri4--Alp2->
+-####--Wri2-<-Ord8-<-Tex1--Wri2--Num0--Alp2--Num0--Alp2->-Cow3--Hol0->-####-
+                   <-Hol9-<-Con5--Hid3--Tim1--Tex1->-Wri4->
+                          <-Num0--Puz6-<-Num0--Alp2->
+                                       <-Tex7--Con5--Wri2->-Hid3--Tim1->>
+            <-Tim1--Wri4--Hol0-<-Hid3--Hol9--Num0--Alp2->
+                               <-Con5--Con5--Cow3--Cow5--Ord8--Tex1->
 
 Set :
+1*[Cow3] : CowTrainMaths: 0 0 70 30
+1*[Wri2] : WritingWords: 0 90 0 10
 1*[Tim1] : TimeReading: 0 0 95 5
-1*[Hol0] : HoledWords: 65 25 0 10
+2*[Num0] : NumberInWords/Figure: 15 0 75 10
+1*[Tex1] : TextReading: 65 0 0 35
 1*[Wri4] : WritingLetters: 0 75 0 25
+1*[Hol0] : HoledWords: 65 25 0 10
 2*[Alp2] : AlphabetSong: 20 0 0 80
 add->start
 ModuleGE[####]->bestfork->start
 ModuleGE[####]->bestfork>after find
 Node[####]->bestfork->no match
-Fork->bestFork->start
-Fork->bestFork->right recursive call
-ModuleGE[Alp2]->bestfork->start
-ModuleGE[Alp2]->bestfork>after find
-ModuleGE[Alp2]->bestfork->match
-Node[Alp2]->bestfork->module erased
-Node[Alp2]->bestfork->recursive call and exit
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->recursive call and exit
 Fork->bestFork->start
 Fork->bestFork->right recursive call
 ModuleGE[Tim1]->bestfork->start
@@ -308,26 +1030,454 @@ ModuleGE[Tim1]->bestfork>after find
 ModuleGE[Tim1]->bestfork->match
 Node[Tim1]->bestfork->module erased
 Node[Tim1]->bestfork->recursive call and exit
-ModuleGE[Hol0]->bestfork->start
-ModuleGE[Hol0]->bestfork>after find
-ModuleGE[Hol0]->bestfork->match
-Node[Hol0]->bestfork->module erased
-Node[Hol0]->bestfork->recursive call and exit
 ModuleGE[Wri4]->bestfork->start
 ModuleGE[Wri4]->bestfork>after find
 ModuleGE[Wri4]->bestfork->match
 Node[Wri4]->bestfork->module erased
 Node[Wri4]->bestfork->recursive call and exit
+ModuleGE[Hol0]->bestfork->start
+ModuleGE[Hol0]->bestfork>after find
+ModuleGE[Hol0]->bestfork->match
+Node[Hol0]->bestfork->module erased
+Node[Hol0]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Con5]->bestfork->start
+ModuleGE[Con5]->bestfork>after find
+Node[Con5]->bestfork->no match
+Node[Con5]->bestfork->new fork place
+ModuleGE[Con5]->bestfork->start
+ModuleGE[Con5]->bestfork>after find
+Node[Con5]->bestfork->no match
+ModuleGE[Cow3]->bestfork->start
+ModuleGE[Cow3]->bestfork>after find
+ModuleGE[Cow3]->bestfork->match
+Node[Cow3]->bestfork->module erased
+Node[Cow3]->bestfork->moving
+Node[Cow3]->bestfork->recursive call and exit
+ModuleGE[Cow5]->bestfork->start
+ModuleGE[Cow5]->bestfork>after find
+Node[Cow5]->bestfork->no match
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+Node[Ord8]->bestfork->no match
+ModuleGE[Tex1]->bestfork->start
+ModuleGE[Tex1]->bestfork>after find
+ModuleGE[Tex1]->bestfork->match
+Node[Tex1]->bestfork->module erased
+Node[Tex1]->bestfork->moving
+Node[Tex1]->bestfork->recursive call and exit
+Junction->bestFork
+Fork->bestFork->left recursive call
+ModuleGE[Hid3]->bestfork->start
+ModuleGE[Hid3]->bestfork>after find
+Node[Hid3]->bestfork->no match
+Node[Hid3]->bestfork->new fork place
+ModuleGE[Hol9]->bestfork->start
+ModuleGE[Hol9]->bestfork>after find
+Node[Hol9]->bestfork->no match
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+ModuleGE[Num0]->bestfork->match
+Node[Num0]->bestfork->module erased
+Node[Num0]->bestfork->moving
+Node[Num0]->bestfork->recursive call and exit
 ModuleGE[Alp2]->bestfork->start
 ModuleGE[Alp2]->bestfork>after find
 ModuleGE[Alp2]->bestfork->match
 Node[Alp2]->bestfork->module erased
+Node[Alp2]->bestfork->moving
 Node[Alp2]->bestfork->recursive call and exit
+Junction->bestFork
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left>=right, delete and exit
+Fork->bestFork->left recursive call
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+Node[Ord8]->bestfork->no match
+Node[Ord8]->bestfork->new fork place
+Fork->bestFork->start
+Fork->bestFork->fork place already found, exit
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left<right, delete and exit
+add->after bestFork
+1*Cow3
+1*Num0
+1*Tex1
+1*Alp2
+-Hid3--Hol9->
+Node[Hid3]->bestJunction->start
+Node[Hid3]->bestJunction->forward
+Node[Hid3]->bestJunction->module not found
+Node[Hol9]->bestJunction->start
+Node[Hol9]->bestJunction->forward
+Node[Hol9]->bestJunction->module not found
+Junction->bestJunction
+Junction->bestJunction->moving forward
+Junction->bestJunction->contains() call
+Junction->bestJunction->contains() returned false=> junction place is bad
+Junction->bestJunction->compatible side => forward recursive call
+Node[Hid3]->bestJunction->start
+Node[Hid3]->bestJunction->forward
+Node[Hid3]->bestJunction->module not found
+Node[Tim1]->bestJunction->start
+Node[Tim1]->bestJunction->forward
+Node[Tim1]->bestJunction->module not found
+Junction->bestJunction
+Junction->bestJunction->moving forward
+Junction->bestJunction->contains() call
+Junction->bestJunction->contains() returned true (good result)
+Junction->bestJunction->new junction place
+Junction->bestJunction->side != calling side => back recursive call
+Junction->bestJunction->right recursive call
+Node[Ord8]->bestJunction->start
+Node[Ord8]->bestJunction->backward
+Node[Ord8]->bestJunction->module not found, recursive call
+Node[Cow5]->bestJunction->start
+Node[Cow5]->bestJunction->backward
+Node[Cow5]->bestJunction->module not found, recursive call
+Node[Con5]->bestJunction->start
+Node[Con5]->bestJunction->backward
+Node[Con5]->bestJunction->module not found, recursive call
+Node[Con5]->bestJunction->start
+Node[Con5]->bestJunction->backward
+Node[Con5]->bestJunction->module not found, recursive call
+Node[Tex1]->bestJunction->start
+Node[Tex1]->bestJunction->backward
+Node[Tex1]->bestJunction->module found, removing module
+Node[Tex1]->moving node
+Node[Tex1]->bestJunction->recursive call
+Node[Cow3]->bestJunction->start
+Node[Cow3]->bestJunction->backward
+Node[Cow3]->bestJunction->module found, removing module
+Node[Cow3]->moving node
+Node[Cow3]->bestJunction->recursive call
+Fork->bestJunction->start
+Fork->bestJunction->moving backward
+Fork->bestJunction->exit
+Node[Cow3]->bestJunction->exit
+Node[Tex1]->bestJunction->exit
+Node[Con5]->bestJunction->exit
+Node[Con5]->bestJunction->exit
+Node[Cow5]->bestJunction->exit
+Node[Ord8]->bestJunction->exit
+Junction->bestJunction->back from back recursive call
+Junction->bestJunction->new junction chosen
+Junction->bestJunction->back from recursive call, exit
+add->afterBestJunction
+-Cow3--Tex1->
+add->path
+add->Modules left:
+1*Num0
+1*Alp2
+add->forking right
+add->forked first Node: Num0
+add->node Alp2
+add->pathed
+add->junction left
+add->juncted
+-####--Wri2-<-Ord8-<-Tex1--Wri2--Num0--Alp2--Num0--Alp2->-Cow3--Hol0->-####-
+                   <-Hol9-<-Con5--Hid3--Tim1--Tex1->-Wri4->
+                          <-Num0--Puz6-<-Num0--Alp2->
+                                       <-Tex7--Con5--Wri2->-Hid3--Tim1->>
+            <-Tim1--Wri4--Hol0-<-Num0--Alp2-<-Hid3--Hol9->
+                                            <-Num0--Alp2->-Cow3--Tex1->
+                               <-Con5--Con5--Cow5--Ord8->
+
+Set :
+1*[Con5] : ConnectsTheDots: 0 0 30 70
+1*[Hid3] : HiddenObjects: 5 0 20 75
+1*[Cow3] : CowTrainMaths: 0 0 70 30
+1*[Ord8] : Ordering: 0 0 75 25
+1*[Wri2] : WritingWords: 0 90 0 10
+1*[Hol9] : HoledText: 80 10 0 10
+1*[Tim1] : TimeReading: 0 0 95 5
+1*[Tex1] : TextReading: 65 0 0 35
+1*[Wri4] : WritingLetters: 0 75 0 25
+1*[Hol0] : HoledWords: 65 25 0 10
+add->start
+ModuleGE[####]->bestfork->start
+ModuleGE[####]->bestfork>after find
+Node[####]->bestfork->no match
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Tim1]->bestfork->start
+ModuleGE[Tim1]->bestfork>after find
+ModuleGE[Tim1]->bestfork->match
+Node[Tim1]->bestfork->module erased
+Node[Tim1]->bestfork->recursive call and exit
+ModuleGE[Wri4]->bestfork->start
+ModuleGE[Wri4]->bestfork>after find
+ModuleGE[Wri4]->bestfork->match
+Node[Wri4]->bestfork->module erased
+Node[Wri4]->bestfork->recursive call and exit
+ModuleGE[Hol0]->bestfork->start
+ModuleGE[Hol0]->bestfork>after find
+ModuleGE[Hol0]->bestfork->match
+Node[Hol0]->bestfork->module erased
+Node[Hol0]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Con5]->bestfork->start
+ModuleGE[Con5]->bestfork>after find
+ModuleGE[Con5]->bestfork->match
+Node[Con5]->bestfork->module erased
+Node[Con5]->bestfork->recursive call and exit
+ModuleGE[Con5]->bestfork->start
+ModuleGE[Con5]->bestfork>after find
+Node[Con5]->bestfork->no match
+Node[Con5]->bestfork->new fork place
+ModuleGE[Cow5]->bestfork->start
+ModuleGE[Cow5]->bestfork>after find
+Node[Cow5]->bestfork->no match
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+ModuleGE[Ord8]->bestfork->match
+Node[Ord8]->bestfork->module erased
+Node[Ord8]->bestfork->moving
+Node[Ord8]->bestfork->recursive call and exit
+Junction->bestFork
+Fork->bestFork->left recursive call
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+Node[Num0]->bestfork->no match
+Node[Num0]->bestfork->new fork place
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+Node[Alp2]->bestfork->no match
+Fork->bestFork->start
+Fork->bestFork->fork place already found, exit
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left<right, delete and exit
+Fork->bestFork->left recursive call
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+ModuleGE[Ord8]->bestfork->match
+Node[Ord8]->bestfork->module erased
+Node[Ord8]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Hol9]->bestfork->start
+ModuleGE[Hol9]->bestfork>after find
+ModuleGE[Hol9]->bestfork->match
+Node[Hol9]->bestfork->module erased
+Node[Hol9]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+Node[Num0]->bestfork->no match
+Node[Num0]->bestfork->new fork place
+ModuleGE[Puz6]->bestfork->start
+ModuleGE[Puz6]->bestfork>after find
+Node[Puz6]->bestfork->no match
+Fork->bestFork->start
+Fork->bestFork->fork place already found, exit
+Fork->bestFork->left recursive call
+ModuleGE[Con5]->bestfork->start
+ModuleGE[Con5]->bestfork>after find
+ModuleGE[Con5]->bestfork->match
+Node[Con5]->bestfork->module erased
+Node[Con5]->bestfork->recursive call and exit
+ModuleGE[Hid3]->bestfork->start
+ModuleGE[Hid3]->bestfork>after find
+ModuleGE[Hid3]->bestfork->match
+Node[Hid3]->bestfork->module erased
+Node[Hid3]->bestfork->recursive call and exit
+ModuleGE[Tim1]->bestfork->start
+ModuleGE[Tim1]->bestfork>after find
+ModuleGE[Tim1]->bestfork->match
+Node[Tim1]->bestfork->module erased
+Node[Tim1]->bestfork->recursive call and exit
+ModuleGE[Tex1]->bestfork->start
+ModuleGE[Tex1]->bestfork>after find
+ModuleGE[Tex1]->bestfork->match
+Node[Tex1]->bestfork->module erased
+Node[Tex1]->bestfork->recursive call and exit
+Junction->bestFork
+ModuleGE[Wri4]->bestfork->start
+ModuleGE[Wri4]->bestfork>after find
+ModuleGE[Wri4]->bestfork->match
+Node[Wri4]->bestfork->module erased
+Node[Wri4]->bestfork->recursive call and exit
+Junction->bestFork
+ModuleGE[Cow3]->bestfork->start
+ModuleGE[Cow3]->bestfork>after find
+ModuleGE[Cow3]->bestfork->match
+Node[Cow3]->bestfork->module erased
+Node[Cow3]->bestfork->recursive call and exit
+ModuleGE[Hol0]->bestfork->start
+ModuleGE[Hol0]->bestfork>after find
+ModuleGE[Hol0]->bestfork->match
+Node[Hol0]->bestfork->module erased
+Node[Hol0]->bestfork->recursive call and exit
+Junction->bestFork
+ModuleGE[####]->bestfork->start
+ModuleGE[####]->bestfork>after find
+Node[####]->bestfork->no match
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left>=right, delete and exit
+Fork->bestFork->left recursive call
+ModuleGE[Tex1]->bestfork->start
+ModuleGE[Tex1]->bestfork>after find
+ModuleGE[Tex1]->bestfork->match
+Node[Tex1]->bestfork->module erased
+Node[Tex1]->bestfork->recursive call and exit
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+Node[Wri2]->bestfork->no match
+Node[Wri2]->bestfork->new fork place
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+Node[Num0]->bestfork->no match
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+Node[Alp2]->bestfork->no match
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+Node[Num0]->bestfork->no match
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+Node[Alp2]->bestfork->no match
+Junction->bestFork
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left<right, delete and exit
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left>=right, delete and exit
+add->after bestFork
+-####--Wri2-<-Ord8-<-Tex1--Wri2--Num0--Alp2--Num0--Alp2->-Cow3--Hol0->-####-
+                   <-Hol9-<-Con5--Hid3--Tim1--Tex1->-Wri4->
+                          <-Num0--Puz6-<-Num0--Alp2->
+                                       <-Tex7--Con5--Wri2->-Hid3--Tim1->>
+            <-Tim1--Wri4--Hol0-<-Num0--Alp2-<-Hid3--Hol9->
+                                            <-Num0--Alp2->-Cow3--Tex1->
+                               <-Con5--Ord8--Con5--Cow5->
+
+Set :
+1*[Puz6] : Puzzle: 5 0 0 95
+1*[Con5] : ConnectsTheDots: 0 0 30 70
+1*[Hid3] : HiddenObjects: 5 0 20 75
+1*[Tex7] : TextUnderstanding: 95 0 0 5
+1*[Ord8] : Ordering: 0 0 75 25
+2*[Wri2] : WritingWords: 0 90 0 10
+1*[Hol9] : HoledText: 80 10 0 10
+1*[Tim1] : TimeReading: 0 0 95 5
+1*[Num0] : NumberInWords/Figure: 15 0 75 10
+add->start
+ModuleGE[####]->bestfork->start
+ModuleGE[####]->bestfork>after find
+Node[####]->bestfork->no match
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Tim1]->bestfork->start
+ModuleGE[Tim1]->bestfork>after find
+ModuleGE[Tim1]->bestfork->match
+Node[Tim1]->bestfork->module erased
+Node[Tim1]->bestfork->recursive call and exit
+ModuleGE[Wri4]->bestfork->start
+ModuleGE[Wri4]->bestfork>after find
+Node[Wri4]->bestfork->no match
+Node[Wri4]->bestfork->new fork place
+ModuleGE[Hol0]->bestfork->start
+ModuleGE[Hol0]->bestfork>after find
+Node[Hol0]->bestfork->no match
+Fork->bestFork->start
+Fork->bestFork->fork place already found, exit
+Fork->bestFork->left recursive call
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+ModuleGE[Ord8]->bestfork->match
+Node[Ord8]->bestfork->module erased
+Node[Ord8]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Hol9]->bestfork->start
+ModuleGE[Hol9]->bestfork>after find
+ModuleGE[Hol9]->bestfork->match
+Node[Hol9]->bestfork->module erased
+Node[Hol9]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+ModuleGE[Num0]->bestfork->match
+Node[Num0]->bestfork->module erased
+Node[Num0]->bestfork->recursive call and exit
+ModuleGE[Puz6]->bestfork->start
+ModuleGE[Puz6]->bestfork>after find
+ModuleGE[Puz6]->bestfork->match
+Node[Puz6]->bestfork->module erased
+Node[Puz6]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Tex7]->bestfork->start
+ModuleGE[Tex7]->bestfork>after find
+ModuleGE[Tex7]->bestfork->match
+Node[Tex7]->bestfork->module erased
+Node[Tex7]->bestfork->recursive call and exit
+ModuleGE[Con5]->bestfork->start
+ModuleGE[Con5]->bestfork>after find
+ModuleGE[Con5]->bestfork->match
+Node[Con5]->bestfork->module erased
+Node[Con5]->bestfork->recursive call and exit
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->recursive call and exit
+Junction->bestFork
+ModuleGE[Hid3]->bestfork->start
+ModuleGE[Hid3]->bestfork>after find
+ModuleGE[Hid3]->bestfork->match
+Node[Hid3]->bestfork->module erased
+Node[Hid3]->bestfork->recursive call and exit
+ModuleGE[Tim1]->bestfork->start
+ModuleGE[Tim1]->bestfork>after find
+ModuleGE[Tim1]->bestfork->match
+Node[Tim1]->bestfork->module erased
+Node[Tim1]->bestfork->recursive call and exit
+Junction->bestFork
 Junction->bestFork
 ModuleGE[####]->bestfork->start
 ModuleGE[####]->bestfork>after find
 Node[####]->bestfork->no match
 Fork->bestFork->left recursive call
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+Node[Num0]->bestfork->no match
+Node[Num0]->bestfork->new fork place
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+Node[Alp2]->bestfork->no match
+Junction->bestFork
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left<right, delete and exit
+Fork->bestFork->left recursive call
+ModuleGE[Con5]->bestfork->start
+ModuleGE[Con5]->bestfork>after find
+ModuleGE[Con5]->bestfork->match
+Node[Con5]->bestfork->module erased
+Node[Con5]->bestfork->recursive call and exit
+ModuleGE[Hid3]->bestfork->start
+ModuleGE[Hid3]->bestfork>after find
+ModuleGE[Hid3]->bestfork->match
+Node[Hid3]->bestfork->module erased
+Node[Hid3]->bestfork->recursive call and exit
+ModuleGE[Tim1]->bestfork->start
+ModuleGE[Tim1]->bestfork>after find
+ModuleGE[Tim1]->bestfork->match
+Node[Tim1]->bestfork->module erased
+Node[Tim1]->bestfork->recursive call and exit
 ModuleGE[Tex1]->bestfork->start
 ModuleGE[Tex1]->bestfork>after find
 Node[Tex1]->bestfork->no match
@@ -336,86 +1486,320 @@ Junction->bestFork
 Fork->bestFork->back from recursive calls
 Fork->bestFork->left<right, delete and exit
 Fork->bestFork->left recursive call
-ModuleGE[Puz6]->bestfork->start
-ModuleGE[Puz6]->bestfork>after find
-Node[Puz6]->bestfork->no match
-Node[Puz6]->bestfork->new fork place
-Fork->bestFork->start
-Fork->bestFork->fork place already found, exit
+ModuleGE[Tex1]->bestfork->start
+ModuleGE[Tex1]->bestfork>after find
+Node[Tex1]->bestfork->no match
+Node[Tex1]->bestfork->new fork place
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->moving
+Node[Wri2]->bestfork->recursive call and exit
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+ModuleGE[Num0]->bestfork->match
+Node[Num0]->bestfork->module erased
+Node[Num0]->bestfork->moving
+Node[Num0]->bestfork->recursive call and exit
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+Node[Alp2]->bestfork->no match
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+Node[Num0]->bestfork->no match
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+Node[Alp2]->bestfork->no match
+Junction->bestFork
 Fork->bestFork->back from recursive calls
 Fork->bestFork->left<right, delete and exit
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left>=right, delete and exit
 add->after bestFork
--####-<-Puz6-<-Cow3--Tex7->-Con5--Wri2->-####-
-             <-Hol9->-Num0->
-      <-Alp2-<-Tex1->
-             <-Tim1--Hol0--Wri4--Alp2->
+-####--Wri2-<-Ord8-<-Wri2--Num0--Tex1--Alp2--Num0--Alp2->-Cow3--Hol0->-####-
+                   <-Hol9-<-Con5--Hid3--Tim1--Tex1->-Wri4->
+                          <-Num0--Puz6-<-Num0--Alp2->
+                                       <-Tex7--Con5--Wri2->-Hid3--Tim1->>
+            <-Tim1--Wri4--Hol0-<-Num0--Alp2-<-Hid3--Hol9->
+                                            <-Num0--Alp2->-Cow3--Tex1->
+                               <-Con5--Ord8--Con5--Cow5->
 
 Set :
-1*[Con5] : ConnectsTheDots: 0 0 30 70
-1*[Hol0] : HoledWords: 65 25 0 10
+1*[Puz6] : Puzzle: 5 0 0 95
+1*[Cow3] : CowTrainMaths: 0 0 70 30
+1*[Ord8] : Ordering: 0 0 75 25
+1*[Wri2] : WritingWords: 0 90 0 10
+1*[Hol9] : HoledText: 80 10 0 10
+2*[Num0] : NumberInWords/Figure: 15 0 75 10
 1*[Wri4] : WritingLetters: 0 75 0 25
-1*[Num0] : NumberInWords/Figure: 15 0 75 10
+1*[Hol0] : HoledWords: 65 25 0 10
 1*[Alp2] : AlphabetSong: 20 0 0 80
 add->start
 ModuleGE[####]->bestfork->start
 ModuleGE[####]->bestfork>after find
 Node[####]->bestfork->no match
-Fork->bestFork->start
-Fork->bestFork->right recursive call
-ModuleGE[Alp2]->bestfork->start
-ModuleGE[Alp2]->bestfork>after find
-ModuleGE[Alp2]->bestfork->match
-Node[Alp2]->bestfork->module erased
-Node[Alp2]->bestfork->recursive call and exit
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->recursive call and exit
 Fork->bestFork->start
 Fork->bestFork->right recursive call
 ModuleGE[Tim1]->bestfork->start
 ModuleGE[Tim1]->bestfork>after find
 Node[Tim1]->bestfork->no match
 Node[Tim1]->bestfork->new fork place
-ModuleGE[Hol0]->bestfork->start
-ModuleGE[Hol0]->bestfork>after find
-ModuleGE[Hol0]->bestfork->match
-Node[Hol0]->bestfork->module erased
-Node[Hol0]->bestfork->moving
-Node[Hol0]->bestfork->recursive call and exit
 ModuleGE[Wri4]->bestfork->start
 ModuleGE[Wri4]->bestfork>after find
 ModuleGE[Wri4]->bestfork->match
 Node[Wri4]->bestfork->module erased
 Node[Wri4]->bestfork->moving
 Node[Wri4]->bestfork->recursive call and exit
+ModuleGE[Hol0]->bestfork->start
+ModuleGE[Hol0]->bestfork>after find
+ModuleGE[Hol0]->bestfork->match
+Node[Hol0]->bestfork->module erased
+Node[Hol0]->bestfork->moving
+Node[Hol0]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->fork place already found, exit
+Fork->bestFork->left recursive call
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+ModuleGE[Ord8]->bestfork->match
+Node[Ord8]->bestfork->module erased
+Node[Ord8]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Hol9]->bestfork->start
+ModuleGE[Hol9]->bestfork>after find
+ModuleGE[Hol9]->bestfork->match
+Node[Hol9]->bestfork->module erased
+Node[Hol9]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+ModuleGE[Num0]->bestfork->match
+Node[Num0]->bestfork->module erased
+Node[Num0]->bestfork->recursive call and exit
+ModuleGE[Puz6]->bestfork->start
+ModuleGE[Puz6]->bestfork>after find
+ModuleGE[Puz6]->bestfork->match
+Node[Puz6]->bestfork->module erased
+Node[Puz6]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Tex7]->bestfork->start
+ModuleGE[Tex7]->bestfork>after find
+Node[Tex7]->bestfork->no match
+Node[Tex7]->bestfork->new fork place
+ModuleGE[Con5]->bestfork->start
+ModuleGE[Con5]->bestfork>after find
+Node[Con5]->bestfork->no match
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+Node[Wri2]->bestfork->no match
+Junction->bestFork
+Fork->bestFork->left recursive call
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+ModuleGE[Num0]->bestfork->match
+Node[Num0]->bestfork->module erased
+Node[Num0]->bestfork->recursive call and exit
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+ModuleGE[Alp2]->bestfork->match
+Node[Alp2]->bestfork->module erased
+Node[Alp2]->bestfork->recursive call and exit
+Junction->bestFork
+ModuleGE[Wri4]->bestfork->start
+ModuleGE[Wri4]->bestfork>after find
+ModuleGE[Wri4]->bestfork->match
+Node[Wri4]->bestfork->module erased
+Node[Wri4]->bestfork->recursive call and exit
+Junction->bestFork
+ModuleGE[Cow3]->bestfork->start
+ModuleGE[Cow3]->bestfork>after find
+ModuleGE[Cow3]->bestfork->match
+Node[Cow3]->bestfork->module erased
+Node[Cow3]->bestfork->recursive call and exit
+ModuleGE[Hol0]->bestfork->start
+ModuleGE[Hol0]->bestfork>after find
+ModuleGE[Hol0]->bestfork->match
+Node[Hol0]->bestfork->module erased
+Node[Hol0]->bestfork->recursive call and exit
+Junction->bestFork
+ModuleGE[####]->bestfork->start
+ModuleGE[####]->bestfork>after find
+Node[####]->bestfork->no match
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left>=right, delete and exit
+Fork->bestFork->left recursive call
+ModuleGE[Con5]->bestfork->start
+ModuleGE[Con5]->bestfork>after find
+Node[Con5]->bestfork->no match
+Node[Con5]->bestfork->new fork place
+ModuleGE[Hid3]->bestfork->start
+ModuleGE[Hid3]->bestfork>after find
+Node[Hid3]->bestfork->no match
+ModuleGE[Tim1]->bestfork->start
+ModuleGE[Tim1]->bestfork>after find
+Node[Tim1]->bestfork->no match
+ModuleGE[Tex1]->bestfork->start
+ModuleGE[Tex1]->bestfork>after find
+Node[Tex1]->bestfork->no match
+Junction->bestFork
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left<right, delete and exit
+Fork->bestFork->left recursive call
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+Node[Wri2]->bestfork->no match
+Node[Wri2]->bestfork->new fork place
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+ModuleGE[Num0]->bestfork->match
+Node[Num0]->bestfork->module erased
+Node[Num0]->bestfork->moving
+Node[Num0]->bestfork->recursive call and exit
+ModuleGE[Tex1]->bestfork->start
+ModuleGE[Tex1]->bestfork>after find
+Node[Tex1]->bestfork->no match
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+ModuleGE[Alp2]->bestfork->match
+Node[Alp2]->bestfork->module erased
+Node[Alp2]->bestfork->moving
+Node[Alp2]->bestfork->recursive call and exit
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+ModuleGE[Num0]->bestfork->match
+Node[Num0]->bestfork->module erased
+Node[Num0]->bestfork->moving
+Node[Num0]->bestfork->recursive call and exit
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+Node[Alp2]->bestfork->no match
+Junction->bestFork
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left<right, delete and exit
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left>=right, delete and exit
+add->after bestFork
+-####--Wri2-<-Ord8-<-Num0--Alp2--Num0--Wri2--Tex1--Alp2->-Cow3--Hol0->-####-
+                   <-Hol9-<-Con5--Hid3--Tim1--Tex1->-Wri4->
+                          <-Num0--Puz6-<-Num0--Alp2->
+                                       <-Tex7--Con5--Wri2->-Hid3--Tim1->>
+            <-Wri4--Hol0--Tim1-<-Num0--Alp2-<-Hid3--Hol9->
+                                            <-Num0--Alp2->-Cow3--Tex1->
+                               <-Con5--Ord8--Con5--Cow5->
+
+Set :
+2*[Hid3] : HiddenObjects: 5 0 20 75
+1*[Tex7] : TextUnderstanding: 95 0 0 5
+1*[Wri2] : WritingWords: 0 90 0 10
+2*[Tim1] : TimeReading: 0 0 95 5
+1*[Num0] : NumberInWords/Figure: 15 0 75 10
+1*[Wri4] : WritingLetters: 0 75 0 25
+1*[Hol0] : HoledWords: 65 25 0 10
+1*[Alp2] : AlphabetSong: 20 0 0 80
+add->start
+ModuleGE[####]->bestfork->start
+ModuleGE[####]->bestfork>after find
+Node[####]->bestfork->no match
+ModuleGE[Wri2]->bestfork->start
+ModuleGE[Wri2]->bestfork>after find
+ModuleGE[Wri2]->bestfork->match
+Node[Wri2]->bestfork->module erased
+Node[Wri2]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Wri4]->bestfork->start
+ModuleGE[Wri4]->bestfork>after find
+ModuleGE[Wri4]->bestfork->match
+Node[Wri4]->bestfork->module erased
+Node[Wri4]->bestfork->recursive call and exit
+ModuleGE[Hol0]->bestfork->start
+ModuleGE[Hol0]->bestfork>after find
+ModuleGE[Hol0]->bestfork->match
+Node[Hol0]->bestfork->module erased
+Node[Hol0]->bestfork->recursive call and exit
+ModuleGE[Tim1]->bestfork->start
+ModuleGE[Tim1]->bestfork>after find
+ModuleGE[Tim1]->bestfork->match
+Node[Tim1]->bestfork->module erased
+Node[Tim1]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Con5]->bestfork->start
+ModuleGE[Con5]->bestfork>after find
+Node[Con5]->bestfork->no match
+Node[Con5]->bestfork->new fork place
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+Node[Ord8]->bestfork->no match
+ModuleGE[Con5]->bestfork->start
+ModuleGE[Con5]->bestfork>after find
+Node[Con5]->bestfork->no match
+ModuleGE[Cow5]->bestfork->start
+ModuleGE[Cow5]->bestfork>after find
+Node[Cow5]->bestfork->no match
+Junction->bestFork
+Fork->bestFork->left recursive call
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+ModuleGE[Num0]->bestfork->match
+Node[Num0]->bestfork->module erased
+Node[Num0]->bestfork->recursive call and exit
+ModuleGE[Alp2]->bestfork->start
+ModuleGE[Alp2]->bestfork>after find
+ModuleGE[Alp2]->bestfork->match
+Node[Alp2]->bestfork->module erased
+Node[Alp2]->bestfork->recursive call and exit
+Fork->bestFork->start
+Fork->bestFork->right recursive call
+ModuleGE[Num0]->bestfork->start
+ModuleGE[Num0]->bestfork>after find
+Node[Num0]->bestfork->no match
+Node[Num0]->bestfork->new fork place
 ModuleGE[Alp2]->bestfork->start
 ModuleGE[Alp2]->bestfork>after find
 Node[Alp2]->bestfork->no match
 Junction->bestFork
 Fork->bestFork->left recursive call
-ModuleGE[Tex1]->bestfork->start
-ModuleGE[Tex1]->bestfork>after find
-Node[Tex1]->bestfork->no match
-Node[Tex1]->bestfork->new fork place
+ModuleGE[Hid3]->bestfork->start
+ModuleGE[Hid3]->bestfork>after find
+ModuleGE[Hid3]->bestfork->match
+Node[Hid3]->bestfork->module erased
+Node[Hid3]->bestfork->recursive call and exit
+ModuleGE[Hol9]->bestfork->start
+ModuleGE[Hol9]->bestfork>after find
+Node[Hol9]->bestfork->no match
+Node[Hol9]->bestfork->new fork place
 Junction->bestFork
 Fork->bestFork->back from recursive calls
-Fork->bestFork->left<right, delete and exit
+Fork->bestFork->left>=right, delete and exit
+Fork->bestFork->back from recursive calls
+Fork->bestFork->left>=right, delete and exit
 Fork->bestFork->left recursive call
-ModuleGE[Puz6]->bestfork->start
-ModuleGE[Puz6]->bestfork>after find
-Node[Puz6]->bestfork->no match
-Node[Puz6]->bestfork->new fork place
+ModuleGE[Ord8]->bestfork->start
+ModuleGE[Ord8]->bestfork>after find
+Node[Ord8]->bestfork->no match
+Node[Ord8]->bestfork->new fork place
 Fork->bestFork->start
 Fork->bestFork->fork place already found, exit
 Fork->bestFork->back from recursive calls
 Fork->bestFork->left<right, delete and exit
 add->after bestFork
-1*Con5
-1*Num0
--Tim1--Alp2->
-Node[Tim1]->bestJunction->start
-Node[Tim1]->bestJunction->forward
-Node[Tim1]->bestJunction->module not found
-Node[Alp2]->bestJunction->start
-Node[Alp2]->bestJunction->forward
-Node[Alp2]->bestJunction->module not found
+1*Hid3
+1*Tex7
+1*Tim1
+-Hol9->
+Node[Hol9]->bestJunction->start
+Node[Hol9]->bestJunction->forward
+Node[Hol9]->bestJunction->module not found
 Junction->bestJunction
 Junction->bestJunction->moving forward
 Junction->bestJunction->contains() call
@@ -428,31 +1812,31 @@ Node[Wri2]->bestJunction->backward
 Node[Wri2]->bestJunction->module not found, recursive call
 Node[Con5]->bestJunction->start
 Node[Con5]->bestJunction->backward
-Node[Con5]->bestJunction->module found, removing module
-Node[Con5]->moving node
-Node[Con5]->bestJunction->recursive call
-Junction->bestJunction
-Junction->bestJunction->moving backward
-distance negative or junction place far away, exit
+Node[Con5]->bestJunction->module not found, recursive call
+Node[Tex7]->bestJunction->start
+Node[Tex7]->bestJunction->backward
+Node[Tex7]->bestJunction->module found, removing module
+Node[Tex7]->moving node
+Node[Tex7]->bestJunction->recursive call
+Fork->bestJunction->start
+Fork->bestJunction->moving backward
+Fork->bestJunction->exit
+Node[Tex7]->bestJunction->exit
 Node[Con5]->bestJunction->exit
 Node[Wri2]->bestJunction->exit
 Junction->bestJunction->back from back recursive call
 Junction->bestJunction->new junction chosen
 add->afterBestJunction
--Con5->-####-
-add->path
-add->Modules left:
-1*Num0
-add->forking left
-add->forked first Node: Num0
-add->pathed
-add->junction right
-add->juncted
--####-<-Puz6-<-Cow3--Tex7->-Wri2->-Con5->-####-
-             <-Hol9->-Num0->
-      <-Alp2-<-Tex1->
-             <-Hol0--Wri4-<-Num0->
-                          <-Tim1--Alp2->
+-Tex7->-Hid3--Tim1->>
+add->no modules
+-####--Wri2-<-Ord8-<-Num0--Alp2--Num0--Wri2--Tex1--Alp2->-Cow3--Hol0->-####-
+                   <-Hol9-<-Con5--Hid3--Tim1--Tex1->-Wri4->
+                          <-Num0--Puz6-<-Num0--Alp2->
+                                       <-Con5--Wri2-><-Tex7->-Hid3--Tim1->>
+                                                     <-Hol9->
+            <-Wri4--Hol0--Tim1-<-Num0--Alp2-<-Hid3->
+                                            <-Num0--Alp2->-Cow3--Tex1->
+                               <-Con5--Ord8--Con5--Cow5->
 
 
 Transforming the pre-graph in usable graph.
@@ -460,173 +1844,379 @@ Getting the GE map and checking for validity.
 Node[####]->distance and validity check
 Node[####]->added to the distanceMap (d=0)
 Node[####]->recursive call on next GE
-Fork->distance and validity check
-Fork->fork not found in the map
-Fork->fork added to the map
-Fork->fork added to the map (d=0)
-Fork->recursive call on left GE
-Node[Puz6]->distance and validity check
-Node[Puz6]->added to the distanceMap (d=1)
-Node[Puz6]->recursive call on next GE
+Node[Wri2]->distance and validity check
+Node[Wri2]->added to the distanceMap (d=1)
+Node[Wri2]->recursive call on next GE
 Fork->distance and validity check
 Fork->fork not found in the map
 Fork->fork added to the map
 Fork->fork added to the map (d=1)
 Fork->recursive call on left GE
-Node[Cow3]->distance and validity check
-Node[Cow3]->added to the distanceMap (d=2)
-Node[Cow3]->recursive call on next GE
-Node[Tex7]->distance and validity check
-Node[Tex7]->added to the distanceMap (d=3)
-Node[Tex7]->recursive call on next GE
-Junction->distance and validity check
-Junction->added to the map (d=3)
-Junction->right recursive call
+Node[Ord8]->distance and validity check
+Node[Ord8]->added to the distanceMap (d=2)
+Node[Ord8]->recursive call on next GE
+Fork->distance and validity check
+Fork->fork not found in the map
+Fork->fork added to the map
+Fork->fork added to the map (d=2)
+Fork->recursive call on left GE
 Node[Num0]->distance and validity check
 Node[Num0]->added to the distanceMap (d=3)
-Node[Num0]->recursive call on previous GE
+Node[Num0]->recursive call on next GE
+Node[Alp2]->distance and validity check
+Node[Alp2]->added to the distanceMap (d=4)
+Node[Alp2]->recursive call on next GE
+Node[Num0]->distance and validity check
+Node[Num0]->added to the distanceMap (d=5)
+Node[Num0]->recursive call on next GE
+Node[Wri2]->distance and validity check
+Node[Wri2]->added to the distanceMap (d=6)
+Node[Wri2]->recursive call on next GE
+Node[Tex1]->distance and validity check
+Node[Tex1]->added to the distanceMap (d=7)
+Node[Tex1]->recursive call on next GE
+Node[Alp2]->distance and validity check
+Node[Alp2]->added to the distanceMap (d=8)
+Node[Alp2]->recursive call on next GE
 Junction->distance and validity check
-Junction->added to the map (d=2)
+Junction->added to the map (d=8)
+Junction->right recursive call
+Node[Wri4]->distance and validity check
+Node[Wri4]->added to the distanceMap (d=8)
+Node[Wri4]->recursive call on previous GE
+Junction->distance and validity check
+Junction->added to the map (d=7)
 Junction->left recursive call
+Node[Tex1]->distance and validity check
+Node[Tex1]->added to the distanceMap (d=7)
+Node[Tex1]->recursive call on previous GE
+Node[Tim1]->distance and validity check
+Node[Tim1]->added to the distanceMap (d=6)
+Node[Tim1]->recursive call on previous GE
+Node[Hid3]->distance and validity check
+Node[Hid3]->added to the distanceMap (d=5)
+Node[Hid3]->recursive call on previous GE
+Node[Con5]->distance and validity check
+Node[Con5]->added to the distanceMap (d=4)
+Node[Con5]->recursive call on previous GE
+Fork->distance and validity check
+Fork->fork not found in the map
+Fork->fork added to the map
+Fork->recursive call on previous GE
 Node[Hol9]->distance and validity check
-Node[Hol9]->added to the distanceMap (d=2)
+Node[Hol9]->added to the distanceMap (d=3)
+Node[Hol9]->recursive call on previous GE
+Fork->distance and validity check
+Fork->fork already encountered once
+Node[Hol9]->back from recursive call
+Fork->back from recursive call
+Node[Con5]->back from recursive call
+Node[Hid3]->back from recursive call
+Node[Tim1]->back from recursive call
+Node[Tex1]->back from recursive call
+Junction->back from recursive call
+Junction->right recursive call
+Node[Alp2]->distance and validity check
+Node[Alp2]->added to the distanceMap (d=7)
+Node[Alp2]->recursive call on previous GE
+Node[Num0]->distance and validity check
+Node[Num0]->added to the distanceMap (d=6)
+Node[Num0]->recursive call on previous GE
+Fork->distance and validity check
+Fork->fork not found in the map
+Fork->fork added to the map
+Fork->recursive call on previous GE
+Node[Puz6]->distance and validity check
+Node[Puz6]->added to the distanceMap (d=5)
+Node[Puz6]->recursive call on previous GE
+Node[Num0]->distance and validity check
+Node[Num0]->added to the distanceMap (d=4)
+Node[Num0]->recursive call on previous GE
+Fork->distance and validity check
+Fork->fork already encountered once
+Node[Num0]->back from recursive call
+Node[Puz6]->back from recursive call
+Fork->back from recursive call
+Node[Num0]->back from recursive call
+Node[Alp2]->back from recursive call
+Junction->back from recursive call
+Node[Wri4]->back from recursive call
+Junction->back from recursive call
+Junction->next recursive call
+Node[Cow3]->distance and validity check
+Node[Cow3]->added to the distanceMap (d=9)
+Node[Cow3]->recursive call on next GE
+Node[Hol0]->distance and validity check
+Node[Hol0]->added to the distanceMap (d=10)
+Node[Hol0]->recursive call on next GE
+Junction->distance and validity check
+Junction->added to the map (d=10)
+Junction->right recursive call
+Junction->distance and validity check
+Junction->added to the map (d=10)
+Junction->left recursive call
+Node[Tim1]->distance and validity check
+Node[Tim1]->added to the distanceMap (d=10)
+Node[Tim1]->recursive call on previous GE
+Node[Hid3]->distance and validity check
+Node[Hid3]->added to the distanceMap (d=9)
+Node[Hid3]->recursive call on previous GE
+Junction->distance and validity check
+Junction->added to the map (d=8)
+Junction->left recursive call
+Node[Tex7]->distance and validity check
+Node[Tex7]->added to the distanceMap (d=8)
+Node[Tex7]->recursive call on previous GE
+Fork->distance and validity check
+Fork->fork not found in the map
+Fork->fork added to the map
+Fork->recursive call on previous GE
+Junction->distance and validity check
+Junction->added to the map (d=7)
+Junction->left recursive call
+Node[Wri2]->distance and validity check
+Node[Wri2]->added to the distanceMap (d=7)
+Node[Wri2]->recursive call on previous GE
+Node[Con5]->distance and validity check
+Node[Con5]->added to the distanceMap (d=6)
+Node[Con5]->recursive call on previous GE
+Fork->distance and validity check
+Fork->fork already encountered once
+Node[Con5]->back from recursive call
+Node[Wri2]->back from recursive call
+Junction->back from recursive call
+Junction->right recursive call
+Node[Hid3]->distance and validity check
+Node[Hid3]->added to the distanceMap (d=7)
+Node[Hid3]->recursive call on previous GE
+Fork->distance and validity check
+Fork->fork not found in the map
+Fork->fork added to the map
+Fork->recursive call on previous GE
+Node[Alp2]->distance and validity check
+Node[Alp2]->added to the distanceMap (d=6)
+Node[Alp2]->recursive call on previous GE
+Node[Num0]->distance and validity check
+Node[Num0]->added to the distanceMap (d=5)
+Node[Num0]->recursive call on previous GE
+Fork->distance and validity check
+Fork->fork not found in the map
+Fork->fork added to the map
+Fork->recursive call on previous GE
+Node[Tim1]->distance and validity check
+Node[Tim1]->added to the distanceMap (d=4)
+Node[Tim1]->recursive call on previous GE
+Node[Hol0]->distance and validity check
+Node[Hol0]->added to the distanceMap (d=3)
+Node[Hol0]->recursive call on previous GE
+Node[Wri4]->distance and validity check
+Node[Wri4]->added to the distanceMap (d=2)
+Node[Wri4]->recursive call on previous GE
+Fork->distance and validity check
+Fork->fork already encountered once
+Node[Wri4]->back from recursive call
+Node[Hol0]->back from recursive call
+Node[Tim1]->back from recursive call
+Fork->back from recursive call
+Node[Num0]->back from recursive call
+Node[Alp2]->back from recursive call
+Fork->back from recursive call
+Node[Hid3]->back from recursive call
+Junction->back from recursive call
+Fork->back from recursive call
+Node[Tex7]->back from recursive call
+Junction->back from recursive call
+Junction->right recursive call
+Node[Hol9]->distance and validity check
+Node[Hol9]->added to the distanceMap (d=8)
 Node[Hol9]->recursive call on previous GE
 Fork->distance and validity check
 Fork->fork already encountered once
 Node[Hol9]->back from recursive call
 Junction->back from recursive call
+Node[Hid3]->back from recursive call
+Node[Tim1]->back from recursive call
+Junction->back from recursive call
 Junction->right recursive call
 Node[Tex1]->distance and validity check
-Node[Tex1]->added to the distanceMap (d=2)
+Node[Tex1]->added to the distanceMap (d=10)
 Node[Tex1]->recursive call on previous GE
-Fork->distance and validity check
-Fork->fork not found in the map
-Fork->fork added to the map
-Fork->recursive call on previous GE
-Node[Alp2]->distance and validity check
-Node[Alp2]->added to the distanceMap (d=1)
-Node[Alp2]->recursive call on previous GE
-Fork->distance and validity check
-Fork->fork already encountered once
-Node[Alp2]->back from recursive call
-Fork->back from recursive call
-Node[Tex1]->back from recursive call
-Junction->back from recursive call
-Node[Num0]->back from recursive call
-Junction->back from recursive call
-Junction->next recursive call
-Node[Wri2]->distance and validity check
-Node[Wri2]->added to the distanceMap (d=4)
-Node[Wri2]->recursive call on next GE
+Node[Cow3]->distance and validity check
+Node[Cow3]->added to the distanceMap (d=9)
+Node[Cow3]->recursive call on previous GE
 Junction->distance and validity check
-Junction->added to the map (d=4)
-Junction->right recursive call
+Junction->added to the map (d=8)
+Junction->left recursive call
+Node[Alp2]->distance and validity check
+Node[Alp2]->added to the distanceMap (d=8)
+Node[Alp2]->recursive call on previous GE
 Node[Num0]->distance and validity check
-Node[Num0]->added to the distanceMap (d=4)
+Node[Num0]->added to the distanceMap (d=7)
 Node[Num0]->recursive call on previous GE
 Fork->distance and validity check
-Fork->fork not found in the map
-Fork->fork added to the map
-Fork->recursive call on previous GE
-Node[Wri4]->distance and validity check
-Node[Wri4]->added to the distanceMap (d=3)
-Node[Wri4]->recursive call on previous GE
-Node[Hol0]->distance and validity check
-Node[Hol0]->added to the distanceMap (d=2)
-Node[Hol0]->recursive call on previous GE
-Fork->distance and validity check
 Fork->fork already encountered once
-Node[Hol0]->back from recursive call
-Node[Wri4]->back from recursive call
-Fork->back from recursive call
 Node[Num0]->back from recursive call
+Node[Alp2]->back from recursive call
 Junction->back from recursive call
-Junction->next recursive call
+Junction->right recursive call
+Node[Cow5]->distance and validity check
+Node[Cow5]->added to the distanceMap (d=8)
+Node[Cow5]->recursive call on previous GE
+Node[Con5]->distance and validity check
+Node[Con5]->added to the distanceMap (d=7)
+Node[Con5]->recursive call on previous GE
+Node[Ord8]->distance and validity check
+Node[Ord8]->added to the distanceMap (d=6)
+Node[Ord8]->recursive call on previous GE
 Node[Con5]->distance and validity check
 Node[Con5]->added to the distanceMap (d=5)
-Node[Con5]->recursive call on next GE
-Junction->distance and validity check
-Junction->added to the map (d=5)
-Junction->right recursive call
-Node[Alp2]->distance and validity check
-Node[Alp2]->added to the distanceMap (d=5)
-Node[Alp2]->recursive call on previous GE
-Node[Tim1]->distance and validity check
-Node[Tim1]->added to the distanceMap (d=4)
-Node[Tim1]->recursive call on previous GE
+Node[Con5]->recursive call on previous GE
 Fork->distance and validity check
 Fork->fork already encountered once
-Node[Tim1]->back from recursive call
-Node[Alp2]->back from recursive call
+Node[Con5]->back from recursive call
+Node[Ord8]->back from recursive call
+Node[Con5]->back from recursive call
+Node[Cow5]->back from recursive call
+Junction->back from recursive call
+Node[Cow3]->back from recursive call
+Node[Tex1]->back from recursive call
+Junction->back from recursive call
 Junction->back from recursive call
 Junction->next recursive call
 Node[####]->distance and validity check
-Node[####]->added to the distanceMap (d=6)
+Node[####]->added to the distanceMap (d=11)
 Junction->back from recursive call
-Node[Con5]->back from recursive call
-Junction->back from recursive call
-Node[Wri2]->back from recursive call
-Junction->back from recursive call
-Node[Tex7]->back from recursive call
+Node[Hol0]->back from recursive call
 Node[Cow3]->back from recursive call
+Junction->back from recursive call
+Node[Alp2]->back from recursive call
+Node[Tex1]->back from recursive call
+Node[Wri2]->back from recursive call
+Node[Num0]->back from recursive call
+Node[Alp2]->back from recursive call
+Node[Num0]->back from recursive call
 Fork->back from recursive call
-Node[Puz6]->back from recursive call
+Node[Ord8]->back from recursive call
 Fork->back from recursive call
+Node[Wri2]->back from recursive call
 Node[####]->back from recursive call
 The pre-graph is valid.
 
 
+Encounter and insertion of node Wri2(7,8745058) there: done.
 Encounter
-Encounter and insertion of node Puz6(1,2) there: done.
-Encounter and insertion of node Tim1(4,10) there: done.
-Encounter
-Encounter
-Encounter
-Encounter
-Encounter and insertion of node Cow3(2,3) there: done.
-Encounter and insertion of node Tex7(3,4) there: done.
-Encounter and insertion of node Alp2(5,9) there: done.
-Encounter and insertion of node Hol0(2,9) not there... there: done.
-Encounter and insertion of node Wri4(3,8) not there... there: done.
-Encounter
-Encounter and insertion of node Hol9(2,6) not there... there: done.
-Encounter and insertion of node Tex1(2,7) not there... not there... there: done.
-Encounter and insertion of node Wri2(4,6) there: done.
-Encounter and insertion of node Num0(3,5) not there... there: done.
-Encounter and insertion of node Con5(5,8) there: done.
-Encounter and insertion of node ####(6,10) there: done.
+Encounter and insertion of node Tim1(10,8745055) there: done.
 Encounter and insertion of node ####(0,1) there: done.
-Encounter and insertion of node Alp2(1,8) not there... there: done.
+Encounter and insertion of node Puz6(5,8745051) there: done.
+Encounter and insertion of node Hol9(3,15) there: done.
+Encounter and insertion of node Num0(4,8745052) there: done.
+Encounter and insertion of node Cow3(9,8745053) there: done.
+Encounter and insertion of node Ord8(2,3) there: done.
+Encounter and insertion of node Alp2(7,8745049) there: done.
+Encounter and insertion of node ####(11,-2087452824) there: done.
+Encounter and insertion of node Hol0(10,8745054) there: done.
+Encounter and insertion of node Con5(6,8745059) there: done.
+Encounter and insertion of node Wri4(8,10) there: done.
 Encounter
-Encounter and insertion of node Num0(4,7) not there... there: done.
+Encounter and insertion of node Wri2(1,2) there: done.
+Encounter and insertion of node Num0(6,8745050) there: done.
+Encounter and insertion of node Hid3(9,8745056) not there... there: done.
+Encounter and insertion of node Tex7(8,8745057) not there... there: done.
+Encounter
+Encounter and insertion of node Tex1(7,8) there: done.
+Encounter and insertion of node Wri2(6,7) there: done.
+Encounter
+Encounter and insertion of node Alp2(8,9) there: done.
+Encounter and insertion of node Num0(5,6) there: done.
+Encounter and insertion of node Num0(3,4) there: done.
+Encounter
+Encounter and insertion of node Alp2(4,5) there: done.
+Encounter and insertion of node Tim1(6,12) not there... there: done.
+Encounter and insertion of node Tex1(7,11) not there... there: done.
+Encounter
+Encounter and insertion of node Hid3(5,13) not there... there: done.
+Encounter and insertion of node Con5(4,14) not there... there: done.
+Encounter
+Encounter and insertion of node Hid3(7,-2087452835) there: done.
+Encounter and insertion of node Hol9(8,-2087452829) there: done.
+Encounter and insertion of node Tim1(4,-2087452832) there: done.
+Encounter and insertion of node Hol0(3,-2087452831) there: done.
+Encounter and insertion of node Num0(5,-2087452833) there: done.
+Encounter and insertion of node Alp2(6,-2087452834) there: done.
+Encounter
+Encounter and insertion of node Wri4(2,-2087452830) there: done.
+Encounter
+Encounter and insertion of node Alp2(8,-2087452826) not there... there: done.
+Encounter
+Encounter and insertion of node Num0(7,-2087452825) not there... there: done.
+Encounter and insertion of node Cow5(8,-2013260031) not there... not there... there: done.
+Encounter and insertion of node Ord8(6,-2013260029) not there... there: done.
+Encounter
+Encounter and insertion of node Tex1(10,-2087452828) there: done.
+Encounter and insertion of node Cow3(9,-2087452827) there: done.
+Encounter and insertion of node Con5(7,-2013260030) not there... not there... there: done.
+Encounter
+Encounter and insertion of node Con5(5,-2013260028) not there... there: done.
+Encounter
 Encounter
 
 Added the list of node to the graph.
 
-Adding children to node Puz6: FRET Cow3 Hol9
-Adding children to node Tim1: Alp2
-Adding children to node Cow3: Tex7
-Adding children to node Tex7: Wri2
-Adding children to node Alp2: ####
-Adding children to node Hol0: Wri4
-Adding children to node Wri4: FRET Num0 Tim1
-Adding children to node Hol9: Num0
-Adding children to node Tex1: Num0
-Adding children to node Wri2: Con5
-Adding children to node Num0: Wri2
-Adding children to node Con5: ####
+Adding children to node Wri2: FRET Tex7 Hol9
+Adding children to node Tim1: ####
+Adding children to node ####: Wri2
+Adding children to node Puz6: FRET Num0 Con5
+Adding children to node Hol9: FRET Con5 Num0
+Adding children to node Num0: Puz6
+Adding children to node Cow3: Hol0
+Adding children to node Ord8: FRET Num0 Hol9
+Adding children to node Alp2: Wri4
 Adding children to node ####:
-Adding children to node ####: FRET Puz6 Alp2
-Adding children to node Alp2: FRET Tex1 Hol0
-Adding children to node Num0: Con5
+Adding children to node Hol0: ####
+Adding children to node Con5: Wri2
+Adding children to node Wri4: Cow3
+Adding children to node Wri2: FRET Ord8 Wri4
+Adding children to node Num0: Alp2
+Adding children to node Hid3: Tim1
+Adding children to node Tex7: Hid3
+Adding children to node Tex1: Alp2
+Adding children to node Wri2: Tex1
+Adding children to node Alp2: Cow3
+Adding children to node Num0: Wri2
+Adding children to node Num0: Alp2
+Adding children to node Alp2: Num0
+Adding children to node Tim1: Tex1
+Adding children to node Tex1: Wri4
+Adding children to node Hid3: Tim1
+Adding children to node Con5: Hid3
+Adding children to node Hid3: FRET Tex7 Hol9
+Adding children to node Hol9: Hid3
+Adding children to node Tim1: FRET Num0 Con5
+Adding children to node Hol0: Tim1
+Adding children to node Num0: Alp2
+Adding children to node Alp2: FRET Hid3 Num0
+Adding children to node Wri4: Hol0
+Adding children to node Alp2: Cow3
+Adding children to node Num0: Alp2
+Adding children to node Cow5: Cow3
+Adding children to node Ord8: Con5
+Adding children to node Tex1: ####
+Adding children to node Cow3: Tex1
+Adding children to node Con5: Cow5
+Adding children to node Con5: Ord8
 
 Usable graph completely generated.
 
-Graph of dimensions (7,4):
-####(2)     
-Puz6(2)     Alp2(2)     
-Cow3(1)     Hol9(1)     Tex1(1)     Hol0(1)     
-Tex7(1)     Num0(1)     Wri4(2)     
-Wri2(1)     Num0(1)     Tim1(1)     
-Con5(1)     Alp2(1)     
+Graph of dimensions (12,7):
+####(1)     
+Wri2(2)     
+Wri4(1)     Ord8(2)     
+Hol0(1)     Num0(1)     Hol9(2)     
+Tim1(2)     Alp2(1)     Con5(1)     Num0(1)     
+Num0(1)     Con5(1)     Num0(1)     Hid3(1)     Puz6(2)     
+Alp2(2)     Ord8(1)     Wri2(1)     Tim1(1)     Num0(1)     Con5(1)     
+Hid3(2)     Num0(1)     Con5(1)     Tex1(1)     Tex1(1)     Alp2(1)     Wri2(2)     
+Hol9(1)     Alp2(1)     Cow5(1)     Alp2(1)     Wri4(1)     Tex7(1)     
+Cow3(1)     Cow3(1)     Hid3(1)     
+Tex1(1)     Hol0(1)     Tim1(1)     
 ####(0)     

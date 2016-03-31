@@ -1,8 +1,6 @@
 #ifndef MODULENODE_H_INCLUDED
 #define MODULENODE_H_INCLUDED
 
-#include "stdafx.h"
-
 #include "ModuleGE.h"
 
 class ModuleNode //: public cocos2d::Node

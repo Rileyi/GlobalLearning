@@ -53,8 +53,9 @@ bool PreGraph::add(map<const Module*, int>*& modules)
 
     if (modules->empty())
     {
-        //Cas particulier dans lequel on a interet a inverser l'ordre entre fourche et jonction
         cout <<"add->no modules\n";
+
+        //Cas particulier dans lequel on a interet a inverser l'ordre entre fourche et jonction
 
         forkPlace->getBefore()->changeNext(fork, junction);
         junctionPlace->getAfter()->changePrevious(junction, fork);

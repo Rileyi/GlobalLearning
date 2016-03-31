@@ -1,8 +1,6 @@
 #ifndef ALGOPARCOUR_H
 #define ALGOPARCOUR_H
 
-#include "stdafx.h"
-#include "Module.h"
 #include "UsableGraph.h"
 
 UsableGraph* generateGraph(int length, int width, int reading, int writing, int maths, int fun);

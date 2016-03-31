@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "AlgoParcour.h"
 
 using namespace std;

@@ -1,8 +1,6 @@
 #ifndef USABLEGRAPH_H_INCLUDED
 #define USABLEGRAPH_H_INCLUDED
 
-#include <list>
-
 #include "PreGraph.h"
 #include "ModuleNode.h"
 
