@@ -98,9 +98,9 @@ void ParcourExos::addSpriteToModule(ModuleNode* module)
 	// ouvrir le document xml
 	if (document.LoadFile(XML_DOC.c_str()) == tinyxml2::XML_NO_ERROR)
 	{
-		// on rÃ©cupÃ¨re la racine
+		// on récupère la racine
 		tinyxml2::XMLHandle root(&document);
-		// on rÃ©cupÃ¨re son premier fils. Le handle sÃ©curise la possibilitÃ© d'un rÃ©sultat null.
+		// on récupère son premier fils. Le handle sécurise la possibilité d'un résultat null.
 		tinyxml2::XMLElement* elem = root.FirstChildElement().FirstChildElement().ToElement();
 
 		if (elem)
@@ -112,7 +112,7 @@ void ParcourExos::addSpriteToModule(ModuleNode* module)
 			}
 			if (elem)
 			{
-				// on ajotue les images Ã  notre bouton
+				// on ajotue les images à notre bouton
 				if (NAME.compare("depart") != 0 && NAME.compare("arrivee") != 0)
 				{
 					Sprite* sprite = Sprite::create(SOCLE);
