@@ -7,6 +7,7 @@
 #include "tinyxml2.h"
 #include "ButtonModule.h"
 #include <iostream>
+#include "algoParcours/ParcourExos.h"
 
 class MainScene : public cocos2d::Layer
 {
@@ -37,8 +38,11 @@ private:
 	void goToMenu(Ref* pSender, cocos2d::ui::Widget::TouchEventType type);
 	void shahootsPop(Ref* pSender, cocos2d::ui::Widget::TouchEventType type);
 	void shahootsAie(Ref* pSender, cocos2d::ui::Widget::TouchEventType type);
+	void changeDisplayModule(Ref* pSender, cocos2d::ui::Widget::TouchEventType type);
 
 	int count_shahoots;
+	ParcourExos* graph;
+	std::vector<ButtonModule*> list;
 
 };
 

@@ -146,6 +146,20 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\algoParcours\AlgoParcour.cpp" />
+    <ClCompile Include="..\Classes\algoParcours\Fork.cpp" />
+    <ClCompile Include="..\Classes\algoParcours\InGE.cpp" />
+    <ClCompile Include="..\Classes\algoParcours\Intersection.cpp" />
+    <ClCompile Include="..\Classes\algoParcours\Junction.cpp" />
+    <ClCompile Include="..\Classes\algoParcours\Link.cpp" />
+    <ClCompile Include="..\Classes\algoParcours\Module.cpp" />
+    <ClCompile Include="..\Classes\algoParcours\ModuleGE.cpp" />
+    <ClCompile Include="..\Classes\algoParcours\ModuleNode.cpp" />
+    <ClCompile Include="..\Classes\algoParcours\OutGE.cpp" />
+    <ClCompile Include="..\Classes\algoParcours\ParcourExos.cpp" />
+    <ClCompile Include="..\Classes\algoParcours\PreGraph.cpp" />
+    <ClCompile Include="..\Classes\algoParcours\stdafx.cpp" />
+    <ClCompile Include="..\Classes\algoParcours\UsableGraph.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\ButtonModule.cpp" />
     <ClCompile Include="..\Classes\ButtonModuleReader.cpp" />
@@ -155,6 +169,23 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\algoParcours\AlgoParcour.h" />
+    <ClInclude Include="..\Classes\algoParcours\Fork.h" />
+    <ClInclude Include="..\Classes\algoParcours\GraphElement.h" />
+    <ClInclude Include="..\Classes\algoParcours\InGE.h" />
+    <ClInclude Include="..\Classes\algoParcours\Intersection.h" />
+    <ClInclude Include="..\Classes\algoParcours\Junction.h" />
+    <ClInclude Include="..\Classes\algoParcours\Link.h" />
+    <ClInclude Include="..\Classes\algoParcours\Module.h" />
+    <ClInclude Include="..\Classes\algoParcours\ModuleGE.h" />
+    <ClInclude Include="..\Classes\algoParcours\ModuleNode.h" />
+    <ClInclude Include="..\Classes\algoParcours\OutGE.h" />
+    <ClInclude Include="..\Classes\algoParcours\ParcourExos.h" />
+    <ClInclude Include="..\Classes\algoParcours\PreGraph.h" />
+    <ClInclude Include="..\Classes\algoParcours\Side.h" />
+    <ClInclude Include="..\Classes\algoParcours\stdafx.h" />
+    <ClInclude Include="..\Classes\algoParcours\targetver.h" />
+    <ClInclude Include="..\Classes\algoParcours\UsableGraph.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\ButtonModule.h" />
     <ClInclude Include="..\Classes\ButtonModuleReader.h" />
@@ -165,6 +196,13 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Classes\algoParcours\coutLog.txt" />
+    <Text Include="..\Classes\algoParcours\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\algoParcours\modules.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

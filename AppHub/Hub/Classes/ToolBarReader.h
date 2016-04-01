@@ -2,6 +2,8 @@
 #include "cocos2d.h"
 #include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
 
+
+
 class ToolBarReader : public cocostudio::NodeReader
 {
 public:

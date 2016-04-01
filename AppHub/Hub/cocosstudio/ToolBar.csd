@@ -32,10 +32,10 @@
       </Animation>
       <AnimationList>
         <AnimationInfo Name="other_to_menu" StartIndex="0" EndIndex="1">
-          <RenderColor A="150" R="50" G="205" B="50" />
+          <RenderColor A="255" R="50" G="205" B="50" />
         </AnimationInfo>
         <AnimationInfo Name="menu_to_other" StartIndex="20" EndIndex="21">
-          <RenderColor A="150" R="0" G="0" B="255" />
+          <RenderColor A="255" R="0" G="0" B="255" />
         </AnimationInfo>
       </AnimationList>
       <ObjectData Name="ToolBar" Tag="57" ctype="GameNodeObjectData">
@@ -110,17 +110,17 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Restart_button" ActionTag="-1064289552" VisibleForFrame="False" Tag="60" IconVisible="False" LeftMargin="-250.0000" RightMargin="187.0000" TopMargin="5.0000" BottomMargin="-62.0000" TouchEnable="True" FontSize="20" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="33" Scale9Height="35" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Vision_graph" ActionTag="-1064289552" VisibleForFrame="False" Tag="60" IconVisible="False" LeftMargin="-250.0000" RightMargin="187.0000" TopMargin="5.0000" BottomMargin="-62.0000" TouchEnable="True" FontSize="20" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="33" Scale9Height="35" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="63.0000" Y="57.0000" />
             <Children>
-              <AbstractNodeData Name="text" ActionTag="-2004499571" Tag="64" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="69.3000" RightMargin="-112.3000" TopMargin="7.0000" BottomMargin="7.0000" FontSize="30" LabelText="Restart" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="106.0000" Y="43.0000" />
+              <AbstractNodeData Name="text" ActionTag="-2004499571" Tag="64" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="69.3000" RightMargin="-176.3000" TopMargin="7.0000" BottomMargin="7.0000" FontSize="30" LabelText="Change view" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="170.0000" Y="43.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="69.3000" Y="28.5000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="1.1000" Y="0.5000" />
-                <PreSize X="1.6825" Y="0.7544" />
+                <PreSize X="2.6984" Y="0.7544" />
                 <FontResource Type="Normal" Path="Fonts/ChalkboardSE.ttc" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

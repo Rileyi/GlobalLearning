@@ -25,5 +25,13 @@
         <LastRunType Value="Windows" />
       </Value>
     </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="ButtonModule.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="ButtonModule.csd" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>

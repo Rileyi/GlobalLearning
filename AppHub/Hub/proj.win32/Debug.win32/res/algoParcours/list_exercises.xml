@@ -1,0 +1,41 @@
+<exercises>
+	<exercise name="arrivee" img="res/boutons/button Icon empty"/>
+	
+	<exercise name="depart" img="res/boutons/Button Icon rocket"/>
+	
+	<exercise name="DotToDotMath" img="res/boutons/button Icon Dot-Dot"/>
+	
+	<exercise name="DrawNode" img="res/boutons/button Icon Colors"/>
+	
+	<exercise name="DotToDotWrite" img="res/boutons/button Icon Dot-Dot"/>
+	
+	<exercise name="CowTrainReading" img="res/boutons/button Icon empty"/>
+	
+	<exercise name="HoledText" img="res/boutons/button Icon empty"/>
+		
+	<exercise name="WritingWords" img="res/boutons/button Icon empty"/>
+	
+	<exercise name="WritingLetters" img="res/boutons/button Icon empty"/>
+		
+	<exercise name="TextUnderstanding" img="res/boutons/button Icon empty"/>
+	
+	<exercise name="HiddenObjects" img="res/boutons/button Icon empty"/>
+	
+	<exercise name="CowTrainMaths" img="res/boutons/button Icon empty"/>
+	
+	<exercise name="ConnectsTheDots" img="res/boutons/button Icon empty"/>
+	
+	<exercise name="HoledWords" img="res/boutons/button Icon empty"/>
+	
+	<exercise name="NumberInWords/Figure" img="res/boutons/button Icon empty"/>
+	
+	<exercise name="Ordering" img="res/boutons/button Icon empty"/>
+	
+	<exercise name="TimeReading" img="res/boutons/button Icon empty"/>
+	
+	<exercise name="TextReading" img="res/boutons/button Icon empty"/>
+		
+	<exercise name="AlphabetSong" img="res/boutons/button Icon empty"/>
+	
+	<exercise name="Puzzle" img="res/boutons/button Icon empty"/>
+</exercises>

@@ -61,14 +61,23 @@ bool MainScene::init()
 
 	// on ajoute les évènements au layer
 	tool_bar = (ToolBar*)rootNode->getChildByName("Tool_bar");
-	cocos2d::ui::Button* restart = tool_bar->getChildByName<cocos2d::ui::Button*>("Restart_button");
+	tool_bar->setLocalZOrder(2);
+	cocos2d::ui::Button* vision_graph = tool_bar->getChildByName<cocos2d::ui::Button*>("Vision_graph");
 	cocos2d::ui::Button* menu = tool_bar->getChildByName<cocos2d::ui::Button*>("Menu_button");
 	cocos2d::ui::Button* valid = tool_bar->getChildByName<cocos2d::ui::Button*>("Valid_button");
 	cocos2d::ui::Button* shahoots = tool_bar->getChildByName<cocos2d::ui::Button*>("Shahoots_button");
 
+
+	// on crée le parcour l'exercice.
+	graph = ParcourExos::createParcourExos(10, 5, 550, 550, 550, 550);
+	graph->setVisible(false);
+
+	// on ajoute les évènements aux boutons de la tool_bar
 	shahoots->addTouchEventListener(CC_CALLBACK_2(MainScene::shahootsPop, this));
 	menu->addTouchEventListener(CC_CALLBACK_2(MainScene::goToMenu, this));
+	vision_graph->addTouchEventListener(CC_CALLBACK_2(MainScene::changeDisplayModule, this));
 
+	rootNode->addChild(graph, 1);
     addChild(rootNode);
 
     return true;
@@ -115,6 +124,31 @@ void MainScene::onEnter()
 	buttonAppeared();
 	runToolBar(true);
 	scheduleUpdate();
+}
+
+
+
+void MainScene::changeDisplayModule(Ref* pSender, cocos2d::ui::Widget::TouchEventType type)
+{
+	if (type == cocos2d::ui::Widget::TouchEventType::ENDED)
+	{
+		if (graph->isVisible())
+		{
+			graph->setVisible(false);
+			for (auto elem : list)
+			{
+				elem->setVisible(true);
+			}
+		}
+		else
+		{
+			graph->setVisible(true);
+			for (auto elem : list)
+			{
+				elem->setVisible(false);
+			}
+		}
+	}
 }
 
 
@@ -198,7 +232,6 @@ void MainScene::createSelectScreen()
 {
 	tinyxml2::XMLDocument document;
 	const std::string MODULE = "res/Modules.xml";
-	std::vector<ButtonModule*> list;
 	const std::string EXT = ".png";
 	const std::string BIS = " ON";
 	const std::string PATH = "res/boutons/";
