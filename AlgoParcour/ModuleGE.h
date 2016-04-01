@@ -17,6 +17,8 @@ class ModuleGE : public InGE, public OutGE
         ~ModuleGE();
         ModuleGE& operator=(const ModuleGE& other);
 
+        void recursiveDelete() override;
+
         void moveAfter(Link&);
         void moveBefore(Link&);
 

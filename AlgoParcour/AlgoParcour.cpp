@@ -251,6 +251,7 @@ bool exchange(std::map<const Module*, int> & base,
 
     //On en deduit l'ecart entre ce que l'on a et ce que l'on veux
     Module diff = total - aim;
+    Module diffp = max (diff, 0);
 
     //Puis on note et on ordone chaque module de la base selon son apport,
     //sa frequence, et sa redondance par rapport aux autres modules dans le set.
@@ -259,7 +260,7 @@ bool exchange(std::map<const Module*, int> & base,
                                            it != base.end(); ++it)
     {                           //frequence*/
         scoreBase.insert(new ModuleScoreStruct(it->first,
-                (max(*(it->first) - max (diff, 0), 0) - min(*(it->first), max(diff, 0))).totalValue()
+                (max(*(it->first) - diffp, 0) - min(*(it->first), diffp)).totalValue()
                 - (it->second - 1) * 10));
     }
 

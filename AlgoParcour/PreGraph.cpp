@@ -3,7 +3,7 @@
 using namespace std;
 
 PreGraph::PreGraph(map<const Module*, int>& modules) :
-    m_contenu(new ModuleGE(nullptr))
+    m_contenu(new ModuleGE(new Module("depart")))
 {
     ModuleGE* currentNode = m_contenu;
     for(map<const Module*, int>::iterator it = modules.begin();
@@ -17,7 +17,7 @@ PreGraph::PreGraph(map<const Module*, int>& modules) :
         }
     }
 
-    currentNode->setNext(new ModuleGE(nullptr, currentNode, nullptr));
+    currentNode->setNext(new ModuleGE(new Module("arrivee"), currentNode, nullptr));
 
     cout <<'\n';
 }

@@ -14,6 +14,7 @@ public:
     virtual ~Module();
 
     const std::string& getName() const;
+    void setName(const std::string name);
     int getReading() const;
     int getWriting() const;
     int getMaths() const;

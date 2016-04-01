@@ -16,9 +16,9 @@ class OutGE : public virtual GraphElement
 
         std::vector<const ModuleGE*>* getNextModuleGEs() const override;
 
-        void recursiveDelete() override;
+        virtual void recursiveDelete() override;
 
-        GraphElement* getNext() { return m_next; }
+        GraphElement* getNext() const { return m_next; }
         void setNext(GraphElement* val) { m_next = val; }
 
     protected:

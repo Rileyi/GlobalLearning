@@ -34,6 +34,12 @@ const std::string& Module::getName() const
     return m_name;
 }
 
+void Module::setName(const std::string name)
+{
+    m_name = name;
+}
+
+
 int Module::getReading() const
 {
     return m_reading;

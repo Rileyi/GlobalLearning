@@ -4,7 +4,16 @@ using namespace std;
 
 ModuleNode::ModuleNode(const ModuleGE* m) : Module(*(m->getModule())),
     m_previous(new vector<ModuleNode*>()), m_next(new vector<ModuleNode*>())
-{}
+{
+    if (m->getPrevious() == nullptr)
+    {
+        setName("depart");
+    }
+    else if (m->getNext() == nullptr)
+    {
+        setName("arrivee");
+    }
+}
 
 ModuleNode::~ModuleNode()
 {}

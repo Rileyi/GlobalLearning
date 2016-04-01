@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="test_win32" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="Hub" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wnon-virtual-dtor" />
+					<Add option="-Wshadow" />
+					<Add option="-Winit-self" />
+					<Add option="-Wredundant-decls" />
+					<Add option="-Wcast-align" />
+					<Add option="-Wundef" />
+					<Add option="-Wfloat-equal" />
+					<Add option="-Winline" />
+					<Add option="-Wunreachable-code" />
+					<Add option="-Wmissing-declarations" />
+					<Add option="-Wmissing-include-dirs" />
+					<Add option="-Wswitch-enum" />
+					<Add option="-Wswitch-default" />
+					<Add option="-Weffc++" />
+					<Add option="-Wzero-as-null-pointer-constant" />
+					<Add option="-Wmain" />
+					<Add option="-pedantic" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-std=c++11" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_USE_MATH_DEFINES" />
+					<Add option="-DGL_GLEXT_PROTOTYPES" />
+					<Add option="-DCC_ENABLE_CHIPMUNK_INTEGRATION=1" />
+					<Add option="-DCOCOS2D_DEBUG=1" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add option="-D_SCL_SECURE_NO_WARNINGS" />
+					<Add directory="../Classes" />
+					<Add directory=".." />
+					<Add directory="$(_COCOS_HEADER_WIN32_BEGIN)" />
+					<Add directory="$(_COCOS_HEADER_WIN32_END)" />
+					<Add directory="C:/cocos2d-x-3.8.1/cocos" />
+					<Add directory="C:/cocos2d-x-3.8.1/cocos/audio/include" />
+					<Add directory="C:/cocos2d-x-3.8.1/external" />
+					<Add directory="C:/cocos2d-x-3.8.1/extensions" />
+					<Add directory="C:/cocos2d-x-3.8.1/external/chipmunk/include/chipmunk" />
+				</Compiler>
+				<Linker>
+					<Add library="$(_COCOS_LIB_WIN32_BEGIN)" />
+					<Add library="$(_COCOS_LIB_WIN32_END)" />
+					<Add directory="$(MSBuildProgramFiles32)/Microsoft SDKs/Windows/v7.1A/lib" />
+					<Add directory="$(LibraryPath)" />
+					<Add directory="$(_COCOS_LIB_PATH_WIN32_BEGIN)" />
+					<Add directory="$(_COCOS_LIB_PATH_WIN32_END)" />
+				</Linker>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="Hub" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_USE_MATH_DEFINES" />
+					<Add option="-DGL_GLEXT_PROTOTYPES" />
+					<Add option="-DCC_ENABLE_CHIPMUNK_INTEGRATION=1" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add option="-D_SCL_SECURE_NO_WARNINGS" />
+					<Add directory="$(COCOS_X_ROOT)/cocos2d-x-3.10/cocos/audio/include" />
+					<Add directory="$(COCOS_X_ROOT)/cocos2d-x-3.10/external" />
+					<Add directory="$(COCOS_X_ROOT)/cocos2d-x-3.10/external/chipmunk/include/chipmunk" />
+					<Add directory="$(COCOS_X_ROOT)/cocos2d-x-3.10/extensions" />
+					<Add directory="../Classes" />
+					<Add directory=".." />
+					<Add directory="$(_COCOS_HEADER_WIN32_BEGIN)" />
+					<Add directory="$(_COCOS_HEADER_WIN32_END)" />
+				</Compiler>
+				<Linker>
+					<Add library="libcurl_imp.lib" />
+					<Add library="websockets.lib" />
+					<Add library="$(_COCOS_LIB_WIN32_BEGIN)" />
+					<Add library="$(_COCOS_LIB_WIN32_END)" />
+					<Add directory="$(MSBuildProgramFiles32)/Microsoft SDKs/Windows/v7.1A/lib" />
+					<Add directory="$(LibraryPath)" />
+					<Add directory="$(_COCOS_LIB_PATH_WIN32_BEGIN)" />
+					<Add directory="$(_COCOS_LIB_PATH_WIN32_END)" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="../Classes/AppDelegate.cpp" />
+		<Unit filename="../Classes/AppDelegate.h" />
+		<Unit filename="../Classes/ButtonModule.cpp" />
+		<Unit filename="../Classes/ButtonModule.h" />
+		<Unit filename="../Classes/ButtonModuleReader.cpp" />
+		<Unit filename="../Classes/ButtonModuleReader.h" />
+		<Unit filename="../Classes/MainScene.cpp" />
+		<Unit filename="../Classes/MainScene.h" />
+		<Unit filename="../Classes/ToolBar.cpp" />
+		<Unit filename="../Classes/ToolBar.h" />
+		<Unit filename="../Classes/ToolBarReader.cpp" />
+		<Unit filename="../Classes/ToolBarReader.h" />
+		<Unit filename="game.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="main.cpp" />
+		<Unit filename="main.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

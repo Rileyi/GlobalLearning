@@ -14,7 +14,7 @@ class InGE : public virtual GraphElement
 
         void changePrevious(GraphElement* oldGE, GraphElement* newGE) override;
 
-        GraphElement* getPrevious() { return m_previous; }
+        GraphElement* getPrevious() const { return m_previous; }
         void setPrevious(GraphElement* val) { m_previous = val; }
 
     protected:

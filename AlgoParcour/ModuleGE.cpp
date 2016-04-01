@@ -45,7 +45,7 @@ int ModuleGE::bestFork(map<const Module*, int>** modules, Link* forkPlace)
 
     cout << "Node[" << m_module << "]->bestfork->no match\n";
     //le module n'a pas ete trouve dans la liste
-    if (forkPlace->isEmpty()  &&  m_module != nullptr)
+    if (forkPlace->isEmpty()  &&  !(*m_module == 0))
     {
         //Si le point de fourche n'est pas encore trouve
         cout << "Node[" << m_module << "]->bestfork->new fork place\n";
@@ -71,9 +71,9 @@ Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPla
 
         ++*distance;
 
-        if (m_module == nullptr || it != (*modules)->end())
+        if (*m_module == 0 || it != (*modules)->end())
         {
-            cout << "Node[" << m_module << "]->bestJunction->module found or nullptr\n";
+            cout << "Node[" << m_module << "]->bestJunction->module found or null\n";
 
             if (it != (*modules)->end())
             {
@@ -183,7 +183,7 @@ Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPla
 
 bool ModuleGE::contains(map<const Module*, int>** modules) const
 {
-    if (m_module != nullptr)
+    if (m_module != nullptr  &&  !(*m_module == 0))
     {
         map<const Module*, int>::iterator it = (*modules)->find(m_module);
         if (it == (*modules)->end())
@@ -272,7 +272,7 @@ void ModuleGE::distanceAndValidity(std::map<const GraphElement*, twoInts*>* dist
         cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance << ")\n";
 
 
-        if (m_module != nullptr)
+        if (!(*m_module == 0))
         {
             *errors += "abnormal starting point (moduleGE[" + m_module->toString() + "]).\n";
             cout << "Node[" << toString() << "]->Error: " << *errors;
@@ -306,7 +306,7 @@ void ModuleGE::distanceAndValidity(std::map<const GraphElement*, twoInts*>* dist
         (*distancesMap)[this] = new twoInts(distance, *w);
         cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance  << ")\n";
 
-        if (m_module == nullptr)
+        if (*m_module == 0)
         {
             *errors += "Unexpected empty moduleGE.\n";
             cout << "Node[" << toString() << "]->Error: " << *errors;
@@ -331,7 +331,7 @@ void ModuleGE::distanceAndValidity(std::map<const GraphElement*, twoInts*>* dist
         (*distancesMap)[this] = new twoInts(distance+1, *w);
         cout << "Node[" << toString() << "]->added to the distanceMap (d=" << distance+1 << ")\n";
 
-        if (m_module == nullptr)
+        if (*m_module == 0)
         {
             if (m_next == nullptr) return;
 
@@ -393,6 +393,15 @@ std::string ModuleGE::toString() const
         stringstream os;
         os << *m_module;
         return os.str();
+    }
+}
+
+void ModuleGE::recursiveDelete()
+{
+    OutGE::recursiveDelete();
+    if (*m_module == 0)
+    {
+        delete m_module;
     }
 }
 

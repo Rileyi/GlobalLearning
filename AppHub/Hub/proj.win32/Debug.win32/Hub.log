@@ -1,9 +1,15 @@
-﻿  60 fichier(s) copi�(s)
-  Hub.vcxproj -> C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\proj.win32\Debug.win32\Hub.exe
-  C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\Resources\res\ButtonModule.csb -> C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\proj.win32\Debug.win32\res\ButtonModule.csb
-  C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\Resources\res\MainScene.csb -> C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\proj.win32\Debug.win32\res\MainScene.csb
-  C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\Resources\res\Mascotte.csb -> C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\proj.win32\Debug.win32\res\Mascotte.csb
-  C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\Resources\res\ToolBar.csb -> C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\proj.win32\Debug.win32\res\ToolBar.csb
-  C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\Resources\res\boutons\button Shahoots ON.png -> C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\proj.win32\Debug.win32\res\boutons\button Shahoots ON.png
-  C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\Resources\res\boutons\button Shahoots.png -> C:\Users\kuungfu-sheep\Documents\Cocos\CocosProjects\Hub\proj.win32\Debug.win32\res\boutons\button Shahoots.png
-  6 fichier(s) copi�(s)
+﻿  AppDelegate.cpp
+  ButtonModule.cpp
+  ButtonModuleReader.cpp
+  MainScene.cpp
+  ToolBar.cpp
+  ToolBarReader.cpp
+  main.cpp
+c:\users\alexandre\documents\github\globallearning\apphub\hub\classes\appdelegate.cpp(40): warning C4305: 'argument' : troncation de 'double' à 'float'
+c:\users\alexandre\documents\github\globallearning\apphub\hub\classes\mainscene.cpp(251): warning C4018: '<' : incompatibilité signed/unsigned
+  Fichier introuvable - *.*
+  0 fichier(s) copié(s)
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(128,5): error MSB3073: La commande "if not exist "C:\Users\Alexandre\Documents\GitHub\GlobalLearning\AppHub\Hub\proj.win32\Debug.win32\" mkdir "C:\Users\Alexandre\Documents\GitHub\GlobalLearning\AppHub\Hub\proj.win32\Debug.win32\"
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(128,5): error MSB3073: xcopy /Y /Q "\cocos2d-x-3.10\prebuilt\win32\*.*" "C:\Users\Alexandre\Documents\GitHub\GlobalLearning\AppHub\Hub\proj.win32\Debug.win32\"
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(128,5): error MSB3073: 
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(128,5): error MSB3073: :VCEnd" s'est arrêtée avec le code 4.
