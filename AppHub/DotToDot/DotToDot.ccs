@@ -1,0 +1,22 @@
+<Solution>
+  <PropertyGroup Name="DotToDot" Version="2.3.3.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="DotToDot.csd" Type="Scene" />
+        <Project Name="TutorialScene.csd" Type="Scene" />
+        <Image Name="dot.png" />
+        <Image Name="cursor.png" />
+        <Image Name="cursorPush.png" />
+        <Project Name="tutorialNode.csd" Type="Node" />
+        <Image Name="flecheDroite.png" />
+        <Image Name="backgroundDotToDot.png" />
+        <Image Name="dot-to-dot-button linked.png" />
+        <Image Name="dot-to-dot-button unlinked.png" />
+        <TTF Name="Chalkboard.ttc" />
+        <Image Name="Finger Black ON.png" />
+        <Image Name="Finger Black.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
