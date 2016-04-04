@@ -22,6 +22,12 @@ class ModuleNode : public Module //, public cocos2d::Node
         void addPrevious(ModuleNode* moduleNode);
         void addPrevious(std::vector<ModuleNode*>& moduleNodes);
 
+        bool calculatePathData(const Module& asked, const Module& authorizedDifference,
+                               Module* totalMin, Module* totalMax,
+                               unsigned int* numberOfPaths, unsigned int* maxDifference,
+                               float* averageDifference )
+                               const;
+
         void recursiveDelete();
 
     protected:

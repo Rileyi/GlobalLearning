@@ -12,12 +12,13 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <fstream>
 #include <vector>
 #include <set>
 #include <list>
 #include <map>
-#include <fstream>
 #include <time.h>
+#include <cmath>
 
 /*
 #if defined __GNUC__
@@ -27,7 +28,6 @@
 	#pragma disable_warn
 	#include "cocos2d.h"
 #elif defined _MSC_VER
-    #include "targetver.h"
 	#pragma warning(push, 0)
 	#include "cocos2d.h"
 	#pragma warning(pop)

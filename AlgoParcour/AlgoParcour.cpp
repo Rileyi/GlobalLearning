@@ -33,8 +33,7 @@ UsableGraph* generateGraph(int length, int width, const Module& aim)
     std::cout.rdbuf(out.rdbuf());
 
     cout << "Asked graph properties: length=" << length << " ; width=" << width << '\n';
-    cout << "                        r=" << aim.getReading() << " ; w=" << aim.getWriting()
-                              << " ; m=" << aim.getMaths() << " ; f=" << aim.getFun() << '\n';
+    cout << "                      " << aim.toString() << '\n';
 
     //Initialisation de l'aleatoire
     srand(static_cast<int>(time(nullptr)));
@@ -69,6 +68,13 @@ UsableGraph* generateGraph(int length, int width, const Module& aim)
         //(ratio ecriture/lecture/mathematiques/eveil).
         map<const Module*, int>* base = new map<const Module*, int>(generateBase(modules, length));
 
+        cout << "\nBase :\n";
+        for (map<const Module*, int>::const_iterator it = base->begin();
+                it != base->end(); ++it)
+        {
+            cout << it->second << "*[" << (*it->first) << "] : " << it->first->toString() << '\n';
+        }
+
         //On va desormais ameillorer cette base par echange successif de modules
         do {}
         while (exchange(*base, modules, aim));
@@ -95,7 +101,7 @@ UsableGraph* generateGraph(int length, int width, const Module& aim)
         else
         {
             //Puis on ajoute un par un les autres sets
-            //L'algo derriere la methode ajouter permet de reperer le redondances
+            //L'algo derriere la methode add permet de reperer le redondances
             //et donc de generer le squelette du graphe final
             ++ (preGraph->add(base) ? success : fails);
         }
@@ -107,14 +113,26 @@ UsableGraph* generateGraph(int length, int width, const Module& aim)
 
     } while (success < width  &&  fails < width);
 
-    UsableGraph* graph =
-        new UsableGraph(preGraph, length+2, width, aim);
+    //Etape |V
+    //Effectuer des modifications sur le graphe obtenu pour eloigner deux a deux les modules avec
+    //une meme matiere predominate, un meme type d'interaction (coloriage, relier des points, ...),
+    //un meme nom...
+
+    UsableGraph* graph = new UsableGraph(preGraph, length, width, aim, 50);
     delete preGraph;
 
     if (graph->isValid())
     {
         cout << "\nGraph of dimensions (" << graph->getLength() << "," << graph->getWidth() << "):\n";
+        cout << "Number of paths: " << graph->getNumberOfPaths() << '\n';
+        cout << "Asked learnings" << graph->askedTotal().toString() << '\n';
+        cout << "Authorized difference" << graph->getAuthorizedDifference().toString() << '\n';
+        cout << "Min" << graph->minTotal().toString() << '\n';
+        cout << "Max" << graph->maxTotal().toString() << '\n';
+        cout << "Max difference: " << graph->getMaxDifference() << '\n';
+        cout << "Average difference: " << graph->getAverageDifference() << '\n';
         graph->display();
+
     }
 
     std::cout.rdbuf(coutbuf);
@@ -249,6 +267,8 @@ bool exchange(std::map<const Module*, int> & base,
         total += *(it->first) * (it->second);
     }
 
+    cout << "total" << total.toString() << '\n';
+
     //On en deduit l'ecart entre ce que l'on a et ce que l'on veux
     Module diff = total - aim;
     Module diffp = max (diff, 0);
@@ -258,7 +278,7 @@ bool exchange(std::map<const Module*, int> & base,
     set< ModuleScoreStruct*, ModuleScoreStruct> scoreBase;
     for (map<const Module* const, int>::const_iterator it = base.begin();
                                            it != base.end(); ++it)
-    {                           //frequence*/
+    {
         scoreBase.insert(new ModuleScoreStruct(it->first,
                 (max(*(it->first) - diffp, 0) - min(*(it->first), diffp)).totalValue()
                 - (it->second - 1) * 10));
@@ -290,6 +310,8 @@ bool exchange(std::map<const Module*, int> & base,
 
         if (meilleurScore >0)
         {
+            cout << *(moduleBase->module) << "  remplace par  " << meilleurCandidat->toString() << '\n';
+
             //Si le meilleur candidat donne un apport positif, on effectue l'echange :
             //On ajoute le nouveau module a la base (ou augmente sa frequence si il y est deja)
             if (base.find(meilleurCandidat) == base.end())

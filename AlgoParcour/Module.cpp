@@ -2,67 +2,95 @@
 
 
 Module::Module(const std::string& name, int reading, int writing,int maths, int fun) :
-    m_name(name), m_reading(reading), m_writing(writing), m_maths(maths), m_fun(fun)
+    m_name(name), m_learnings(Matter::Size, 0)
+{
+    m_learnings[Matter::Reading] = reading;
+    m_learnings[Matter::Writing] = writing;
+    m_learnings[Matter::Maths] = maths;
+    m_learnings[Matter::Fun] = fun;
+}
+
+Module::Module(const std::string& name, const std::vector<int>& learnings) :
+    m_name(name), m_learnings(learnings)
 {}
 
 Module::Module(const std::string& name) :
-    m_name(name), m_reading(0), m_writing(0), m_maths(0), m_fun(0)
+    m_name(name), m_learnings(Matter::Size, 0)
 {}
 
 Module::Module(int reading, int writing,int maths, int fun) :
-    m_name(), m_reading(reading), m_writing(writing), m_maths(maths), m_fun(fun)
-{}
+    m_name(), m_learnings(Matter::Size, 0)
+{
+    m_learnings[Matter::Reading] = reading;
+    m_learnings[Matter::Writing] = writing;
+    m_learnings[Matter::Maths] = maths;
+    m_learnings[Matter::Fun] = fun;
+}
 
-Module::Module() :
-    m_name(), m_reading(0), m_writing(0), m_maths(0), m_fun(0)
+Module::Module(const std::vector<int>& learnings) :
+    m_name(), m_learnings(learnings)
 {}
 
 Module::Module(int x) :
-    m_name(), m_reading(x), m_writing(x), m_maths(x), m_fun(x)
+    m_name(), m_learnings(Matter::Size, 0)
+{
+    m_learnings[Matter::Reading] = x;
+    m_learnings[Matter::Writing] = x;
+    m_learnings[Matter::Maths] = x;
+    m_learnings[Matter::Fun] = x;
+}
+
+Module::Module() :
+    m_name(), m_learnings(Matter::Size, 0)
 {}
 
 Module::Module(const Module & other) :
-    m_name(other.m_name), m_reading(other.m_reading), m_writing(other.m_writing),
-    m_maths(other.m_maths), m_fun(other.m_fun)
+    m_name(other.m_name), m_learnings(other.m_learnings)
 {}
 
 
 Module::~Module() {}
 
-const std::string& Module::getName() const
+const std::string& Module::getModuleName() const
 {
     return m_name;
 }
 
-void Module::setName(const std::string name)
+void Module::setModuleName(const std::string name)
 {
     m_name = name;
 }
 
-
-int Module::getReading() const
+const std::vector<int>& Module::getlearnings() const
 {
-    return m_reading;
+    return m_learnings;
 }
 
-int Module::getWriting() const
-{
-    return m_writing;
-}
 
-int Module::getMaths() const
+Matter Module::mainMatter() const
 {
-    return m_maths;
-}
+    int value = 0;
+    Matter matter = Matter::Fun;
+    for (int i=0; i<Matter::Size; ++i)
+    {
+        if (m_learnings[i] > value)
+        {
+            matter = Matter(i);
+            value = m_learnings[i];
+        }
+    }
 
-int Module::getFun() const
-{
-    return m_fun;
+    return matter;
 }
 
 int Module::totalValue() const
 {
-    return m_reading + m_writing + m_maths + m_fun;
+    int total = 0;
+    for(int i=0; i<Matter::Size; ++i)
+    {
+        total += m_learnings[i];
+    }
+    return total;
 }
 
 Module* Module::inferiorLevel() const
@@ -75,72 +103,139 @@ Module* Module::inferiorLevel() const
 std::string Module::toString() const
 {
     std::stringstream os;
-    os << m_name << ": " << m_reading << " " << m_writing << " " << m_maths << " " << m_fun;
+    os << m_name << ": ";
+    os << "reading(" << (*this)[Matter::Reading] << ") ";
+    os << "writing(" << m_learnings[Matter::Writing] << ") ";
+    os << "maths(" << m_learnings[Matter::Maths] << ") ";
+    os << "fun(" << m_learnings[Matter::Fun] << ") ";
     return os.str();
 }
 
 Module& Module:: operator=(const Module& other)
 {
-    if (m_name.empty()) m_name = std::string(other.m_name);
-    m_reading = other.m_reading;
-    m_writing = other.m_writing;
-    m_maths = other.m_maths;
-    m_fun = other.m_fun;
+    m_learnings = other.m_learnings;
     return *this;
 }
 
 Module& Module::operator+=(const Module& other)
 {
-    m_reading += other.m_reading;
-    m_writing += other.m_writing;
-    m_maths += other.m_maths;
-    m_fun += other.m_fun;
+    for(int i=0; i<Matter::Size; ++i)
+    {
+        m_learnings[i] += other.m_learnings[i];
+    }
+    return *this;
+}
+
+Module& Module::operator-=(const Module& other)
+{
+    for(int i=0; i<Matter::Size; ++i)
+    {
+        m_learnings[i] -= other.m_learnings[i];
+    }
+    return *this;
+}
+
+Module& Module::operator*=(const int& x)
+{
+    for(int i=0; i<Matter::Size; ++i)
+    {
+        m_learnings[i] *= x;
+    }
+    return *this;
+}
+
+Module& Module::operator/=(const int& x)
+{
+    for(int i=0; i<Matter::Size; ++i)
+    {
+        m_learnings[i] /= x;
+    }
     return *this;
 }
 
 Module Module::operator+(const Module& other) const
 {
-    return Module(m_reading + other.m_reading, m_writing + other.m_writing,
-                  m_maths + other.m_maths, m_fun + other.m_fun);
+    Module m = *this;
+    m += other;
+    return m;
 }
 
 Module Module::operator-(const Module& other) const
 {
-    return Module(m_reading - other.m_reading, m_writing - other.m_writing,
-                  m_maths - other.m_maths, m_fun - other.m_fun);
+    Module m = *this;
+    m -= other;
+    return m;
 }
 
 Module Module::operator-() const
 {
-    return Module(-m_reading, -m_writing, -m_maths, -m_fun);
+    Module m = *this;
+    m *= -1;
+    return m;
 }
 
 Module Module::operator*(const int& x) const
 {
-    return Module(m_reading * x, m_writing * x, m_maths * x, m_fun * x);
+    Module m = *this;
+    m *= x;
+    return m;
 }
 
 Module Module::operator/(const int& x) const
 {
-    return Module(m_reading / x, m_writing / x, m_maths / x, m_fun / x);
+    Module m = *this;
+    m /= x;
+    return m;
+}
+
+int& Module::operator[](const Matter& matter)
+{
+    return m_learnings[matter];
+}
+
+int Module::operator[](const Matter& matter) const
+{
+    return m_learnings[matter];
+}
+
+int& Module::operator[](const int& matter)
+{
+    return m_learnings[matter];
+}
+
+int Module::operator[](const int& matter) const
+{
+    return m_learnings[matter];
 }
 
 bool Module::operator==(const Module& other) const
 {
-    return m_reading == other.m_reading  &&  m_writing == other.m_writing  &&
-           m_maths == other.m_maths  &&  m_fun == other.m_fun;
+    for(int i=0; i<Matter::Size; ++i)
+    {
+        if (m_learnings[i] != other.m_learnings[i]) return false;
+    }
+
+    return true;
 }
 
 Module max(const Module& m1, const Module& m2)
 {
-    return Module(std::max(m1.m_reading, m2.m_reading), std::max(m1.m_writing, m2.m_writing),
-                  std::max(m1.m_maths, m2.m_maths), std::max(m1.m_fun, m2.m_fun));
+    Module m;
+    for(int i=0; i<Matter::Size; ++i)
+    {
+        m.m_learnings[i] = std::max(m1.m_learnings[i], m2.m_learnings[i]);
+    }
+    return m;
 }
 
 Module min(const Module& m1, const Module& m2)
 {
-    return Module(std::min(m1.m_reading, m2.m_reading), std::min(m1.m_writing, m2.m_writing),
-                  std::min(m1.m_maths, m2.m_maths), std::min(m1.m_fun, m2.m_fun));
+    Module m;
+    for(int i=0; i<Matter::Size; ++i)
+    {
+        m.m_learnings[i] = std::min(m1.m_learnings[i], m2.m_learnings[i]);
+    }
+    return m;
 }
 
 std::ostream& operator<<(std::ostream& flux, const Module & module)
@@ -149,32 +244,15 @@ std::ostream& operator<<(std::ostream& flux, const Module & module)
     return flux;
 }
 
-std::ostream& operator<<(std::ostream& flux, const Module* & module)
-{
-    if (module == nullptr)
-    {
-        flux << "####";
-    }
-    else
-    {
-        flux << *module;
-    }
-    return flux;
-}
-
-
 int calculateScore(const Module& current, const Module& concurrent, const Module& diff)
 {
-    return  calculateScore(current.m_reading, concurrent.m_reading, diff.m_reading) +
-            calculateScore(current.m_writing, concurrent.m_writing, diff.m_writing) +
-            calculateScore(current.m_maths, concurrent.m_maths, diff.m_maths) +
-            calculateScore(current.m_fun, concurrent.m_fun, diff.m_fun);
+    int score = 0;
+    for(int i=0; i<Matter::Size; ++i)
+    {
+        int modif = concurrent[i] - current[i];
+        score += (diff[i]>0 ? (modif >= 0 ||  diff[i] >= -modif  ?  -modif  :   modif + 2*diff[i])
+                            : (modif <= 0 || -diff[i] >=  modif  ?   modif  :  -modif - 2*diff[i]));
+    }
+    return score;
 }
 
-
-int calculateScore(int current, int concurrent, int diff)
-{
-    int modif = concurrent - current;
-    return (diff>0 ? (modif >= 0 ||  diff >= -modif  ?  -modif  :   modif + 2*diff)
-                   : (modif <= 0 || -diff >=  modif  ?   modif  :  -modif - 2*diff));
-}

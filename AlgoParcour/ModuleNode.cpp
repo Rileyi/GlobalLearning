@@ -7,11 +7,11 @@ ModuleNode::ModuleNode(const ModuleGE* m) : Module(*(m->getModule())),
 {
     if (m->getPrevious() == nullptr)
     {
-        setName("depart");
+        setModuleName("depart");
     }
     else if (m->getNext() == nullptr)
     {
-        setName("arrivee");
+        setModuleName("arrivee");
     }
 }
 
@@ -62,6 +62,44 @@ void ModuleNode::addPrevious(std::vector<ModuleNode*>& moduleNodes)
     for(ModuleNode* moduleNode : moduleNodes)
     {
         addPrevious(moduleNode);
+    }
+}
+
+bool ModuleNode::calculatePathData(const Module& asked, const Module& authorizedDifference,
+                                   Module* totalMin, Module* totalMax, unsigned int* numberOfPaths,
+                                   unsigned int* maxDifference, float* averageDifference) const
+{
+    if (m_next->empty())
+    {
+        ++*numberOfPaths;
+        *averageDifference = *maxDifference = max(asked, -asked).totalValue();
+        *totalMax = *totalMin = 0;
+        return (min(asked,authorizedDifference)==asked  &&  max(asked,-authorizedDifference)==asked);
+    }
+    else
+    {
+        bool b=true;
+        for (ModuleNode* mn : *m_next)
+        {
+            unsigned int numberOfPaths2 = 0;
+            Module totalMin2(INT_MAX);
+            Module totalMax2(INT_MIN);
+            unsigned int maxDifference2 = 0;
+            float averageDifference2 = 0;
+
+            b &= mn->calculatePathData(asked-*this, authorizedDifference, &totalMin2, &totalMax2,
+                                         &numberOfPaths2, &maxDifference2, &averageDifference2);
+
+            *totalMin = min(*totalMin, totalMin2);
+            *totalMax = max(*totalMax, totalMax2);
+            *maxDifference = std::max(*maxDifference, maxDifference2);
+            *averageDifference = (*numberOfPaths * *averageDifference + numberOfPaths2 * averageDifference2)
+                                / (*numberOfPaths + numberOfPaths2);
+            *numberOfPaths += numberOfPaths2;
+        }
+        *totalMin += *this;
+        *totalMax += *this;
+        return b;
     }
 }
 

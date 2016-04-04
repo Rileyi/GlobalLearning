@@ -247,7 +247,6 @@ vector<const ModuleGE*>* Fork::getNextModuleGEs() const
         if (nullptr != mge) l->push_back(mge);
         else
         {
-            cout << " FLREC";
             vector<const ModuleGE*>* ll = m_left->getNextModuleGEs();
             l->insert(l->end(), ll->begin(), ll->end());
             delete ll;
@@ -260,14 +259,12 @@ vector<const ModuleGE*>* Fork::getNextModuleGEs() const
         if (nullptr != mge) l->push_back(mge);
         else
         {
-            cout << " FRREC";
             vector<const ModuleGE*>* lr = m_right->getNextModuleGEs();
             l->insert(l->end(), lr->begin(), lr->end());
             delete lr;
         }
     }
 
-    cout << " FRET";
     return l;
 }
 
