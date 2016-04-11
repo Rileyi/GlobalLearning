@@ -2,14 +2,12 @@
 
 using namespace std;
 
-UsableGraph::UsableGraph(PreGraph* preGraph, int length, int maxWidth, const Module& asked
-                         //, int authorizedDifference, int negligibleDifference
-                         ) :
+UsableGraph::UsableGraph(PreGraph* preGraph, unsigned int length, unsigned int maxWidth,
+                         const Module& asked, const Module& authorizedDifferences) :
     m_nodes(new vector<std::list<ModuleNode*>>()), m_currentNode(nullptr),
-    m_length(length), m_maxWidth(maxWidth), //m_width(0), //m_numberOfPaths(0),
-    m_asked(asked), //m_average(0), m_min(0), m_max(0)
-    //m_authorizedDifference(authorizedDifference), m_negligibleDifference(negligibleDifference),
-    //m_maxDifference(0), m_averageDifference(0),
+    m_length(length), m_maxWidth(maxWidth), m_numberOfPaths(0),
+    m_asked(asked), m_authorizedDifferences(authorizedDifferences), m_min(INT_MAX), m_max(INT_MIN),
+    m_maxDifference(0), m_averageDifference(0),
     m_errors("")
 {
     cout << "\n\nTransforming the pre-graph in usable graph.\n";
@@ -30,7 +28,7 @@ UsableGraph::UsableGraph(PreGraph* preGraph, int length, int maxWidth, const Mod
 
     cout << "The pre-graph is valid.\n\n";
 
-    m_nodes->insert(m_nodes->end(), length, list<ModuleNode*>());
+    m_nodes->insert(m_nodes->end(), length+2, list<ModuleNode*>());
 
     map<const ModuleGE*, ModuleNode*> mgeToMn;
     map<ModuleNode*, const ModuleGE*> mnToMge;
@@ -39,12 +37,12 @@ UsableGraph::UsableGraph(PreGraph* preGraph, int length, int maxWidth, const Mod
         it != geMap->end(); it++)
     {
         const ModuleGE* mge;
-        cout << "\nEncounter";
         if ((mge = dynamic_cast<const ModuleGE*>(it->first)) != nullptr)
         {
-            cout << " and insertion of node " << mge->toString() << '(' << it->second->fst << ',' << it->second->snd << ")";
+            cout << "Insertion of node " << mge->toString();
+            cout << '(' << it->second->fst << ',' << it->second->snd << ")\n";
 
-            if (it->second->fst >= length)
+            if (static_cast<unsigned>(it->second->fst) >= length+2)
             {
                 validityErrors += "Graph is too long.\n";
                 cout <<validityErrors;
@@ -61,22 +59,19 @@ UsableGraph::UsableGraph(PreGraph* preGraph, int length, int maxWidth, const Mod
                 if (it2 == (*m_nodes)[it->second->fst].end()  ||
                     ((*geMap)[mnToMge[*it2]])->snd  >  it->second->snd)
                 {
-                    cout << " there: ";
                     (*m_nodes)[it->second->fst].insert(it2, mn);
-                    cout << "done.";
                     break;
                 }
-
-                cout << " not there...";
             }
         }
     }
 
     cout << "\n\nAdded the list of node to the graph.\n";
 
+    cout << "\nLinking parent nodes to children nodes:";
     for(map<const ModuleGE*, ModuleNode*>::iterator it = mgeToMn.begin(); it != mgeToMn.end(); it++)
     {
-        cout << "\nAdding children to node " << it->first->toString() << ":";
+        cout << '\n' << it->first->toString() << "->";
         for (const ModuleGE* mge : *(it->first->getNextModuleGEs()))
         {
             cout << " " << mge->toString();
@@ -86,18 +81,37 @@ UsableGraph::UsableGraph(PreGraph* preGraph, int length, int maxWidth, const Mod
         }
     }
 
+    if (getWidth() > getMaxWidth())
+    {
+        validityErrors += "Graph is too wide.\n";
+        cout << validityErrors;
+    }
+
     m_currentNode = m_nodes->front().front();
 
     cout << "\n\nUsable graph completely generated.\n";
+
+    cout << "\nComputing the graph data.\n";
+
+    if (m_currentNode->calculatePathData(m_asked, m_authorizedDifferences, &m_min, &m_max,
+                                           &m_numberOfPaths, &m_maxDifference, &m_averageDifference))
+    {
+        cout << "Graph matches with the asked learnings values.\n";
+    }
+    else
+    {
+        validityErrors += "Graph does not meet the demanded learnings values.\n";
+        cout << validityErrors;
+    }
 }
 
 UsableGraph::UsableGraph(const UsableGraph& other) :
     m_nodes(new vector<std::list<ModuleNode*>>(*(other.m_nodes))),
     m_currentNode(other.m_currentNode),
-    m_length(other.m_length), m_maxWidth(other.m_maxWidth), //m_width(other.m_width), //m_numberOfPaths(0),
-    m_asked(other.m_asked), //m_average(other.m_average), m_min(other.m_min), m_max(other.m_max),
-    //m_authorizedDifference(other.m_authorizedDifference), m_negligibleDifference(other.m_negligibleDifference),
-    //m_maxDifference(other.m_maxDifference), m_averageDifference(other.m_averageDifference),
+    m_length(other.m_length), m_maxWidth(other.m_maxWidth), m_numberOfPaths(other.m_numberOfPaths),
+    m_asked(other.m_asked), m_authorizedDifferences(other.m_authorizedDifferences),
+    m_min(other.m_min), m_max(other.m_max),
+    m_maxDifference(other.m_maxDifference), m_averageDifference(other.m_averageDifference),
     m_errors(other.m_errors)
 {}
 
