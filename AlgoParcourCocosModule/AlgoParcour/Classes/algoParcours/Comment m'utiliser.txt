@@ -1,0 +1,17 @@
+Pour créer graphiquement un parcours, il faut utiliser la méthode ParcourExos::createParcourExos situé dans la classe ParcourExos.
+
+Cette méthode a pour paramètre :
+	-int longueur : nombre d'exercice entre le début et la fin du parcours (le premier et le dernier noeud étant des noeuds sans exercice, ils ne comptent pas)
+	-int largeur : le nombre de chemin différent maximum (on aura au plus <largeur> chemin possible, mais il peut y en avoir moins)
+	-int reading : la quantité de point en reading
+	-int writing : la quantité de point en writing
+	-int math : la quantité de point en math
+	-int fun : la quantité de point en fun
+
+par exemple :
+
+ParcourExos::createParcourExos(10, 5, 550, 550, 550, 550);
+
+On crée un parcours de 10 exercice, avec au plus 5 chemins et 550 points dans chaque catégorie.
+
+La method retourne une valeur de type ParcourExos* qui dérive du type Node. Vous avez donc juste à ajouter cet objet comme un Node à votre layer et le tour est joué !

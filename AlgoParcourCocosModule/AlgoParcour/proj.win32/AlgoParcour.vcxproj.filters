@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\hub">
+      <UniqueIdentifier>{ae175760-dde6-4037-8bcb-7404bae59971}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\algoParcours">
+      <UniqueIdentifier>{7f3662e5-3c59-44b4-b8dc-c0bff3fc255e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\AlgoParcour.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\Fork.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\InGE.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\Intersection.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\Junction.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\Link.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\Module.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\ModuleGE.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\ModuleNode.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\OutGE.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\PreGraph.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\stdafx.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\UsableGraph.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\algoParcours\ParcourExos.cpp">
+      <Filter>src\algoParcours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\hub\MainScene.cpp">
+      <Filter>src\hub</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\AlgoParcour.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\Fork.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\GraphElement.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\InGE.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\Intersection.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\Junction.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\Link.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\Module.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\ModuleGE.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\ModuleNode.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\OutGE.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\PreGraph.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\Side.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\stdafx.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\targetver.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\UsableGraph.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\algoParcours\ParcourExos.h">
+      <Filter>src\algoParcours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\hub\MainScene.h">
+      <Filter>src\hub</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
