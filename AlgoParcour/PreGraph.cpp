@@ -33,7 +33,11 @@ bool PreGraph::add(map<const Module*, int>*& modules)
     {
         cout << it->second << '*' << *(it->first) << '\n';
     }
-    if (forkPlace->isEmpty()) return false;
+    if (forkPlace->isEmpty())
+    {
+        cout << "bestFork() fails because set is already present in the graph\n";
+        return false;
+    }
     forkPlace->getAfter()->display();
     cout <<'\n';
     Link* junctionPlace = new Link();
@@ -42,8 +46,12 @@ bool PreGraph::add(map<const Module*, int>*& modules)
 
     Side forkSide = forkPlace->getAfter()->bestJunction(&modules, junctionPlace, &junctionSide,
                                             forkPlace->getBefore(), &distance);
-    cout <<"add->afterBestJunction\n";
-    if (junctionPlace->isEmpty()) return false;
+    cout <<"add->after BestJunction\n";
+    if (junctionPlace->isEmpty())
+    {
+        cout << "bestJunction() fails()\n";
+        return false;
+    }
 
     junctionPlace->getAfter()->display();
     cout <<'\n';

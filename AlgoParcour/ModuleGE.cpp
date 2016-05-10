@@ -4,16 +4,16 @@ using namespace std;
 
 int ModuleGE::bestFork(map<const Module*, int>** modules, Link* forkPlace)
 {
-    cout << "ModuleGE[" << m_module << "]->bestfork->start\n";
+    cout << "ModuleGE[" << *m_module << "]->bestfork->start\n";
 
     map<const Module*, int>::iterator it = (*modules)->find(m_module);
 
-    cout << "ModuleGE[" << m_module << "]->bestfork>after find\n";
+    cout << "ModuleGE[" << *m_module << "]->bestfork>after find\n";
 
     //Si le module du noeud est trouve
     if (it != (*modules)->end())
     {
-        cout << "ModuleGE[" << m_module << "]->bestfork->match\n";
+        cout << "ModuleGE[" << *m_module << "]->bestfork->match\n";
         //On le retire de notre map
         if(it->second > 1)
         {
@@ -24,7 +24,7 @@ int ModuleGE::bestFork(map<const Module*, int>** modules, Link* forkPlace)
             (*modules)->erase(it);
         }
 
-        cout << "Node[" << m_module << "]->bestfork->module erased\n";
+        cout << "Node[" << *m_module << "]->bestfork->module erased\n";
 
         //On sauve this->n_next car il va etre modifie lorsque va deplacer le module
         GE* next = m_next;
@@ -32,23 +32,23 @@ int ModuleGE::bestFork(map<const Module*, int>** modules, Link* forkPlace)
         //Si le point de fourche est deja trouve, on replace le module avant le point de fourche:
         if (!forkPlace->isEmpty())
         {
-            cout << "Node[" << m_module << "]->bestfork->moving\n";
+            cout << "Node[" << *m_module << "]->bestfork->moving\n";
             moveBefore(*forkPlace);
         }
 
-        cout << "Node[" << m_module << "]->bestfork->recursive call and exit\n";
+        cout << "Node[" << *m_module << "]->bestfork->recursive call and exit\n";
 
         //Puis on continue a iterer
 
         return 1 + next->bestFork(modules, forkPlace);
     }
 
-    cout << "Node[" << m_module << "]->bestfork->no match\n";
+    cout << "Node[" << *m_module << "]->bestfork->no match\n";
     //le module n'a pas ete trouve dans la liste
     if (forkPlace->isEmpty()  &&  !(*m_module == 0))
     {
         //Si le point de fourche n'est pas encore trouve
-        cout << "Node[" << m_module << "]->bestfork->new fork place\n";
+        cout << "Node[" << *m_module << "]->bestfork->new fork place\n";
         forkPlace->setBefore(m_previous);
         forkPlace->setAfter(this);
         //Maintenant il est trouve
@@ -61,23 +61,23 @@ int ModuleGE::bestFork(map<const Module*, int>** modules, Link* forkPlace)
 Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPlace, Side* side,
                         GraphElement* callingNode, int* distance)
 {
-    cout << "Node[" << m_module << "]->bestJunction->start\n";
+    cout << "Node[" << *m_module << "]->bestJunction->start\n";
 
     map<const Module*, int>::iterator it = (*modules)->find(m_module);
 
     if (callingNode == m_previous)
     {
-        cout << "Node[" << m_module << "]->bestJunction->forward\n";
+        cout << "Node[" << *m_module << "]->bestJunction->forward\n";
 
         ++*distance;
 
         if (*m_module == 0 || it != (*modules)->end())
         {
-            cout << "Node[" << m_module << "]->bestJunction->module found or null\n";
+            cout << "Node[" << *m_module << "]->bestJunction->module found or null\n";
 
             if (it != (*modules)->end())
             {
-                cout << "Node[" << m_module << "]->bestJunction->removing module\n";
+                cout << "Node[" << *m_module << "]->bestJunction->removing module\n";
                 if(it->second > 1)
                 {
                     --(it->second);
@@ -90,25 +90,25 @@ Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPla
 
             if (junctionPlace->isEmpty())
             {
-                cout << "Node[" << m_module << "]->bestJunction->new junction place\n";
+                cout << "Node[" << *m_module << "]->bestJunction->new junction place\n";
                 junctionPlace->setBefore(m_previous);
                 junctionPlace->setAfter(this);
             }
 
-            cout << "Node[" << m_module << "]->bestJunction->recursive call\n";
+            cout << "Node[" << *m_module << "]->bestJunction->recursive call\n";
             GE* previousJunctionGE = junctionPlace->getAfter();
             Side returnSide = m_next == nullptr ? *side
                     : m_next->bestJunction(modules, junctionPlace, side, this, distance);
 
             if (junctionPlace->getAfter() == previousJunctionGE)
             {
-                cout << "Node[" << m_module << "]->bestJunction->junctionPlace still on this path\n";
+                cout << "Node[" << *m_module << "]->bestJunction->junctionPlace still on this path\n";
                 --*distance;
             }
             else
             {
-                cout << "Node[" << m_module << "]->bestJunction->junctionPlace was moved to another area\n";
-                cout << "Node[" << m_module << "]->bestJunction->replacing module in the list\n";
+                cout << "Node[" << *m_module << "]->bestJunction->junctionPlace was moved to another area\n";
+                cout << "Node[" << *m_module << "]->bestJunction->replacing module in the list\n";
                 it = (*modules)->find(m_module);
                 if (it == (*modules)->end())
                 {
@@ -120,12 +120,12 @@ Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPla
                 }
             }
 
-            cout << "Node[" << m_module << "]->bestJunction->exit\n";
+            cout << "Node[" << *m_module << "]->bestJunction->exit\n";
             return returnSide;
         }
         else
         {
-            cout << "Node[" << m_module << "]->bestJunction->module not found\n";
+            cout << "Node[" << *m_module << "]->bestJunction->module not found\n";
 
             if (!junctionPlace->isEmpty())
             {
@@ -144,13 +144,13 @@ Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPla
     }
     else
     {
-        cout << "Node[" << m_module << "]->bestJunction->backward\n";
+        cout << "Node[" << *m_module << "]->bestJunction->backward\n";
 
         --*distance;
 
         if (it != (*modules)->end())
         {
-            cout << "Node[" << m_module << "]->bestJunction->module found, removing module\n";
+            cout << "Node[" << *m_module << "]->bestJunction->module found, removing module\n";
             if(it->second > 1)
             {
                 --(it->second);
@@ -163,20 +163,20 @@ Side ModuleGE::bestJunction(map<const Module*, int>** modules, Link* junctionPla
             GE* previous = m_previous;
             GE* next = junctionPlace->getBefore() == this  ?  this  :  m_next;
 
-            cout << "Node[" << m_module << "]->moving node\n";
+            cout << "Node[" << *m_module << "]->moving node\n";
             moveAfter(*junctionPlace);
 
-            cout << "Node[" << m_module << "]->bestJunction->recursive call\n";
+            cout << "Node[" << *m_module << "]->bestJunction->recursive call\n";
             previous->bestJunction(modules, junctionPlace, side, next, distance);
         }
         else
         {
-            cout << "Node[" << m_module << "]->bestJunction->module not found, recursive call\n";
+            cout << "Node[" << *m_module << "]->bestJunction->module not found, recursive call\n";
             m_previous->bestJunction(modules, junctionPlace, side, this, distance);
 
             ++*distance;
         }
-        cout << "Node[" << m_module << "]->bestJunction->exit\n";
+        cout << "Node[" << *m_module << "]->bestJunction->exit\n";
         return *side == Side::left ? Side::right : Side::left;
     }
 }

@@ -1,0 +1,24 @@
+﻿La génération a démarré 02/04/2016 18:30:07.
+     1>Projet "C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\proj.win32\DotToDot.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>PreLinkEvent:
+         if not exist "C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\proj.win32\Debug.win32\" mkdir "C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\proj.win32\Debug.win32\"
+         xcopy /Y /Q "C:\Cocos\frameworks\cocos2d-x-3.8\prebuilt\win32\*.*" "C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\proj.win32\Debug.win32\"
+         
+         :VCEnd
+         60 fichier(s) copié(s)
+       Link:
+         DotToDot.vcxproj -> C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\proj.win32\Debug.win32\DotToDot.exe
+       CustomBuildStep:
+         if not exist "C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\proj.win32\Debug.win32\" mkdir "C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\proj.win32\Debug.win32\"
+         xcopy "C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\proj.win32\..\Resources" "C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\proj.win32\Debug.win32\" /D /E /I /F /Y
+               
+         :VCEnd
+         C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\Resources\res\DotToDot.csb -> C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\proj.win32\Debug.win32\res\DotToDot.csb
+         C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\Resources\res\tutorialNode.csb -> C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\proj.win32\Debug.win32\res\tutorialNode.csb
+         C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\Resources\res\TutorialScene.csb -> C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\proj.win32\Debug.win32\res\TutorialScene.csb
+         3 fichier(s) copié(s)
+     1>Génération du projet "C:\Users\guillaume\Documents\EFREI\PA8\DotToDot\proj.win32\DotToDot.vcxproj" terminée (Build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:02.34

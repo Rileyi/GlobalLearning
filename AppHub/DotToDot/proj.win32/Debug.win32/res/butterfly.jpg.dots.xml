@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<exercice type="dot-to-dot">
+	<requirements>
+		<subject class="arithmetic" value="0"/>
+		<move type="drag-and-drop" value="0"/>
+	</requirements>
+	<learnings>
+		<subject class="arithmetic" experience="10"/>
+		<move type="drag-and-drop" experience="0"/>
+	</learnings>
+	<content>
+		<dot number="0" x="99" y="97"/>
+		<dot number="1" x="172" y="164"/>
+		<dot number="2" x="221" y="140"/>
+		<dot number="3" x="204" y="48"/>
+		<dot number="4" x="77" y="63"/>
+		<dot number="5" x="78" y="163"/>
+	</content>
+</exercice>

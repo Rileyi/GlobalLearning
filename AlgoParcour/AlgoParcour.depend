@@ -1,35 +1,11 @@
 # depslib dependency file v1.0
-1459469452 source:c:\users\alexandre\documents\github\globallearning\algoparcour\algoparcour.cpp
+1459757009 source:c:\users\alexandre\documents\github\globallearning\algoparcour\algoparcour.cpp
 	"AlgoParcour.h"
-
-1459442488 c:\users\alexandre\documents\github\globallearning\algoparcour\stdafx.h
-	<stdio.h>
-	<stdlib.h>
-	<tchar.h>
-	<string>
-	<iostream>
-	<sstream>
-	<vector>
-	<set>
-	<list>
-	<map>
-	<fstream>
-	<time.h>
-	"cocos2d.h"
-	"cocos2d.h"
-	"targetver.h"
-	"cocos2d.h"
-
-1459442488 c:\users\alexandre\documents\github\globallearning\algoparcour\targetver.h
-	<SDKDDKVer.h>
 
 1459460516 c:\users\alexandre\documents\github\globallearning\algoparcour\algoparcour.h
 	"UsableGraph.h"
 
-1459535252 c:\users\alexandre\documents\github\globallearning\algoparcour\module.h
-	"stdafx.h"
-
-1459463917 c:\users\alexandre\documents\github\globallearning\algoparcour\usablegraph.h
+1459759879 c:\users\alexandre\documents\github\globallearning\algoparcour\usablegraph.h
 	"PreGraph.h"
 	"ModuleNode.h"
 
@@ -37,11 +13,17 @@
 	"Fork.h"
 	"Junction.h"
 
-1459536652 c:\users\alexandre\documents\github\globallearning\algoparcour\modulege.h
+1459442488 c:\users\alexandre\documents\github\globallearning\algoparcour\fork.h
+	"Intersection.h"
+
+1459442488 c:\users\alexandre\documents\github\globallearning\algoparcour\intersection.h
+	"ModuleGE.h"
+
+1459538251 c:\users\alexandre\documents\github\globallearning\algoparcour\modulege.h
 	"InGE.h"
 	"OutGE.h"
 
-1459533627 c:\users\alexandre\documents\github\globallearning\algoparcour\inge.h
+1459538251 c:\users\alexandre\documents\github\globallearning\algoparcour\inge.h
 	"GraphElement.h"
 
 1459442488 c:\users\alexandre\documents\github\globallearning\algoparcour\graphelement.h
@@ -49,26 +31,44 @@
 	"Side.h"
 	"Link.h"
 
+1459638182 c:\users\alexandre\documents\github\globallearning\algoparcour\module.h
+	"stdafx.h"
+
+1459808333 c:\users\alexandre\documents\github\globallearning\algoparcour\stdafx.h
+	<stdio.h>
+	<stdlib.h>
+	<tchar.h>
+	<string>
+	<iostream>
+	<sstream>
+	<fstream>
+	<vector>
+	<set>
+	<list>
+	<map>
+	<time.h>
+	<cmath>
+	"cocos2d.h"
+	"cocos2d.h"
+	"cocos2d.h"
+
+1459442488 c:\users\alexandre\documents\github\globallearning\algoparcour\targetver.h
+	<SDKDDKVer.h>
+
 1454851478 c:\users\alexandre\documents\github\globallearning\algoparcour\side.h
 
 1455795014 c:\users\alexandre\documents\github\globallearning\algoparcour\link.h
 
-1459536652 c:\users\alexandre\documents\github\globallearning\algoparcour\outge.h
+1459538251 c:\users\alexandre\documents\github\globallearning\algoparcour\outge.h
 	"GraphElement.h"
-
-1459442488 c:\users\alexandre\documents\github\globallearning\algoparcour\fork.h
-	"Intersection.h"
-
-1459442488 c:\users\alexandre\documents\github\globallearning\algoparcour\intersection.h
-	"ModuleGE.h"
 
 1459442488 c:\users\alexandre\documents\github\globallearning\algoparcour\junction.h
 	"Intersection.h"
 
-1459465045 c:\users\alexandre\documents\github\globallearning\algoparcour\modulenode.h
+1459759975 c:\users\alexandre\documents\github\globallearning\algoparcour\modulenode.h
 	"ModuleGE.h"
 
-1459442488 source:c:\users\alexandre\documents\github\globallearning\algoparcour\fork.cpp
+1459755590 source:c:\users\alexandre\documents\github\globallearning\algoparcour\fork.cpp
 	"Fork.h"
 
 1454897489 source:c:\users\alexandre\documents\github\globallearning\algoparcour\inge.cpp
@@ -83,24 +83,24 @@
 1458596865 source:c:\users\alexandre\documents\github\globallearning\algoparcour\link.cpp
 	"Link.h"
 
-1459535294 source:c:\users\alexandre\documents\github\globallearning\algoparcour\module.cpp
+1459639998 source:c:\users\alexandre\documents\github\globallearning\algoparcour\module.cpp
 	"Module.h"
 
-1459537818 source:c:\users\alexandre\documents\github\globallearning\algoparcour\modulege.cpp
+1459638182 source:c:\users\alexandre\documents\github\globallearning\algoparcour\modulege.cpp
 	"ModuleGE.h"
 
-1459536196 source:c:\users\alexandre\documents\github\globallearning\algoparcour\modulenode.cpp
+1459760015 source:c:\users\alexandre\documents\github\globallearning\algoparcour\modulenode.cpp
 	"ModuleNode.h"
 
 1458822113 source:c:\users\alexandre\documents\github\globallearning\algoparcour\outge.cpp
 	"OutGE.h"
 
-1459536196 source:c:\users\alexandre\documents\github\globallearning\algoparcour\pregraph.cpp
+1459757009 source:c:\users\alexandre\documents\github\globallearning\algoparcour\pregraph.cpp
 	"PreGraph.h"
 
 1454434768 source:c:\users\alexandre\documents\github\globallearning\algoparcour\stdafx.cpp
 	"stdafx.h"
 
-1459464003 source:c:\users\alexandre\documents\github\globallearning\algoparcour\usablegraph.cpp
+1459760225 source:c:\users\alexandre\documents\github\globallearning\algoparcour\usablegraph.cpp
 	"UsableGraph.h"
 

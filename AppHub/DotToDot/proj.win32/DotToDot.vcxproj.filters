@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Content">
+      <UniqueIdentifier>{04b845cf-d06f-43db-a7e3-81f45202e738}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Exercice">
+      <UniqueIdentifier>{fe0f4f42-63bd-43ab-b0fd-ca5b8d80da80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\IO">
+      <UniqueIdentifier>{1446ec27-dfbe-46c4-9fe4-7b1935b389ce}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Exception.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Content\DotToDot\Dot.cpp">
+      <Filter>src\Content</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Content\DotToDot\DotToDotExercice.cpp">
+      <Filter>src\Content</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Exercice\Exercice.cpp">
+      <Filter>src\Exercice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Exercice\Learning.cpp">
+      <Filter>src\Exercice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Exercice\LearningList.cpp">
+      <Filter>src\Exercice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Exercice\MoveLearning.cpp">
+      <Filter>src\Exercice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Exercice\MoveRequirement.cpp">
+      <Filter>src\Exercice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Exercice\Requirement.cpp">
+      <Filter>src\Exercice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Exercice\RequirementList.cpp">
+      <Filter>src\Exercice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Exercice\SubjectLearning.cpp">
+      <Filter>src\Exercice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Exercice\SubjectRequirement.cpp">
+      <Filter>src\Exercice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\IO\Parser.cpp">
+      <Filter>src\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\IO\tinyxml2.cpp">
+      <Filter>src\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Content\DotToDot\DotToDotLayer.cpp">
+      <Filter>src\Content</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Color.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Definitions.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Exception.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Content\DotToDot\Dot.h">
+      <Filter>src\Content</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Content\DotToDot\DotToDotExercice.h">
+      <Filter>src\Content</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Exercice\Exercice.h">
+      <Filter>src\Exercice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Exercice\Learning.h">
+      <Filter>src\Exercice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Exercice\LearningList.h">
+      <Filter>src\Exercice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Exercice\MoveLearning.h">
+      <Filter>src\Exercice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Exercice\MoveRequirement.h">
+      <Filter>src\Exercice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Exercice\Requirement.h">
+      <Filter>src\Exercice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Exercice\RequirementList.h">
+      <Filter>src\Exercice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Exercice\SubjectLearning.h">
+      <Filter>src\Exercice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Exercice\SubjectRequirement.h">
+      <Filter>src\Exercice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\IO\I_Cloneable.h">
+      <Filter>src\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\IO\I_Loadable.h">
+      <Filter>src\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\IO\I_Saveable.h">
+      <Filter>src\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\IO\Parser.h">
+      <Filter>src\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\IO\tinyxml2.h">
+      <Filter>src\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Content\DotToDot\DotToDotLayer.h">
+      <Filter>src\Content</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Color.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

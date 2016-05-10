@@ -7,9 +7,8 @@
 class UsableGraph
 {
     public:
-        UsableGraph(PreGraph* preGraph, int length, int maxWidth, const Module& asked
-                    //, int authorizedDifference, int negligibleDifference
-                    );
+        UsableGraph(PreGraph* preGraph, unsigned int length, unsigned int maxWidth,
+                    const Module& asked, const Module& authorizedDifference);
         UsableGraph(const UsableGraph& other);
         ~UsableGraph();
         UsableGraph& operator=(const UsableGraph& other);
@@ -25,19 +24,20 @@ class UsableGraph
         bool moveBackwardTo(ModuleNode* mn);
 
         bool isValid() const {return 0 == m_errors.compare("");}
+
         std::string getErrors() const {return m_errors;}
-        int getLength() const {return m_length;}
-        int getMaxWidth() const {return m_maxWidth;}
+
+        unsigned int getLength() const {return m_length;}
+        unsigned int getMaxWidth() const {return m_maxWidth;}
         unsigned int getWidth() const;
-        //int getNumberOfPaths() const {return m_numberOfPaths;}
+        unsigned int getNumberOfPaths() const {return m_numberOfPaths;}
+
         const Module& askedTotal() const {return m_asked;}
-        /*const Module& averageTotal() const {return m_average;}
         const Module& maxTotal() const {return m_max;}
         const Module& minTotal() const {return m_min;}
-        int getAuthorizedDifference() const {return m_authorizedDifference;}
-        int getNegligibleDifference() const {return m_negligibleDifference;}
-        int getMaxDifference() const {return m_maxDifference;}
-        int getAverageDifference() const {return m_averageDifference;}*/
+        const Module& getAuthorizedDifference() const {return m_authorizedDifferences;}
+        unsigned int getMaxDifference() const {return m_maxDifference;}
+        float getAverageDifference() const {return m_averageDifference;}
 
     protected:
     private:
@@ -45,16 +45,16 @@ class UsableGraph
 
         ModuleNode* m_currentNode;
 
-        int m_length, m_maxWidth;
-        //int m_width;
-        //int m_numberOfPaths;
+        unsigned int m_length, m_maxWidth;
+        unsigned int m_numberOfPaths;
 
         const Module m_asked;
-        //const Module m_average;
-        //const Module m_min;
-        //const Module m_max;
+        const Module m_authorizedDifferences;
+        Module m_min;
+        Module m_max;
 
-        //int m_authorizedDifference, m_negligibleDifference, m_maxDifference, m_averageDifference;
+        unsigned int m_maxDifference;
+        float m_averageDifference;
 
         std::string m_errors;
 };

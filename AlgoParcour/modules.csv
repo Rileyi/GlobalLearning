@@ -1,4 +1,7 @@
 Module	Reading	Writing	Maths	Fun
+DrawNode	0	0	80	20
+DotToDotMath	0	0	70	30
+DotToDotWrite	0	70	0	30
 Puzzle	5	0	0	95
 ConnectsTheDots	0	0	30	70
 HiddenObjects	5	0	20	75
