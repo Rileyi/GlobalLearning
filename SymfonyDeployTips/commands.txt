@@ -1,0 +1,13 @@
+
+
+	// Launch symfony application
+	// -----------------------------
+		php bin/console server:run
+
+	// Create database Schema
+	// ------------------------------
+		php bin/console doctrine:schema:create
+		
+	// Load data into the database
+	// ------------------------------
+		php bin/console doctrine:fixtures:load -n
