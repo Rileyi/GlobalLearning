@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 /**
  * Controller used to manage Words collection in the public part of the site.
  *
- * @Route("/collect")
+ * @Route("/words")
  *
  * @author Paul-Axel MARIE
  */
