@@ -14,6 +14,9 @@ namespace AppBundle\DataFixtures\ORM;
 use AppBundle\Entity\Comment;
 use AppBundle\Entity\Post;
 use AppBundle\Entity\User;
+use AppBundle\Entity\Word;
+use AppBundle\Entity\ImagePath;
+use AppBundle\Entity\SoundPath;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
@@ -43,6 +46,7 @@ class LoadFixtures implements FixtureInterface, ContainerAwareInterface
     {
         $this->loadUsers($manager);
         $this->loadPosts($manager);
+        $this->loadWords($manager);
     }
 
     private function loadUsers(ObjectManager $manager)
@@ -95,6 +99,25 @@ class LoadFixtures implements FixtureInterface, ContainerAwareInterface
         }
 
         $manager->flush();
+    }
+
+    private function loadWords(ObjectManager $manager)
+    {
+        $word = new Word();
+        $word->setName('car');
+        $word->setAuthorId(1);
+
+        $imagePath = new ImagePath();
+        $imagePath->setPath('/var/samples/car_sample.jpg');
+        $imagePath->setAuthorId(1);
+        $imagePath->setWord('car');
+        $manager->persist($imagePath);
+
+        $word->addImagePath($imagePath);
+
+        $manager->persist($word);
+        $manager->flush();
+
     }
 
     private function getPostContent()

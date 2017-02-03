@@ -1,4 +1,9 @@
 *.db
 SymfonyWWW/.idea
+SymfonyWWW/.idea/
 SymfonyWWW/.idea/*
+
+SymfonyWWW/.idea/Sym.iml
+SymfonyWWW/.idea/workspace.xml
+SymfonyWWW/.idea/Sym.iml
 SymfonyWWW/.idea/workspace.xml

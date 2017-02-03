@@ -2,17 +2,62 @@
 
 {% block body_id 'central_index' %}
 
-{% block main %}
+{% block body %}
 
     <div class="row">
         <div class="col-sm-5">
             <div class="well">
+                <form action="{{ path('search_word') }}" method="post">
+                    <fieldset>
+                        <legend><i class="fa fa-search" aria-hidden="true"></i> {{ 'title.search_word'|trans }}</legend>
+                        <div class="form-group">
+                            <label for="word_form">{{ 'label.enter_word'|trans }}</label>
+                            <input type="text" id="word_form" name="_word_form" value="" class="form-control"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'action.search_validation'|trans }}
+                        </button>
+                    </fieldset>
+                </form>
             </div>
         </div>
         <div class="col-sm-7">
             <div class="well">
+                <table class="table">
+                    <thead class="thead-inverse">
+                    <tr>
+                        <th>#</th>
+                        <th>Word</th>
+                        <th>ImagesCount</th>
+                        <th>SoundsCount</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><a href="/en/words/house">House</a></td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td><a href="/en/words/car">Car</a></td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td><a href="/en/words/chair">Chair</a></td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 
 {% endblock %}
+
+
+{% block sidebar %}{% endblock %}

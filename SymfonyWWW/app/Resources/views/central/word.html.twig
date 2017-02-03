@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'central_word' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="well">
+                <h2>Word: {{ word }}</h2>
+               <img src="/var/samples/car_sample.jpg" alt="car" title="car" />
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block sidebar %}{% endblock %}

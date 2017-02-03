@@ -71,7 +71,6 @@ class SoundPath
     /// ----
     /// Setters
     /// ----------
-
     /**
      * @param string $id
      */

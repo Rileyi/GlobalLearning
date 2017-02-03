@@ -75,7 +75,8 @@ class Word
     public function __construct()
     {
         $this->publishedAt = new \DateTime();
-        $this->comments = new ArrayCollection();
+        $this->imagePathList = new ArrayCollection();
+        $this->soundPathList = new ArrayCollection();
     }
 
     public function getId()

@@ -339,6 +339,22 @@
                 <source>rss.description</source>
                 <target>Most recent posts published on the Symfony Demo blog</target>
             </trans-unit>
+
+
+            <trans-unit id="title.search_word">
+                <source>title.search_word</source>
+                <target>Search a Word</target>
+            </trans-unit>
+            <trans-unit id="label.enter_word">
+                <source>label.enter_word</source>
+                <target>Enter your Word</target>
+            </trans-unit>
+            <trans-unit id="action.search_validation">
+                <source>action.search_validation</source>
+                <target>Search !</target>
+            </trans-unit>
+
+
         </body>
     </file>
 </xliff>
