@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="table_sound_path")
+ * @ORM\Table(name="table_image_path")
  *
  * @author Paul-Axel MARIE
  */
@@ -23,7 +23,7 @@ class ImagePath
     private $id;
 
     /**
-     * @var Word
+     * @var string
      *
      * @ORM\ManyToOne(targetEntity="Word", inversedBy="imagePath")
      * @ORM\JoinColumn(nullable=false)
@@ -53,6 +53,7 @@ class ImagePath
      * @Assert\DateTime
      */
     private $publishedAt;
+
 
     public function __construct()
     {

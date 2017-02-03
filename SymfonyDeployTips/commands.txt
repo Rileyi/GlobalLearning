@@ -1,9 +1,26 @@
 
+	// Composer setup - prevent tls problems => composer.json
+	// -----------------------------------------------------------
+		"preferred-install": "dist",
+        "disable-tls": true,
+        "secure-http": false
 
+
+
+	// Install dependencies
+	// ------------------------
+		composer install
+	
 	// Launch symfony application
 	// -----------------------------
 		php bin/console server:run
 
+		
+	// Create database 
+	// -------------------
+		php bin/console doctrine:database:create 
+		// Need to configure the user before risky, better to do this step manualy with a dedicated user.
+	
 	// Create database Schema
 	// ------------------------------
 		php bin/console doctrine:schema:create
@@ -11,3 +28,5 @@
 	// Load data into the database
 	// ------------------------------
 		php bin/console doctrine:fixtures:load -n
+		
+	
